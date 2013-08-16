@@ -1,7 +1,7 @@
 -- -----------------------------------------------------
--- Table `adsumCCI`.`users`
+-- Table `users`
 -- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `adsumCCI`.`users` (
+CREATE  TABLE IF NOT EXISTS `users` (
   `id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT ,
   `extid` VARCHAR(255) NULL DEFAULT NULL ,
   `email` VARCHAR(150) NOT NULL ,
@@ -20,9 +20,9 @@ COMMENT = 'Stores registered user accounts.';
 
 
 -- -----------------------------------------------------
--- Table `adsumCCI`.`event_types`
+-- Table `event_types`
 -- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `adsumCCI`.`event_types` (
+CREATE  TABLE IF NOT EXISTS `event_types` (
   `id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT ,
   `title` VARCHAR(150) NOT NULL ,
   PRIMARY KEY (`id`) )
@@ -31,11 +31,12 @@ COMMENT = 'Holds event category types.';
 
 
 -- -----------------------------------------------------
--- Table `adsumCCI`.`events`
+-- Table `events`
 -- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `adsumCCI`.`events` (
+CREATE  TABLE IF NOT EXISTS `events` (
   `id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT ,
   `event_type_id` INT(11) UNSIGNED NOT NULL ,
+  `uuid` CHAR(36) NOT NULL ,
   `extid` VARCHAR(255) NULL DEFAULT NULL ,
   `title` VARCHAR(255) NOT NULL ,
   `is_active` INT(2) NULL DEFAULT 1 ,
@@ -49,9 +50,9 @@ COMMENT = 'Stores event details.';
 
 
 -- -----------------------------------------------------
--- Table `adsumCCI`.`attendees`
+-- Table `attendees`
 -- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `adsumCCI`.`attendees` (
+CREATE  TABLE IF NOT EXISTS `attendees` (
   `id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT ,
   `uuid` CHAR(36) NOT NULL ,
   `extid` VARCHAR(255) NULL DEFAULT NULL ,
@@ -65,9 +66,9 @@ COMMENT = 'Event attendees and guests.';
 
 
 -- -----------------------------------------------------
--- Table `adsumCCI`.`attendance_status_states`
+-- Table `attendance_status_states`
 -- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `adsumCCI`.`attendance_status_states` (
+CREATE  TABLE IF NOT EXISTS `attendance_status_states` (
   `id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT ,
   `title` VARCHAR(100) NOT NULL ,
   PRIMARY KEY (`id`) )
@@ -76,9 +77,9 @@ COMMENT = 'Statuses for attendees at events.';
 
 
 -- -----------------------------------------------------
--- Table `adsumCCI`.`attendee_status_logs`
+-- Table `attendee_status_logs`
 -- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `adsumCCI`.`attendee_status_logs` (
+CREATE  TABLE IF NOT EXISTS `attendee_status_logs` (
   `id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT ,
   `attendee_id` INT(11) UNSIGNED NOT NULL ,
   `attendance_status_state_id` INT(11) UNSIGNED NOT NULL ,
@@ -95,9 +96,9 @@ COMMENT = 'Records attendee event registration and status.';
 
 
 -- -----------------------------------------------------
--- Table `adsumCCI`.`attendee_bar_numbers`
+-- Table `attendee_bar_numbers`
 -- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `adsumCCI`.`attendee_bar_numbers` (
+CREATE  TABLE IF NOT EXISTS `attendee_bar_numbers` (
   `id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT ,
   `attendee_id` INT(11) UNSIGNED NOT NULL ,
   `bar_number` VARCHAR(150) NOT NULL ,
