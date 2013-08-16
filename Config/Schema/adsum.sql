@@ -108,3 +108,32 @@ CREATE  TABLE IF NOT EXISTS `attendee_bar_numbers` (
   PRIMARY KEY (`id`) ,
   INDEX `attendee_id` (`attendee_id` ASC) )
 ENGINE = InnoDB;
+
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+-- -----------------------------------------------------
+-- Data for table `event_types`
+-- -----------------------------------------------------
+START TRANSACTION;
+INSERT INTO `event_types` (`id`, `title`) VALUES (1, 'Conference');
+INSERT INTO `event_types` (`id`, `title`) VALUES (2, 'Meeting');
+INSERT INTO `event_types` (`id`, `title`) VALUES (3, 'Webinar');
+
+COMMIT;
+
+-- -----------------------------------------------------
+-- Data for table `attendance_status_states`
+-- -----------------------------------------------------
+START TRANSACTION;
+INSERT INTO `attendance_status_states` (`id`, `title`) VALUES (1, 'Registered');
+INSERT INTO `attendance_status_states` (`id`, `title`) VALUES (2, 'Arrived');
+INSERT INTO `attendance_status_states` (`id`, `title`) VALUES (3, 'Cancelled');
+INSERT INTO `attendance_status_states` (`id`, `title`) VALUES (4, 'No Show');
+INSERT INTO `attendance_status_states` (`id`, `title`) VALUES (5, 'Substituted');
+INSERT INTO `attendance_status_states` (`id`, `title`) VALUES (6, 'Substitution');
+
+COMMIT;
