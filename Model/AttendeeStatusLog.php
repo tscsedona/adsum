@@ -15,4 +15,9 @@ App::uses('AppModel', 'Model');
  */
 class AttendeeStatusLog extends AppModel {
     
+    public $belongsTo = array(
+        'Attendee',
+        'AttendanceStatusState'
+    );
+    
 }

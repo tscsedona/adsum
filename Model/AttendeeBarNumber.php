@@ -15,4 +15,6 @@ App::uses('AppModel', 'Model');
  */
 class AttendeeBarNumber extends AppModel {
     
+    public $belongsTo = 'Attendee';
+    
 }

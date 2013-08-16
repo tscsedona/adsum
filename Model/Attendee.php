@@ -15,4 +15,9 @@ App::uses('AppModel', 'Model');
  */
 class Attendee extends AppModel {
     
+    public $hasMany = array(
+        'AttendeeBarNumber',
+        'AttendeeStatusLog'
+    );
+    
 }
