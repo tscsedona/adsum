@@ -35,4 +35,7 @@ class AppController extends Controller {
     
     public $components = array('DebugKit.Toolbar');
     
+    // DEV - Globally enable scaffold mode
+    public $scaffold;
+    
 }
