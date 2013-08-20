@@ -17,7 +17,12 @@ class AttendeeStatusLog extends AppModel {
     
     public $belongsTo = array(
         'Attendee',
-        'AttendanceStatusState'
+        'AttendanceStatusState',
+        'Event',
+        'User' => array(
+            'className'   => 'User',
+            'foreignKey'  => 'logged_by'
+        )
     );
     
 }

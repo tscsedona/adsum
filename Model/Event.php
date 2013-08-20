@@ -15,4 +15,8 @@ App::uses('AppModel', 'Model');
  */
 class Event extends AppModel {
     
+    public $belongsTo = 'EventType';
+    
+    public $hasAndBelongsToMany = 'Attendee';
+    
 }

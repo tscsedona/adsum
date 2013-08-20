@@ -15,9 +15,13 @@ App::uses('AppModel', 'Model');
  */
 class Attendee extends AppModel {
     
+    public $displayField = 'display_name';
+    
     public $hasMany = array(
         'AttendeeBarNumber',
         'AttendeeStatusLog'
     );
+    
+    public $hasAndBelongsToMany = 'Event';
     
 }
