@@ -1,13 +1,12 @@
 <?php
 App::uses('AppModel', 'Model');
 /**
- * AttendeeStatusLog Model
+ * AttendeesEvent Model
  *
  * @property Attendee $Attendee
- * @property AttendanceStatusState $AttendanceStatusState
  * @property Event $Event
  */
-class AttendeeStatusLog extends AppModel {
+class AttendeesEvent extends AppModel {
 
 /**
  * Validation rules
@@ -25,27 +24,7 @@ class AttendeeStatusLog extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'attendance_status_state_id' => array(
-			'numeric' => array(
-				'rule' => array('numeric'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
 		'event_id' => array(
-			'numeric' => array(
-				'rule' => array('numeric'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
-		'logged_by' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -68,13 +47,6 @@ class AttendeeStatusLog extends AppModel {
 		'Attendee' => array(
 			'className' => 'Attendee',
 			'foreignKey' => 'attendee_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		),
-		'AttendanceStatusState' => array(
-			'className' => 'AttendanceStatusState',
-			'foreignKey' => 'attendance_status_state_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''

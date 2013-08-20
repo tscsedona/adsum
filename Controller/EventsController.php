@@ -1,20 +1,111 @@
 <?php
 App::uses('AppController', 'Controller');
-
 /**
  * Events Controller
  *
- * CakePHP 2.x.
- *
- * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE file
- * Redistributions of files must retain the above copyright notice.
- *
- * @copyright The Sedona Conference® (https://thesedonaconference.org)
- * @author Chris Vogt <CJV@sedonaconference.org>
+ * @property Event $Event
+ * @property PaginatorComponent $Paginator
  */
 class EventsController extends AppController {
-    
-    
-    
+
+/**
+ * Components
+ *
+ * @var array
+ */
+	public $components = array('Paginator');
+
+/**
+ * index method
+ *
+ * @return void
+ */
+	public function index() {
+		$this->Event->recursive = 0;
+		$this->set('events', $this->paginate());
+	}
+
+/**
+ * view method
+ *
+ * @throws NotFoundException
+ * @param string $id
+ * @return void
+ */
+	public function view($id = null) {
+		if (!$this->Event->exists($id)) {
+			throw new NotFoundException(__('Invalid event'));
+		}
+		$options = array('conditions' => array('Event.' . $this->Event->primaryKey => $id));
+		$this->set('event', $this->Event->find('first', $options));
+	}
+
+/**
+ * add method
+ *
+ * @return void
+ */
+	public function add() {
+		if ($this->request->is('post')) {
+			$this->Event->create();
+			if ($this->Event->save($this->request->data)) {
+				$this->Session->setFlash(__('The event has been saved'), 'flash/success');
+				$this->redirect(array('action' => 'index'));
+			} else {
+				$this->Session->setFlash(__('The event could not be saved. Please, try again.'), 'flash/error');
+			}
+		}
+		$eventTypes = $this->Event->EventType->find('list');
+		$attendees = $this->Event->Attendee->find('list');
+		$this->set(compact('eventTypes', 'attendees'));
+	}
+
+/**
+ * edit method
+ *
+ * @throws NotFoundException
+ * @param string $id
+ * @return void
+ */
+	public function edit($id = null) {
+		if (!$this->Event->exists($id)) {
+			throw new NotFoundException(__('Invalid event'));
+		}
+		if ($this->request->is('post') || $this->request->is('put')) {
+			if ($this->Event->save($this->request->data)) {
+				$this->Session->setFlash(__('The event has been saved'), 'flash/success');
+				$this->redirect(array('action' => 'index'));
+			} else {
+				$this->Session->setFlash(__('The event could not be saved. Please, try again.'), 'flash/error');
+			}
+		} else {
+			$options = array('conditions' => array('Event.' . $this->Event->primaryKey => $id));
+			$this->request->data = $this->Event->find('first', $options);
+		}
+		$eventTypes = $this->Event->EventType->find('list');
+		$attendees = $this->Event->Attendee->find('list');
+		$this->set(compact('eventTypes', 'attendees'));
+	}
+
+/**
+ * delete method
+ *
+ * @throws NotFoundException
+ * @throws MethodNotAllowedException
+ * @param string $id
+ * @return void
+ */
+	public function delete($id = null) {
+		$this->Event->id = $id;
+		if (!$this->Event->exists()) {
+			throw new NotFoundException(__('Invalid event'));
+		}
+		$this->request->onlyAllow('post', 'delete');
+		if ($this->Event->delete()) {
+			$this->Session->setFlash(__('Event deleted'), 'flash/success');
+			$this->redirect(array('action' => 'index'));
+		}
+		$this->Session->setFlash(__('Event was not deleted'), 'flash/error');
+		$this->redirect(array('action' => 'index'));
+	}
 }

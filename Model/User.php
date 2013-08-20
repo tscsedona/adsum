@@ -1,20 +1,66 @@
 <?php
 App::uses('AppModel', 'Model');
-
 /**
- * Users Model
+ * User Model
  *
- * CakePHP 2.x.
- *
- * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE file
- * Redistributions of files must retain the above copyright notice.
- *
- * @copyright The Sedona Conference® (https://thesedonaconference.org)
- * @author Chris Vogt <CJV@sedonaconference.org>
  */
 class User extends AppModel {
-    
-    public $displayField = 'display_name';
-    
+
+/**
+ * Validation rules
+ *
+ * @var array
+ */
+	public $validate = array(
+		'email' => array(
+			'email' => array(
+				'rule' => array('email'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'pass' => array(
+			'notempty' => array(
+				'rule' => array('notempty'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'display_name' => array(
+			'notempty' => array(
+				'rule' => array('notempty'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'is_active' => array(
+			'boolean' => array(
+				'rule' => array('boolean'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'is_admin' => array(
+			'boolean' => array(
+				'rule' => array('boolean'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+	);
 }
