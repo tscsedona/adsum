@@ -1,3 +1,8 @@
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL';
+
+
 -- -----------------------------------------------------
 -- Table `users`
 -- -----------------------------------------------------
@@ -42,6 +47,7 @@ CREATE  TABLE IF NOT EXISTS `events` (
   `is_active` TINYINT(1) NULL DEFAULT 1 ,
   `start_time` DATETIME NULL DEFAULT NULL ,
   `end_time` DATETIME NULL DEFAULT NULL ,
+  `attendee_count` INT NULL DEFAULT NULL ,
   `created` DATETIME NULL DEFAULT NULL ,
   PRIMARY KEY (`id`) ,
   INDEX `event_type_id` (`event_type_id` ASC) )
@@ -110,6 +116,20 @@ CREATE  TABLE IF NOT EXISTS `attendee_bar_numbers` (
 ENGINE = InnoDB;
 
 
+-- -----------------------------------------------------
+-- Table `attendees_events`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `attendees_events` (
+  `id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT ,
+  `attendee_id` INT(11) UNSIGNED NOT NULL ,
+  `event_id` INT(11) UNSIGNED NOT NULL ,
+  PRIMARY KEY (`id`) ,
+  INDEX `attendee_id` (`attendee_id` ASC) ,
+  INDEX `event_id` (`event_id` ASC) )
+ENGINE = InnoDB
+COMMENT = 'Attendees registered for events.';
+
+
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
@@ -129,11 +149,12 @@ COMMIT;
 -- Data for table `attendance_status_states`
 -- -----------------------------------------------------
 START TRANSACTION;
-INSERT INTO `attendance_status_states` (`id`, `title`) VALUES (1, 'Registered');
-INSERT INTO `attendance_status_states` (`id`, `title`) VALUES (2, 'Arrived');
+INSERT INTO `attendance_status_states` (`id`, `title`) VALUES (6, 'Registered');
+INSERT INTO `attendance_status_states` (`id`, `title`) VALUES (7, 'Arrived');
 INSERT INTO `attendance_status_states` (`id`, `title`) VALUES (3, 'Cancelled');
 INSERT INTO `attendance_status_states` (`id`, `title`) VALUES (4, 'No Show');
 INSERT INTO `attendance_status_states` (`id`, `title`) VALUES (5, 'Substituted');
-INSERT INTO `attendance_status_states` (`id`, `title`) VALUES (6, 'Substitution');
+INSERT INTO `attendance_status_states` (`id`, `title`) VALUES (1, 'Check-In');
+INSERT INTO `attendance_status_states` (`id`, `title`) VALUES (2, 'Check-Out');
 
 COMMIT;
