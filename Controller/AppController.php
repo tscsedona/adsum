@@ -37,5 +37,6 @@ class AppController extends Controller {
     
     // DEV - Globally enable scaffold mode
     public $scaffold;
+    public $theme = "Cakestrap";
     
 }
