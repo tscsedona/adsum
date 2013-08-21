@@ -102,21 +102,6 @@ COMMENT = 'Records attendee event registration and status.';
 
 
 -- -----------------------------------------------------
--- Table `attendee_bar_numbers`
--- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `attendee_bar_numbers` (
-  `id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT ,
-  `attendee_id` INT(11) UNSIGNED NOT NULL ,
-  `bar_number` VARCHAR(150) NOT NULL ,
-  `state` CHAR(2) NOT NULL COMMENT 'State postal abbreviation. See ISO 3166-2:US.' ,
-  `created` DATETIME NULL DEFAULT NULL ,
-  `modified` DATETIME NULL DEFAULT NULL ,
-  PRIMARY KEY (`id`) ,
-  INDEX `attendee_id` (`attendee_id` ASC) )
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
 -- Table `attendees_events`
 -- -----------------------------------------------------
 CREATE  TABLE IF NOT EXISTS `attendees_events` (
@@ -128,6 +113,18 @@ CREATE  TABLE IF NOT EXISTS `attendees_events` (
   INDEX `event_id` (`event_id` ASC) )
 ENGINE = InnoDB
 COMMENT = 'Attendees registered for events.';
+
+
+-- -----------------------------------------------------
+-- Table `attendee_meta`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `attendee_meta` (
+  `id` INT NOT NULL ,
+  `key` VARCHAR(100) NOT NULL ,
+  `value` TEXT NULL DEFAULT NULL ,
+  PRIMARY KEY (`id`) ,
+  INDEX `key` (`key` ASC) )
+ENGINE = InnoDB;
 
 
 
