@@ -14,7 +14,7 @@ class AttendeesControllerTest extends ControllerTestCase {
  */
 	public $fixtures = array(
 		'app.attendee',
-		'app.attendee_bar_number',
+		'app.attendee_metum',
 		'app.attendee_status_log',
 		'app.attendance_status_state',
 		'app.event',

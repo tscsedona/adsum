@@ -10,8 +10,8 @@
 		<li><?php echo $this->Form->postLink(__('Delete Attendee'), array('action' => 'delete', $attendee['Attendee']['id']), array('class' => ''), __('Are you sure you want to delete # %s?', $attendee['Attendee']['id'])); ?> </li>
 		<li><?php echo $this->Html->link(__('List Attendees'), array('action' => 'index'), array('class' => '')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Attendee'), array('action' => 'add'), array('class' => '')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Attendee Bar Numbers'), array('controller' => 'attendee_bar_numbers', 'action' => 'index'), array('class' => '')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Attendee Bar Number'), array('controller' => 'attendee_bar_numbers', 'action' => 'add'), array('class' => '')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Attendee Meta'), array('controller' => 'attendee_meta', 'action' => 'index'), array('class' => '')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Attendee Metum'), array('controller' => 'attendee_meta', 'action' => 'add'), array('class' => '')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Attendee Status Logs'), array('controller' => 'attendee_status_logs', 'action' => 'index'), array('class' => '')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Attendee Status Log'), array('controller' => 'attendee_status_logs', 'action' => 'add'), array('class' => '')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Events'), array('controller' => 'events', 'action' => 'index'), array('class' => '')); ?> </li>
@@ -72,34 +72,30 @@
 					
 			<div class="related">
 
-				<h3><?php echo __('Related Attendee Bar Numbers'); ?></h3>
+				<h3><?php echo __('Related Attendee Meta'); ?></h3>
 				
-				<?php if (!empty($attendee['AttendeeBarNumber'])): ?>
+				<?php if (!empty($attendee['AttendeeMetum'])): ?>
 				
 					<table class="table table-striped table-bordered">
 						<tr>
 									<th><?php echo __('Id'); ?></th>
 		<th><?php echo __('Attendee Id'); ?></th>
-		<th><?php echo __('Bar Number'); ?></th>
-		<th><?php echo __('State'); ?></th>
-		<th><?php echo __('Created'); ?></th>
-		<th><?php echo __('Modified'); ?></th>
+		<th><?php echo __('Key'); ?></th>
+		<th><?php echo __('Value'); ?></th>
 							<th class="actions"><?php echo __('Actions'); ?></th>
 						</tr>
 							<?php
 								$i = 0;
-								foreach ($attendee['AttendeeBarNumber'] as $attendeeBarNumber): ?>
+								foreach ($attendee['AttendeeMetum'] as $attendeeMetum): ?>
 		<tr>
-			<td><?php echo $attendeeBarNumber['id']; ?></td>
-			<td><?php echo $attendeeBarNumber['attendee_id']; ?></td>
-			<td><?php echo $attendeeBarNumber['bar_number']; ?></td>
-			<td><?php echo $attendeeBarNumber['state']; ?></td>
-			<td><?php echo $attendeeBarNumber['created']; ?></td>
-			<td><?php echo $attendeeBarNumber['modified']; ?></td>
+			<td><?php echo $attendeeMetum['id']; ?></td>
+			<td><?php echo $attendeeMetum['attendee_id']; ?></td>
+			<td><?php echo $attendeeMetum['key']; ?></td>
+			<td><?php echo $attendeeMetum['value']; ?></td>
 			<td class="actions">
-				<?php echo $this->Html->link(__('View'), array('controller' => 'attendee_bar_numbers', 'action' => 'view', $attendeeBarNumber['id']), array('class' => 'btn btn-mini')); ?>
-				<?php echo $this->Html->link(__('Edit'), array('controller' => 'attendee_bar_numbers', 'action' => 'edit', $attendeeBarNumber['id']), array('class' => 'btn btn-mini')); ?>
-				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'attendee_bar_numbers', 'action' => 'delete', $attendeeBarNumber['id']), array('class' => 'btn btn-mini'), __('Are you sure you want to delete # %s?', $attendeeBarNumber['id'])); ?>
+				<?php echo $this->Html->link(__('View'), array('controller' => 'attendee_meta', 'action' => 'view', $attendeeMetum['id']), array('class' => 'btn btn-mini')); ?>
+				<?php echo $this->Html->link(__('Edit'), array('controller' => 'attendee_meta', 'action' => 'edit', $attendeeMetum['id']), array('class' => 'btn btn-mini')); ?>
+				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'attendee_meta', 'action' => 'delete', $attendeeMetum['id']), array('class' => 'btn btn-mini'), __('Are you sure you want to delete # %s?', $attendeeMetum['id'])); ?>
 			</td>
 		</tr>
 	<?php endforeach; ?>
@@ -109,7 +105,7 @@
 
 				
 				<div class="actions">
-					<?php echo $this->Html->link('<i class="icon-plus icon-white"></i> '.__('New Attendee Bar Number'), array('controller' => 'attendee_bar_numbers', 'action' => 'add'), array('class' => 'btn btn-primary', 'escape' => false)); ?>				</div><!-- .actions -->
+					<?php echo $this->Html->link('<i class="icon-plus icon-white"></i> '.__('New Attendee Metum'), array('controller' => 'attendee_meta', 'action' => 'add'), array('class' => 'btn btn-primary', 'escape' => false)); ?>				</div><!-- .actions -->
 				
 			</div><!-- .related -->
 

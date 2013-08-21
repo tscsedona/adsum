@@ -3,7 +3,7 @@ App::uses('AppModel', 'Model');
 /**
  * Attendee Model
  *
- * @property AttendeeBarNumber $AttendeeBarNumber
+ * @property AttendeeMetum $AttendeeMetum
  * @property AttendeeStatusLog $AttendeeStatusLog
  * @property Event $Event
  */
@@ -55,8 +55,8 @@ class Attendee extends AppModel {
  * @var array
  */
 	public $hasMany = array(
-		'AttendeeBarNumber' => array(
-			'className' => 'AttendeeBarNumber',
+		'AttendeeMetum' => array(
+			'className' => 'AttendeeMetum',
 			'foreignKey' => 'attendee_id',
 			'dependent' => false,
 			'conditions' => '',

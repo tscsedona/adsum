@@ -15,12 +15,11 @@ class EventsControllerTest extends ControllerTestCase {
 	public $fixtures = array(
 		'app.event',
 		'app.event_type',
-		'app.attendee',
-		'app.attendee_bar_number',
 		'app.attendee_status_log',
-		'app.user',
-		'app.attendance_status_state',
-		'app.attendees_event'
+		'app.attendee',
+		'app.attendee_metum',
+		'app.attendees_event',
+		'app.attendance_status_state'
 	);
 
 /**

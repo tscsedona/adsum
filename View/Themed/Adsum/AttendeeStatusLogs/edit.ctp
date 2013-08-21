@@ -8,9 +8,7 @@
 			<ul class="nav nav-list bs-docs-sidenav">
 										<li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('AttendeeStatusLog.id')), null, __('Are you sure you want to delete # %s?', $this->Form->value('AttendeeStatusLog.id'))); ?></li>
 										<li><?php echo $this->Html->link(__('List Attendee Status Logs'), array('action' => 'index')); ?></li>
-						<li><?php echo $this->Html->link(__('List Users'), array('controller' => 'users', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New User'), array('controller' => 'users', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Attendees'), array('controller' => 'attendees', 'action' => 'index')); ?> </li>
+						<li><?php echo $this->Html->link(__('List Attendees'), array('controller' => 'attendees', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Attendee'), array('controller' => 'attendees', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Attendance Status States'), array('controller' => 'attendance_status_states', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Attendance Status State'), array('controller' => 'attendance_status_states', 'action' => 'add')); ?> </li>

@@ -6,7 +6,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</a>
-			<?php echo $this->Html->link('AdsumCCI', '/pages/home', array('class' => 'brand')); ?>
+			<a class="brand" target="_blank" href="http://twitter.github.com/bootstrap/"><?php echo __('CakeStrap'); ?></a>
 			<div class="nav-collapse">
 				<ul class="nav">
 					<?php //Fill me with your sweet, sweet menu items. ?>

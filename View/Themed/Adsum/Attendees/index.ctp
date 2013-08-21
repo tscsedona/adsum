@@ -6,8 +6,8 @@
 		<div class="actions">
 		
 			<ul class="nav nav-list bs-docs-sidenav">
-				<li><?php echo $this->Html->link(__('New Attendee'), array('action' => 'add'), array('class' => '')); ?></li>						<li><?php echo $this->Html->link(__('List Attendee Bar Numbers'), array('controller' => 'attendee_bar_numbers', 'action' => 'index'), array('class' => '')); ?></li> 
-		<li><?php echo $this->Html->link(__('New Attendee Bar Number'), array('controller' => 'attendee_bar_numbers', 'action' => 'add'), array('class' => '')); ?></li> 
+				<li><?php echo $this->Html->link(__('New Attendee'), array('action' => 'add'), array('class' => '')); ?></li>						<li><?php echo $this->Html->link(__('List Attendee Meta'), array('controller' => 'attendee_meta', 'action' => 'index'), array('class' => '')); ?></li> 
+		<li><?php echo $this->Html->link(__('New Attendee Metum'), array('controller' => 'attendee_meta', 'action' => 'add'), array('class' => '')); ?></li> 
 		<li><?php echo $this->Html->link(__('List Attendee Status Logs'), array('controller' => 'attendee_status_logs', 'action' => 'index'), array('class' => '')); ?></li> 
 		<li><?php echo $this->Html->link(__('New Attendee Status Log'), array('controller' => 'attendee_status_logs', 'action' => 'add'), array('class' => '')); ?></li> 
 		<li><?php echo $this->Html->link(__('List Events'), array('controller' => 'events', 'action' => 'index'), array('class' => '')); ?></li> 

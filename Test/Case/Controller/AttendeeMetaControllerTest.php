@@ -1,11 +1,11 @@
 <?php
-App::uses('AttendeesEventsController', 'Controller');
+App::uses('AttendeeMetaController', 'Controller');
 
 /**
- * AttendeesEventsController Test Case
+ * AttendeeMetaController Test Case
  *
  */
-class AttendeesEventsControllerTest extends ControllerTestCase {
+class AttendeeMetaControllerTest extends ControllerTestCase {
 
 /**
  * Fixtures
@@ -13,13 +13,13 @@ class AttendeesEventsControllerTest extends ControllerTestCase {
  * @var array
  */
 	public $fixtures = array(
-		'app.attendees_event',
-		'app.attendee',
 		'app.attendee_metum',
+		'app.attendee',
 		'app.attendee_status_log',
 		'app.attendance_status_state',
 		'app.event',
-		'app.event_type'
+		'app.event_type',
+		'app.attendees_event'
 	);
 
 /**

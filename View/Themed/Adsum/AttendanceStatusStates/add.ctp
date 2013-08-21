@@ -7,7 +7,9 @@
 		
 			<ul class="nav nav-list bs-docs-sidenav">
 										<li><?php echo $this->Html->link(__('List Attendance Status States'), array('action' => 'index')); ?></li>
-							</ul><!-- .nav nav-list bs-docs-sidenav -->
+						<li><?php echo $this->Html->link(__('List Attendee Status Logs'), array('controller' => 'attendee_status_logs', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Attendee Status Log'), array('controller' => 'attendee_status_logs', 'action' => 'add')); ?> </li>
+			</ul><!-- .nav nav-list bs-docs-sidenav -->
 		
 		</div><!-- .actions -->
 		

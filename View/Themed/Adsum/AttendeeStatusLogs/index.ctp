@@ -6,9 +6,7 @@
 		<div class="actions">
 		
 			<ul class="nav nav-list bs-docs-sidenav">
-				<li><?php echo $this->Html->link(__('New Attendee Status Log'), array('action' => 'add'), array('class' => '')); ?></li>						<li><?php echo $this->Html->link(__('List Users'), array('controller' => 'users', 'action' => 'index'), array('class' => '')); ?></li> 
-		<li><?php echo $this->Html->link(__('New User'), array('controller' => 'users', 'action' => 'add'), array('class' => '')); ?></li> 
-		<li><?php echo $this->Html->link(__('List Attendees'), array('controller' => 'attendees', 'action' => 'index'), array('class' => '')); ?></li> 
+				<li><?php echo $this->Html->link(__('New Attendee Status Log'), array('action' => 'add'), array('class' => '')); ?></li>						<li><?php echo $this->Html->link(__('List Attendees'), array('controller' => 'attendees', 'action' => 'index'), array('class' => '')); ?></li> 
 		<li><?php echo $this->Html->link(__('New Attendee'), array('controller' => 'attendees', 'action' => 'add'), array('class' => '')); ?></li> 
 		<li><?php echo $this->Html->link(__('List Attendance Status States'), array('controller' => 'attendance_status_states', 'action' => 'index'), array('class' => '')); ?></li> 
 		<li><?php echo $this->Html->link(__('New Attendance Status State'), array('controller' => 'attendance_status_states', 'action' => 'add'), array('class' => '')); ?></li> 
@@ -49,9 +47,7 @@
 		<td>
 			<?php echo $this->Html->link($attendeeStatusLog['Event']['title'], array('controller' => 'events', 'action' => 'view', $attendeeStatusLog['Event']['id'])); ?>
 		</td>
-		<td>
-			<?php echo $this->Html->link($attendeeStatusLog['User']['id'], array('controller' => 'users', 'action' => 'view', $attendeeStatusLog['User']['id'])); ?>
-		</td>
+		<td><?php echo h($attendeeStatusLog['AttendeeStatusLog']['logged_by']); ?>&nbsp;</td>
 		<td><?php echo h($attendeeStatusLog['AttendeeStatusLog']['created']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $attendeeStatusLog['AttendeeStatusLog']['id']), array('class' => 'btn btn-mini')); ?>

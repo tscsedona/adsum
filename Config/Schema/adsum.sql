@@ -119,18 +119,14 @@ COMMENT = 'Attendees registered for events.';
 -- Table `attendee_meta`
 -- -----------------------------------------------------
 CREATE  TABLE IF NOT EXISTS `attendee_meta` (
-  `id` INT NOT NULL ,
+  `id` INT UNSIGNED NOT NULL ,
+  `attendee_id` INT(11) UNSIGNED NOT NULL ,
   `key` VARCHAR(100) NOT NULL ,
   `value` TEXT NULL DEFAULT NULL ,
   PRIMARY KEY (`id`) ,
-  INDEX `key` (`key` ASC) )
+  INDEX `key` (`key` ASC) ,
+  INDEX `attendee_id` () )
 ENGINE = InnoDB;
-
-
-
-SET SQL_MODE=@OLD_SQL_MODE;
-SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
-SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 -- -----------------------------------------------------
 -- Data for table `event_types`

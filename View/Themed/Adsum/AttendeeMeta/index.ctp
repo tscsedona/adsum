@@ -6,10 +6,8 @@
 		<div class="actions">
 		
 			<ul class="nav nav-list bs-docs-sidenav">
-				<li><?php echo $this->Html->link(__('New Attendees Event'), array('action' => 'add'), array('class' => '')); ?></li>						<li><?php echo $this->Html->link(__('List Attendees'), array('controller' => 'attendees', 'action' => 'index'), array('class' => '')); ?></li> 
+				<li><?php echo $this->Html->link(__('New Attendee Metum'), array('action' => 'add'), array('class' => '')); ?></li>						<li><?php echo $this->Html->link(__('List Attendees'), array('controller' => 'attendees', 'action' => 'index'), array('class' => '')); ?></li> 
 		<li><?php echo $this->Html->link(__('New Attendee'), array('controller' => 'attendees', 'action' => 'add'), array('class' => '')); ?></li> 
-		<li><?php echo $this->Html->link(__('List Events'), array('controller' => 'events', 'action' => 'index'), array('class' => '')); ?></li> 
-		<li><?php echo $this->Html->link(__('New Event'), array('controller' => 'events', 'action' => 'add'), array('class' => '')); ?></li> 
 			</ul><!-- .nav nav-list bs-docs-sidenav -->
 			
 		</div><!-- .actions -->
@@ -18,31 +16,31 @@
 	
 	<div id="page-content" class="span9">
 
-		<div class="attendeesEvents index">
+		<div class="attendeeMeta index">
 		
-			<h2><?php echo __('Attendees Events'); ?></h2>
+			<h2><?php echo __('Attendee Meta'); ?></h2>
 			
 			<table cellpadding="0" cellspacing="0" class="table table-striped table-bordered">
 				<tr>
 											<th><?php echo $this->Paginator->sort('id'); ?></th>
 											<th><?php echo $this->Paginator->sort('attendee_id'); ?></th>
-											<th><?php echo $this->Paginator->sort('event_id'); ?></th>
+											<th><?php echo $this->Paginator->sort('key'); ?></th>
+											<th><?php echo $this->Paginator->sort('value'); ?></th>
 											<th class="actions"><?php echo __('Actions'); ?></th>
 				</tr>
 				<?php
-				foreach ($attendeesEvents as $attendeesEvent): ?>
+				foreach ($attendeeMeta as $attendeeMetum): ?>
 	<tr>
-		<td><?php echo h($attendeesEvent['AttendeesEvent']['id']); ?>&nbsp;</td>
+		<td><?php echo h($attendeeMetum['AttendeeMetum']['id']); ?>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link($attendeesEvent['Attendee']['id'], array('controller' => 'attendees', 'action' => 'view', $attendeesEvent['Attendee']['id'])); ?>
+			<?php echo $this->Html->link($attendeeMetum['Attendee']['id'], array('controller' => 'attendees', 'action' => 'view', $attendeeMetum['Attendee']['id'])); ?>
 		</td>
-		<td>
-			<?php echo $this->Html->link($attendeesEvent['Event']['title'], array('controller' => 'events', 'action' => 'view', $attendeesEvent['Event']['id'])); ?>
-		</td>
+		<td><?php echo h($attendeeMetum['AttendeeMetum']['key']); ?>&nbsp;</td>
+		<td><?php echo h($attendeeMetum['AttendeeMetum']['value']); ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $attendeesEvent['AttendeesEvent']['id']), array('class' => 'btn btn-mini')); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $attendeesEvent['AttendeesEvent']['id']), array('class' => 'btn btn-mini')); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $attendeesEvent['AttendeesEvent']['id']), array('class' => 'btn btn-mini'), __('Are you sure you want to delete # %s?', $attendeesEvent['AttendeesEvent']['id'])); ?>
+			<?php echo $this->Html->link(__('View'), array('action' => 'view', $attendeeMetum['AttendeeMetum']['id']), array('class' => 'btn btn-mini')); ?>
+			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $attendeeMetum['AttendeeMetum']['id']), array('class' => 'btn btn-mini')); ?>
+			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $attendeeMetum['AttendeeMetum']['id']), array('class' => 'btn btn-mini'), __('Are you sure you want to delete # %s?', $attendeeMetum['AttendeeMetum']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>

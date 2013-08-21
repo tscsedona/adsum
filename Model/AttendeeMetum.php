@@ -1,11 +1,11 @@
 <?php
 App::uses('AppModel', 'Model');
 /**
- * AttendeeBarNumber Model
+ * AttendeeMetum Model
  *
  * @property Attendee $Attendee
  */
-class AttendeeBarNumber extends AppModel {
+class AttendeeMetum extends AppModel {
 
 /**
  * Validation rules
@@ -23,17 +23,7 @@ class AttendeeBarNumber extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'bar_number' => array(
-			'notempty' => array(
-				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
-		'state' => array(
+		'key' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
 				//'message' => 'Your custom message here',

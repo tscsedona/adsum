@@ -33,7 +33,10 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller {
     
-    public $components = array('DebugKit.Toolbar');
+    public $components = array(
+        'DebugKit.Toolbar',
+        'Session'
+    );
     
     // DEV - Globally enable scaffold mode
     public $theme = "Adsum";

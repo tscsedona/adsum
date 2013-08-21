@@ -13,7 +13,13 @@ class AttendanceStatusStatesControllerTest extends ControllerTestCase {
  * @var array
  */
 	public $fixtures = array(
-		'app.attendance_status_state'
+		'app.attendance_status_state',
+		'app.attendee_status_log',
+		'app.attendee',
+		'app.attendee_metum',
+		'app.event',
+		'app.event_type',
+		'app.attendees_event'
 	);
 
 /**

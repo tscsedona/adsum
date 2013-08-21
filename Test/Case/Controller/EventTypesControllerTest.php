@@ -16,9 +16,8 @@ class EventTypesControllerTest extends ControllerTestCase {
 		'app.event_type',
 		'app.event',
 		'app.attendee_status_log',
-		'app.user',
 		'app.attendee',
-		'app.attendee_bar_number',
+		'app.attendee_metum',
 		'app.attendees_event',
 		'app.attendance_status_state'
 	);

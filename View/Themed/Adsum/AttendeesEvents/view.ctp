@@ -35,7 +35,7 @@
 		</td>
 </tr><tr>		<td><strong><?php echo __('Attendee'); ?></strong></td>
 		<td>
-			<?php echo $this->Html->link($attendeesEvent['Attendee']['display_name'], array('controller' => 'attendees', 'action' => 'view', $attendeesEvent['Attendee']['id']), array('class' => '')); ?>
+			<?php echo $this->Html->link($attendeesEvent['Attendee']['id'], array('controller' => 'attendees', 'action' => 'view', $attendeesEvent['Attendee']['id']), array('class' => '')); ?>
 			&nbsp;
 		</td>
 </tr><tr>		<td><strong><?php echo __('Event'); ?></strong></td>

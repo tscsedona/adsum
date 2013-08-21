@@ -55,11 +55,10 @@ class AttendeeStatusLogsController extends AppController {
 				$this->Session->setFlash(__('The attendee status log could not be saved. Please, try again.'), 'flash/error');
 			}
 		}
-		$users = $this->AttendeeStatusLog->User->find('list');
 		$attendees = $this->AttendeeStatusLog->Attendee->find('list');
 		$attendanceStatusStates = $this->AttendeeStatusLog->AttendanceStatusState->find('list');
 		$events = $this->AttendeeStatusLog->Event->find('list');
-		$this->set(compact('users', 'attendees', 'attendanceStatusStates', 'events'));
+		$this->set(compact('attendees', 'attendanceStatusStates', 'events'));
 	}
 
 /**
@@ -84,11 +83,10 @@ class AttendeeStatusLogsController extends AppController {
 			$options = array('conditions' => array('AttendeeStatusLog.' . $this->AttendeeStatusLog->primaryKey => $id));
 			$this->request->data = $this->AttendeeStatusLog->find('first', $options);
 		}
-		$users = $this->AttendeeStatusLog->User->find('list');
 		$attendees = $this->AttendeeStatusLog->Attendee->find('list');
 		$attendanceStatusStates = $this->AttendeeStatusLog->AttendanceStatusState->find('list');
 		$events = $this->AttendeeStatusLog->Event->find('list');
-		$this->set(compact('users', 'attendees', 'attendanceStatusStates', 'events'));
+		$this->set(compact('attendees', 'attendanceStatusStates', 'events'));
 	}
 
 /**

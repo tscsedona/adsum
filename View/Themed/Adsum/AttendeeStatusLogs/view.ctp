@@ -10,8 +10,6 @@
 		<li><?php echo $this->Form->postLink(__('Delete Attendee Status Log'), array('action' => 'delete', $attendeeStatusLog['AttendeeStatusLog']['id']), array('class' => ''), __('Are you sure you want to delete # %s?', $attendeeStatusLog['AttendeeStatusLog']['id'])); ?> </li>
 		<li><?php echo $this->Html->link(__('List Attendee Status Logs'), array('action' => 'index'), array('class' => '')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Attendee Status Log'), array('action' => 'add'), array('class' => '')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Users'), array('controller' => 'users', 'action' => 'index'), array('class' => '')); ?> </li>
-		<li><?php echo $this->Html->link(__('New User'), array('controller' => 'users', 'action' => 'add'), array('class' => '')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Attendees'), array('controller' => 'attendees', 'action' => 'index'), array('class' => '')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Attendee'), array('controller' => 'attendees', 'action' => 'add'), array('class' => '')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Attendance Status States'), array('controller' => 'attendance_status_states', 'action' => 'index'), array('class' => '')); ?> </li>
@@ -52,9 +50,9 @@
 			<?php echo $this->Html->link($attendeeStatusLog['Event']['title'], array('controller' => 'events', 'action' => 'view', $attendeeStatusLog['Event']['id']), array('class' => '')); ?>
 			&nbsp;
 		</td>
-</tr><tr>		<td><strong><?php echo __('User'); ?></strong></td>
+</tr><tr>		<td><strong><?php echo __('Logged By'); ?></strong></td>
 		<td>
-			<?php echo $this->Html->link($attendeeStatusLog['User']['id'], array('controller' => 'users', 'action' => 'view', $attendeeStatusLog['User']['id']), array('class' => '')); ?>
+			<?php echo h($attendeeStatusLog['AttendeeStatusLog']['logged_by']); ?>
 			&nbsp;
 		</td>
 </tr><tr>		<td><strong><?php echo __('Created'); ?></strong></td>
