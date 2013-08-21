@@ -16,7 +16,6 @@ class AttendeesControllerTest extends ControllerTestCase {
 		'app.attendee',
 		'app.attendee_bar_number',
 		'app.attendee_status_log',
-		'app.user',
 		'app.attendance_status_state',
 		'app.event',
 		'app.event_type',
