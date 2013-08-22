@@ -73,21 +73,21 @@
 <div class="control-group">
 	<?php echo $this->Form->label('is_active', 'is_active', array('class' => 'control-label'));?>
 	<div class="controls">
-		<?php echo $this->Form->input('is_active', array('class' => 'span12')); ?>
+		<?php echo $this->Form->input('is_active'); ?>
 	</div><!-- .controls -->
 </div><!-- .control-group -->
 
 <div class="control-group">
 	<?php echo $this->Form->label('last_seen', 'last_seen', array('class' => 'control-label'));?>
 	<div class="controls">
-		<?php echo $this->Form->input('last_seen', array('class' => 'span12')); ?>
+		<?php echo $this->Form->input('last_seen'); ?>
 	</div><!-- .controls -->
 </div><!-- .control-group -->
 
 <div class="control-group">
 	<?php echo $this->Form->label('is_admin', 'is_admin', array('class' => 'control-label'));?>
 	<div class="controls">
-		<?php echo $this->Form->input('is_admin', array('class' => 'span12')); ?>
+		<?php echo $this->Form->input('is_admin'); ?>
 	</div><!-- .controls -->
 </div><!-- .control-group -->
 

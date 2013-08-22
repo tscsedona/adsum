@@ -27,8 +27,6 @@
 			<table cellpadding="0" cellspacing="0" class="table table-striped table-bordered">
 				<tr>
 											<th><?php echo $this->Paginator->sort('id'); ?></th>
-											<th><?php echo $this->Paginator->sort('uuid'); ?></th>
-											<th><?php echo $this->Paginator->sort('extid'); ?></th>
 											<th><?php echo $this->Paginator->sort('first_name'); ?></th>
 											<th><?php echo $this->Paginator->sort('last_name'); ?></th>
 											<th><?php echo $this->Paginator->sort('display_name'); ?></th>
@@ -39,12 +37,10 @@
 				foreach ($attendees as $attendee): ?>
 	<tr>
 		<td><?php echo h($attendee['Attendee']['id']); ?>&nbsp;</td>
-		<td><?php echo h($attendee['Attendee']['uuid']); ?>&nbsp;</td>
-		<td><?php echo h($attendee['Attendee']['extid']); ?>&nbsp;</td>
 		<td><?php echo h($attendee['Attendee']['first_name']); ?>&nbsp;</td>
 		<td><?php echo h($attendee['Attendee']['last_name']); ?>&nbsp;</td>
 		<td><?php echo h($attendee['Attendee']['display_name']); ?>&nbsp;</td>
-		<td><?php echo h($attendee['Attendee']['created']); ?>&nbsp;</td>
+		<td><?php echo h($this->Time->format($attendee['Attendee']['created'])); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $attendee['Attendee']['id']), array('class' => 'btn btn-mini')); ?>
 			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $attendee['Attendee']['id']), array('class' => 'btn btn-mini')); ?>

@@ -28,14 +28,10 @@
 				<tr>
 											<th><?php echo $this->Paginator->sort('id'); ?></th>
 											<th><?php echo $this->Paginator->sort('event_type_id'); ?></th>
-											<th><?php echo $this->Paginator->sort('uuid'); ?></th>
-											<th><?php echo $this->Paginator->sort('extid'); ?></th>
 											<th><?php echo $this->Paginator->sort('title'); ?></th>
-											<th><?php echo $this->Paginator->sort('is_active'); ?></th>
 											<th><?php echo $this->Paginator->sort('start_time'); ?></th>
 											<th><?php echo $this->Paginator->sort('end_time'); ?></th>
 											<th><?php echo $this->Paginator->sort('attendee_count'); ?></th>
-											<th><?php echo $this->Paginator->sort('created'); ?></th>
 											<th class="actions"><?php echo __('Actions'); ?></th>
 				</tr>
 				<?php
@@ -45,14 +41,10 @@
 		<td>
 			<?php echo $this->Html->link($event['EventType']['title'], array('controller' => 'event_types', 'action' => 'view', $event['EventType']['id'])); ?>
 		</td>
-		<td><?php echo h($event['Event']['uuid']); ?>&nbsp;</td>
-		<td><?php echo h($event['Event']['extid']); ?>&nbsp;</td>
 		<td><?php echo h($event['Event']['title']); ?>&nbsp;</td>
-		<td><?php echo h($event['Event']['is_active']); ?>&nbsp;</td>
-		<td><?php echo h($event['Event']['start_time']); ?>&nbsp;</td>
-		<td><?php echo h($event['Event']['end_time']); ?>&nbsp;</td>
+		<td><?php echo h($this->Time->format($event['Event']['start_time'])); ?>&nbsp;</td>
+		<td><?php echo h($this->Time->format($event['Event']['end_time'])); ?>&nbsp;</td>
 		<td><?php echo h($event['Event']['attendee_count']); ?>&nbsp;</td>
-		<td><?php echo h($event['Event']['created']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $event['Event']['id']), array('class' => 'btn btn-mini')); ?>
 			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $event['Event']['id']), array('class' => 'btn btn-mini')); ?>
