@@ -58,7 +58,8 @@ class AttendeeStatusLogsController extends AppController {
 		$attendees = $this->AttendeeStatusLog->Attendee->find('list');
 		$attendanceStatusStates = $this->AttendeeStatusLog->AttendanceStatusState->find('list');
 		$events = $this->AttendeeStatusLog->Event->find('list');
-		$this->set(compact('attendees', 'attendanceStatusStates', 'events'));
+		$users = $this->AttendeeStatusLog->User->find('list');
+		$this->set(compact('attendees', 'attendanceStatusStates', 'events', 'users'));
 	}
 
 /**
@@ -86,7 +87,8 @@ class AttendeeStatusLogsController extends AppController {
 		$attendees = $this->AttendeeStatusLog->Attendee->find('list');
 		$attendanceStatusStates = $this->AttendeeStatusLog->AttendanceStatusState->find('list');
 		$events = $this->AttendeeStatusLog->Event->find('list');
-		$this->set(compact('attendees', 'attendanceStatusStates', 'events'));
+		$users = $this->AttendeeStatusLog->User->find('list');
+		$this->set(compact('attendees', 'attendanceStatusStates', 'events', 'users'));
 	}
 
 /**

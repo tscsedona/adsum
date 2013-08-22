@@ -6,6 +6,7 @@ App::uses('AppModel', 'Model');
  * @property Attendee $Attendee
  * @property AttendanceStatusState $AttendanceStatusState
  * @property Event $Event
+ * @property User $User
  */
 class AttendeeStatusLog extends AppModel {
 
@@ -45,7 +46,7 @@ class AttendeeStatusLog extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'logged_by' => array(
+		'user_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -82,6 +83,13 @@ class AttendeeStatusLog extends AppModel {
 		'Event' => array(
 			'className' => 'Event',
 			'foreignKey' => 'event_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		),
+		'User' => array(
+			'className' => 'User',
+			'foreignKey' => 'user_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''

@@ -7,6 +7,13 @@ App::uses('AppModel', 'Model');
 class User extends AppModel {
 
 /**
+ * Display field attribute
+ * 
+ * @var string
+ */
+    public $displayField = 'display_name';
+    
+/**
  * Validation rules
  *
  * @var array
