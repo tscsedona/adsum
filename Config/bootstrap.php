@@ -24,11 +24,25 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
-// Setup a 'default' cache configuration for use in the application.
+/**
+ * Settings that alter the adsumCCI system
+ */
+Configure::write('Site.settings', array(
+    'name'  => __d('adsum', 'AdsumCCI'),
+    'email' => 'you@email.com'
+));
+
+/**
+ * For development
+ */
+CakePlugin::load('DebugKit');
+
+
+/**
+ * Application config
+ */
 Cache::config('default', array('engine' => 'File'));
 
-// Initialize DebugKit for development
-CakePlugin::load('DebugKit');
 
 /**
  * The settings below can be used to set additional paths to models, views and controllers.

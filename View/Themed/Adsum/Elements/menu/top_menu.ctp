@@ -8,7 +8,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <?php echo $this->Html->link(__('AdsumCCI'), '/', array('class' => 'brand')); ?> 
+              <?php echo $this->Html->link(Configure::read('Site.settings.name'), '/', array('class' => 'brand')); ?> 
               <div class="nav-collapse collapse">
                 <ul class="nav">
                     <?php echo $this->element('menu/items'); ?> 
