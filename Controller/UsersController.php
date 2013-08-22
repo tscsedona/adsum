@@ -26,6 +26,16 @@ class UsersController extends AppController {
 	}
 
 /**
+ * login method
+ * 
+ * @return void
+ */    
+    public function login() {
+        $this->layout = 'preauth';
+        ## does nothing yet
+    }
+    
+/**
  * view method
  *
  * @throws NotFoundException

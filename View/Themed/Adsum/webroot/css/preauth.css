@@ -1,0 +1,58 @@
+/* 
+    Document   : Login (preauth) page styles
+    Created on : Aug 22, 2013, 10:10:34 AM
+    Author     : Chris Vogt <CJV@sedonaconference.org>
+*/
+
+body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  border-top: 10px solid #FFD700;
+  background: url('../img/pattern/square_bg.png') repeat #563d7c;
+  color: #fefefe;
+}
+h1 {
+  font-weight: bold;
+  font-size: 2.8em;
+}
+a {
+    color: #cecece;
+}
+.form-signin {
+  padding: 15px;
+  margin: 24px auto 0 auto;
+  border-radius: 14px;
+  background-color:rgba(255,255,255,0.4);
+}
+.form-signin h2 {
+  font-size: 1.450em;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  font-size: 16px;
+  height: auto;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="text"] {
+  margin-bottom: -1px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}

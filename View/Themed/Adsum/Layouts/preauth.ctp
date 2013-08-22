@@ -34,42 +34,19 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
         <?php echo $this->Html->css('bootstrap.min'); ?> 
 		<?php echo $this->Html->css('bootstrap-responsive.min'); ?> 
 		<?php echo $this->Html->css('core'); ?> 
-        <?php echo $this->Html->css('adsum'); ?> 
+        <?php echo $this->Html->css('preauth'); ?> 
  
 		<?php echo $this->fetch('css'); ?> 
 			 
 		<?php echo $this->Html->script('libs/jquery'); ?> 
 		<?php echo $this->Html->script('libs/bootstrap.min'); ?> 
-		 	
+        
 		<?php echo $this->fetch('script'); ?> 
 	</head>
 
 	<body>
         
-        <?php echo $this->element('menu/top_menu'); ?>
-
-		<div id="main-container">
-			
-			<div id="content" class="container">
-
-				<?php echo $this->Session->flash(); ?>
-
-				<?php echo $this->fetch('content'); ?>
-			</div><!-- #header .container -->
-			
-			<div id="footer" class="container">
-				<?php //Silence is golden ?>
-			</div><!-- #footer .container -->
-			
-		</div><!-- #main-container -->
-		
-		<div class="container">
-			<div class="well">
-				<small>
-					<?php echo $this->element('sql_dump'); ?>
-				</small>
-			</div>
-		</div><!-- .container -->
+        <?php echo $this->fetch('content'); ?>
 		
 	</body>
 
