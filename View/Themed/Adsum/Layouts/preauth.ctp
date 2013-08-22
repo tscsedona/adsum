@@ -22,6 +22,21 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 <html>
 	<head>
 		<?php echo $this->Html->charset(); ?> 
+        
+        <!--
+                    .-'''''-.
+                  .'         `.
+                 :             :
+                :               :
+                :      _/|      :
+                 :   =/_/      :
+                  `._/ |     .'
+               (   /  ,|...-'
+                \_/^\/||__
+             _/~  `""~`"` \_
+          __/  -'/  `-._ `\_\__
+        /jgs  /-'`  `\   \  \-.\ -->
+        
 		<title>
 			<?php echo $cakeDescription ?> :
 			<?php echo $title_for_layout; ?> 

@@ -26,72 +26,73 @@
 		
 			<?php echo $this->Form->create('Event', array('inputDefaults' => array('label' => false), 'class' => 'form form-horizontal')); ?>
 				<fieldset>
-					<h2><?php echo __('Edit Event'); ?></h2>
-			<div class="control-group">
-	<?php echo $this->Form->label('id', 'id', array('class' => 'control-label'));?>
-	<div class="controls">
-		<?php echo $this->Form->input('id', array('class' => 'span12')); ?>
-	</div><!-- .controls -->
-</div><!-- .control-group -->
+                    <h2><?php echo __('Edit Event'); ?></h2>
+                    <div class="control-group">
+                        <?php echo $this->Form->label('id', 'id', array('class' => 'control-label'));?>
+                        <div class="controls">
+                            <?php echo $this->Form->input('id', array('class' => 'span12')); ?>
+                        </div><!-- .controls -->
+                    </div><!-- .control-group -->
 
-<div class="control-group">
-	<?php echo $this->Form->label('event_type_id', 'event_type_id', array('class' => 'control-label'));?>
-	<div class="controls">
-		<?php echo $this->Form->input('event_type_id', array('class' => 'span12')); ?>
-	</div><!-- .controls -->
-</div><!-- .control-group -->
+                    <div class="control-group">
+                        <?php echo $this->Form->label('event_type_id', 'event_type_id', array('class' => 'control-label'));?>
+                        <div class="controls">
+                            <?php echo $this->Form->input('event_type_id', array('class' => 'span12')); ?>
+                        </div><!-- .controls -->
+                    </div><!-- .control-group -->
 
-<div class="control-group">
-	<?php echo $this->Form->label('uuid', 'uuid', array('class' => 'control-label'));?>
-	<div class="controls">
-		<?php echo $this->Form->input('uuid', array('class' => 'span12')); ?>
-	</div><!-- .controls -->
-</div><!-- .control-group -->
+                    <div class="control-group">
+                        <?php echo $this->Form->label('uuid', 'uuid', array('class' => 'control-label'));?>
+                        <div class="controls">
+                            <?php echo $this->Form->input('uuid', array('class' => 'span12', 'disabled' => true)); ?>
+                        </div><!-- .controls -->
+                    </div><!-- .control-group -->
 
-<div class="control-group">
-	<?php echo $this->Form->label('extid', 'extid', array('class' => 'control-label'));?>
-	<div class="controls">
-		<?php echo $this->Form->input('extid', array('class' => 'span12')); ?>
-	</div><!-- .controls -->
-</div><!-- .control-group -->
+                    <div class="control-group">
+                        <?php echo $this->Form->label('extid', 'extid', array('class' => 'control-label'));?>
+                        <div class="controls">
+                            <?php echo $this->Form->input('extid', array('class' => 'span12')); ?>
+                        </div><!-- .controls -->
+                    </div><!-- .control-group -->
 
-<div class="control-group">
-	<?php echo $this->Form->label('title', 'title', array('class' => 'control-label'));?>
-	<div class="controls">
-		<?php echo $this->Form->input('title', array('class' => 'span12')); ?>
-	</div><!-- .controls -->
-</div><!-- .control-group -->
+                    <div class="control-group">
+                        <?php echo $this->Form->label('title', 'title', array('class' => 'control-label'));?>
+                        <div class="controls">
+                            <?php echo $this->Form->input('title', array('class' => 'span12')); ?>
+                        </div><!-- .controls -->
+                    </div><!-- .control-group -->
 
-<div class="control-group">
-	<?php echo $this->Form->label('is_active', 'is_active', array('class' => 'control-label'));?>
-	<div class="controls">
-		<?php echo $this->Form->input('is_active', array('class' => 'span12')); ?>
-	</div><!-- .controls -->
-</div><!-- .control-group -->
+                    <div class="control-group">
+                        <?php echo $this->Form->label('is_active', 'is_active', array('class' => 'control-label'));?>
+                        <div class="controls">
+                            <?php echo $this->Form->input('is_active'); ?>
+                        </div><!-- .controls -->
+                    </div><!-- .control-group -->
 
-<div class="control-group">
-	<?php echo $this->Form->label('start_time', 'start_time', array('class' => 'control-label'));?>
-	<div class="controls">
-		<?php echo $this->Form->input('start_time', array('class' => 'span12')); ?>
-	</div><!-- .controls -->
-</div><!-- .control-group -->
+                    <div class="control-group">
+                        <?php echo $this->Form->label('start_time', 'start_time', array('class' => 'control-label'));?>
+                        <div class="controls">
+                            <?php echo $this->Form->input('start_time'); ?>
+                        </div><!-- .controls -->
+                    </div><!-- .control-group -->
 
-<div class="control-group">
-	<?php echo $this->Form->label('end_time', 'end_time', array('class' => 'control-label'));?>
-	<div class="controls">
-		<?php echo $this->Form->input('end_time', array('class' => 'span12')); ?>
-	</div><!-- .controls -->
-</div><!-- .control-group -->
+                    <div class="control-group">
+                        <?php echo $this->Form->label('end_time', 'end_time', array('class' => 'control-label'));?>
+                        <div class="controls">
+                            <?php echo $this->Form->input('end_time'); ?>
+                        </div><!-- .controls -->
+                    </div><!-- .control-group -->
 
-<div class="control-group">
-	<?php echo $this->Form->label('attendee_count', 'attendee_count', array('class' => 'control-label'));?>
-	<div class="controls">
-		<?php echo $this->Form->input('attendee_count', array('class' => 'span12')); ?>
-	</div><!-- .controls -->
-</div><!-- .control-group -->
+                    <div class="control-group">
+                        <?php echo $this->Form->label('attendee_count', 'attendee_count', array('class' => 'control-label'));?>
+                        <div class="controls">
+                            <?php echo $this->Form->input('attendee_count', array('class' => 'span12', 'disabled' => true)); ?>
+                        </div><!-- .controls -->
+                    </div><!-- .control-group -->
 
-		<?php echo $this->Form->input('Attendee');?>
-				</fieldset>
+                <?php # echo $this->Form->input('Attendee'); Temp removed, will allow adding users to an event from this view ?>
+
+            </fieldset>
 			<?php echo $this->Form->submit('Submit', array('class' => 'btn btn-large btn-primary')); ?>
 <?php echo $this->Form->end(); ?>
 			

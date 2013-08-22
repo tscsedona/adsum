@@ -22,6 +22,21 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 <html>
 	<head>
 		<?php echo $this->Html->charset(); ?> 
+        
+        <!--
+                    .-'''''-.
+                  .'         `.
+                 :             :
+                :               :
+                :      _/|      :
+                 :   =/_/      :
+                  `._/ |     .'
+               (   /  ,|...-'
+                \_/^\/||__
+             _/~  `""~`"` \_
+          __/  -'/  `-._ `\_\__
+        /jgs  /-'`  `\   \  \-.\ -->
+        
 		<title>
 			<?php echo $cakeDescription ?> :
 			<?php echo $title_for_layout; ?> 
@@ -35,6 +50,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 		<?php echo $this->Html->css('bootstrap-responsive.min'); ?> 
 		<?php echo $this->Html->css('core'); ?> 
         <?php echo $this->Html->css('adsum'); ?> 
+        <?php echo $this->Html->css('//netdna.bootstrapcdn.com/font-awesome/3.2.0/css/font-awesome.min.css'); ?>  
  
 		<?php echo $this->fetch('css'); ?> 
 			 
@@ -63,6 +79,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 			
 		</div><!-- #main-container -->
 		
+        <?php /*
 		<div class="container">
 			<div class="well">
 				<small>
@@ -70,7 +87,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 				</small>
 			</div>
 		</div><!-- .container -->
-		
+		*/ ?> 
 	</body>
 
 </html>

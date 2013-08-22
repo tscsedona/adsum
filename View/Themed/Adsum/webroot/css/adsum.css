@@ -4,6 +4,10 @@
     Author     : Chris Vogt <cjv@sedonaconference.org>
 */
 
+body {
+    background: url('../img/pattern/square_bg.png') repeat #fefefe;
+}
+
 #main-container {
     margin-top: 24px;
 }

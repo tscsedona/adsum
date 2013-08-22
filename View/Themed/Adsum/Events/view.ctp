@@ -62,12 +62,12 @@
 		</td>
 </tr><tr>		<td><strong><?php echo __('Start Time'); ?></strong></td>
 		<td>
-			<?php echo h($event['Event']['start_time']); ?>
+			<?php echo h($this->Time->nice($event['Event']['start_time'])); ?>
 			&nbsp;
 		</td>
 </tr><tr>		<td><strong><?php echo __('End Time'); ?></strong></td>
 		<td>
-			<?php echo h($event['Event']['end_time']); ?>
+			<?php echo h($this->Time->nice($event['Event']['end_time'])); ?>
 			&nbsp;
 		</td>
 </tr><tr>		<td><strong><?php echo __('Attendee Count'); ?></strong></td>
@@ -84,54 +84,9 @@
 			
 		</div><!-- .view -->
 
-					
 			<div class="related">
 
-				<h3><?php echo __('Related Attendee Status Logs'); ?></h3>
-				
-				<?php if (!empty($event['AttendeeStatusLog'])): ?>
-				
-					<table class="table table-striped table-bordered">
-						<tr>
-									<th><?php echo __('Id'); ?></th>
-		<th><?php echo __('Attendee Id'); ?></th>
-		<th><?php echo __('Attendance Status State Id'); ?></th>
-		<th><?php echo __('Event Id'); ?></th>
-		<th><?php echo __('Logged By'); ?></th>
-		<th><?php echo __('Created'); ?></th>
-							<th class="actions"><?php echo __('Actions'); ?></th>
-						</tr>
-							<?php
-								$i = 0;
-								foreach ($event['AttendeeStatusLog'] as $attendeeStatusLog): ?>
-		<tr>
-			<td><?php echo $attendeeStatusLog['id']; ?></td>
-			<td><?php echo $attendeeStatusLog['attendee_id']; ?></td>
-			<td><?php echo $attendeeStatusLog['attendance_status_state_id']; ?></td>
-			<td><?php echo $attendeeStatusLog['event_id']; ?></td>
-			<td><?php echo $attendeeStatusLog['logged_by']; ?></td>
-			<td><?php echo $attendeeStatusLog['created']; ?></td>
-			<td class="actions">
-				<?php echo $this->Html->link(__('View'), array('controller' => 'attendee_status_logs', 'action' => 'view', $attendeeStatusLog['id']), array('class' => 'btn btn-mini')); ?>
-				<?php echo $this->Html->link(__('Edit'), array('controller' => 'attendee_status_logs', 'action' => 'edit', $attendeeStatusLog['id']), array('class' => 'btn btn-mini')); ?>
-				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'attendee_status_logs', 'action' => 'delete', $attendeeStatusLog['id']), array('class' => 'btn btn-mini'), __('Are you sure you want to delete # %s?', $attendeeStatusLog['id'])); ?>
-			</td>
-		</tr>
-	<?php endforeach; ?>
-					</table><!-- .table table-striped table-bordered -->
-					
-				<?php endif; ?>
-
-				
-				<div class="actions">
-					<?php echo $this->Html->link('<i class="icon-plus icon-white"></i> '.__('New Attendee Status Log'), array('controller' => 'attendee_status_logs', 'action' => 'add'), array('class' => 'btn btn-primary', 'escape' => false)); ?>				</div><!-- .actions -->
-				
-			</div><!-- .related -->
-
-					
-			<div class="related">
-
-				<h3><?php echo __('Related Attendees'); ?></h3>
+				<h3><?php echo __('Attendees'); ?></h3>
 				
 				<?php if (!empty($event['Attendee'])): ?>
 				
@@ -172,7 +127,51 @@
 				<div class="actions">
 					<?php echo $this->Html->link('<i class="icon-plus icon-white"></i> '.__('New Attendee'), array('controller' => 'attendees', 'action' => 'add'), array('class' => 'btn btn-primary', 'escape' => false)); ?>				</div><!-- .actions -->
 				
+			</div><!-- .related -->			
+        
+			<div class="related">
+
+				<h3><?php echo __('Attendee Status Logs'); ?></h3>
+				
+				<?php if (!empty($event['AttendeeStatusLog'])): ?>
+				
+					<table class="table table-striped table-bordered">
+						<tr>
+									<th><?php echo __('Id'); ?></th>
+		<th><?php echo __('Attendee Id'); ?></th>
+		<th><?php echo __('Attendance Status State Id'); ?></th>
+		<th><?php echo __('Event Id'); ?></th>
+		<th><?php echo __('Logged By'); ?></th>
+		<th><?php echo __('Created'); ?></th>
+							<th class="actions"><?php echo __('Actions'); ?></th>
+						</tr>
+							<?php
+								$i = 0;
+								foreach ($event['AttendeeStatusLog'] as $attendeeStatusLog): ?>
+		<tr>
+			<td><?php echo $attendeeStatusLog['id']; ?></td>
+			<td><?php echo $attendeeStatusLog['attendee_id']; ?></td>
+			<td><?php echo $attendeeStatusLog['attendance_status_state_id']; ?></td>
+			<td><?php echo $attendeeStatusLog['event_id']; ?></td>
+			<td><?php echo $attendeeStatusLog['logged_by']; ?></td>
+			<td><?php echo $attendeeStatusLog['created']; ?></td>
+			<td class="actions">
+				<?php echo $this->Html->link(__('View'), array('controller' => 'attendee_status_logs', 'action' => 'view', $attendeeStatusLog['id']), array('class' => 'btn btn-mini')); ?>
+				<?php echo $this->Html->link(__('Edit'), array('controller' => 'attendee_status_logs', 'action' => 'edit', $attendeeStatusLog['id']), array('class' => 'btn btn-mini')); ?>
+				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'attendee_status_logs', 'action' => 'delete', $attendeeStatusLog['id']), array('class' => 'btn btn-mini'), __('Are you sure you want to delete # %s?', $attendeeStatusLog['id'])); ?>
+			</td>
+		</tr>
+	<?php endforeach; ?>
+					</table><!-- .table table-striped table-bordered -->
+					
+				<?php endif; ?>
+
+				
+				<div class="actions">
+					<?php echo $this->Html->link('<i class="icon-plus icon-white"></i> '.__('New Attendee Status Log'), array('controller' => 'attendee_status_logs', 'action' => 'add'), array('class' => 'btn btn-primary', 'escape' => false)); ?>				</div><!-- .actions -->
+				
 			</div><!-- .related -->
+
 
 			
 	</div><!-- #page-content .span9 -->
