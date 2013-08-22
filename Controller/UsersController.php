@@ -36,6 +36,15 @@ class UsersController extends AppController {
     }
     
 /**
+ * dashboard method
+ * 
+ * @return void
+ */
+    public function dashboard() {
+        ## does nothing yet
+    }
+    
+/**
  * view method
  *
  * @throws NotFoundException
