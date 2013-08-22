@@ -63,6 +63,8 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
         
         <?php echo $this->fetch('content'); ?>
 		
+        <?php echo $this->Html->image('logo/cakephp_logo_125_trans.png', array('alt' => 'Powered by CakePHP', 'class' => 'cakepower hidden-phone')); ?> 
+        
 	</body>
 
 </html>

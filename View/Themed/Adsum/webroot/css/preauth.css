@@ -56,3 +56,8 @@ a {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+img.cakepower {
+   position: absolute;
+   bottom: 24px;
+   right: 24px;
+}

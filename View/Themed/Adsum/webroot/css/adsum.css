@@ -7,8 +7,19 @@
 body {
     background: url('../img/pattern/square_bg.png') repeat #fefefe;
 }
-
+.navbar-inverse .navbar-inner {
+    background-color: #563d7c;
+    background-image: none;
+}
+.navbar-inverse .navbar-inner a, .navbar-inverse .navbar-inner .nav a {
+    color: #cecece;
+}
+.navbar.navbar-static-top {
+    border-bottom: 4px solid #FFD700;
+}
 #main-container {
     margin-top: 24px;
 }
-
+.table {
+    background: #fefefe;
+}

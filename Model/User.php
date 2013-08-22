@@ -14,6 +14,19 @@ class User extends AppModel {
     public $displayField = 'display_name';
     
 /**
+ * Hash the password before saving
+ * 
+ * @param array $options
+ * @return boolean
+ */
+public function beforeSave($options = array()) {
+    if (isset($this->data[$this->alias]['pass'])) {
+        $this->data[$this->alias]['pass'] = AuthComponent::password($this->data[$this->alias]['pass']);
+    }
+    return true;
+}
+    
+/**
  * Validation rules
  *
  * @var array

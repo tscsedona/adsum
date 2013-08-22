@@ -34,5 +34,10 @@
                     <p><?php echo $this->Html->link('Can\'t access your account?', '#'); ?> </p>
             </div><!-- /#login -->
         </div><!-- /.well -->
+        <div class="form-signin" style="margin:12px 0 0;">
+            <p class="text-center"><a href="#" class="btn btn-large btn-info" style="margin:4px;">Self Check-In</a></p>
+        </div><!-- /.well -->
+        
+            <p class="muted text-right"><small>&copy; 2013 The Sedona Conference<sup>&reg;</sup></small></p>
     </div><!-- /.span4 offset4 -->
 </div><!-- /.row-fluid -->
