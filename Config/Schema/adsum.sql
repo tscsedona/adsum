@@ -90,13 +90,13 @@ CREATE  TABLE IF NOT EXISTS `attendee_status_logs` (
   `attendee_id` INT(11) UNSIGNED NOT NULL ,
   `attendance_status_state_id` INT(11) UNSIGNED NOT NULL ,
   `event_id` INT(11) UNSIGNED NOT NULL ,
-  `logged_by` INT(11) UNSIGNED NOT NULL ,
+  `user_id` INT(11) UNSIGNED NOT NULL ,
   `created` DATETIME NULL DEFAULT NULL ,
   PRIMARY KEY (`id`) ,
   INDEX `attendee_id` (`attendee_id` ASC) ,
   INDEX `event_id` (`event_id` ASC) ,
   INDEX `attendance_status_state_id` (`attendance_status_state_id` ASC) ,
-  INDEX `logged_by` (`logged_by` ASC) )
+  INDEX `user_id` (`user_id` ASC) )
 ENGINE = InnoDB
 COMMENT = 'Records attendee event registration and status.';
 
@@ -126,6 +126,17 @@ CREATE  TABLE IF NOT EXISTS `attendee_meta` (
   PRIMARY KEY (`id`) ,
   INDEX `key` (`key` ASC) ,
   INDEX `attendee_id` () )
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `options`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `options` (
+  `id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT ,
+  `key` VARCHAR(100) NOT NULL ,
+  `value` TEXT NULL ,
+  PRIMARY KEY (`id`) )
 ENGINE = InnoDB;
 
 -- -----------------------------------------------------
