@@ -5,7 +5,7 @@
 
         <div class="events index">
 
-            <h2><?php echo __('Events'); ?> <?php echo $this->Html->link('<i class="icon-plus">&nbsp;</i>' . __('Add New'), array('action' => 'add'), array('escape' => false, 'class' => 'btn btn-mini')); ?></h2>
+            <h2><?php echo __('Events'); ?> <?php echo $this->Html->link('<i class="icon-plus">&nbsp;</i>' . __('Add New'), array('action' => 'add'), array('escape' => false, 'class' => 'btn btn-mini btn-success')); ?></h2>
 
             <table cellpadding="0" cellspacing="0" class="table table-striped table-bordered">
                 <tr>
@@ -26,9 +26,9 @@
                         <td><?php echo h($this->Time->format($event['Event']['end_time'])); ?>&nbsp;</td>
                         <td><?php echo h($event['Event']['attendee_count']); ?>&nbsp;</td>
                         <td class="actions">
-                            <?php echo $this->Html->link(__('View'), array('action' => 'view', $event['Event']['id']), array('class' => 'btn btn-mini')); ?>
-                            <?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $event['Event']['id']), array('class' => 'btn btn-mini')); ?>
-                            <?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $event['Event']['id']), array('class' => 'btn btn-mini'), __('Are you sure you want to delete # %s?', $event['Event']['id'])); ?>
+                            <?php echo $this->Html->link('<i class="icon-eye-open">&nbsp;</i> ' . __('View'), array('action' => 'view', $event['Event']['id']), array('escape' => false, 'class' => 'btn btn-mini')); ?>
+                            <?php echo $this->Html->link('<i class="icon-edit">&nbsp;</i> ' . __('Edit'), array('action' => 'edit', $event['Event']['id']), array('escape' => false, 'class' => 'btn btn-mini')); ?>
+                            <?php echo $this->Form->postLink('<i class="icon-remove">&nbsp;</i> ' . __('Delete'), array('action' => 'delete', $event['Event']['id']), array('escape' => false, 'class' => 'btn btn-mini'), __('Are you sure you want to delete # %s?', $event['Event']['id'])); ?>
                         </td>
                     </tr>
                 <?php endforeach; ?>
