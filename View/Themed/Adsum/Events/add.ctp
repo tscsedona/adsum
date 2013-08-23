@@ -1,7 +1,7 @@
 
 <div id="page-container" class="row-fluid">
 
-    <div id="page-content" class="span8 offset2">
+    <div id="page-content" class="span6 offset3">
         <div class="well">
             <div class="events form">
                 <?php echo $this->Form->create('Event', array('inputDefaults' => array('label' => false), 'class' => 'form form-horizontal')); ?>
@@ -46,14 +46,18 @@
                     <div class="control-group">
                         <?php echo $this->Form->label('start_time', 'Start Date', array('class' => 'control-label')); ?>
                         <div class="controls">
-                            <?php echo $this->Form->input('start_time'); ?>
+                            <?php echo $this->Form->input('start_time', array(
+                                'class' => 'datepicker', 'type' => 'text'
+                            )); ?>
                         </div><!-- .controls -->
                     </div><!-- .control-group -->
 
                     <div class="control-group">
                         <?php echo $this->Form->label('end_time', 'End Date', array('class' => 'control-label')); ?>
                         <div class="controls">
-                            <?php echo $this->Form->input('end_time'); ?>
+                            <?php echo $this->Form->input('end_time', array(
+                                'class' => 'datepicker', 'type' => 'text'
+                            )); ?>
                         </div><!-- .controls -->
                     </div><!-- .control-group -->
 
@@ -68,3 +72,6 @@
         </div><!-- /.events.form -->
     </div><!-- #page-content .span9 -->
 </div><!-- #page-container .row-fluid -->
+
+<?php $this->Html->script('libs/bootstrap-datepicker', array('block' => 'script')); ?> 
+<?php $this->Html->css('datepicker', null, array('block' => 'scriptHead')); ?> 

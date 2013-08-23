@@ -47,30 +47,26 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <?php echo $this->Html->css('bootstrap.min'); ?> 
-		<?php echo $this->Html->css('bootstrap-responsive.min'); ?> 
-		<?php echo $this->Html->css('core'); ?> 
+        <?php echo $this->Html->css('bootstrap-responsive.min'); ?> 
+        <?php echo $this->Html->css('core'); ?> 
         <?php echo $this->Html->css('adsum'); ?> 
         <?php echo $this->Html->css('//netdna.bootstrapcdn.com/font-awesome/3.2.0/css/font-awesome.min.css'); ?>  
  
-		<?php echo $this->fetch('css'); ?> 
-			 
-		<?php echo $this->Html->script('libs/jquery'); ?> 
-		<?php echo $this->Html->script('libs/bootstrap.min'); ?> 
-		 	
-		<?php echo $this->fetch('script'); ?> 
+        <?php echo $this->fetch('css'); ?> 
+        <?php echo $this->fetch('scriptHead'); ?> 
 	</head>
 
 	<body>
         
-        <?php echo $this->element('menu/top_menu'); ?>
+        <?php echo $this->element('menu/top_menu'); ?> 
 
 		<div id="main-container">
 			
 			<div id="content" class="container">
 
-				<?php echo $this->Session->flash(); ?>
+				<?php echo $this->Session->flash(); ?> 
 
-				<?php echo $this->fetch('content'); ?>
+				<?php echo $this->fetch('content'); ?> 
 			</div><!-- #header .container -->
 			
 			<div id="footer" class="container">
@@ -88,6 +84,13 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 			</div>
 		</div><!-- .container -->
 		*/ ?> 
+        
+		<?php echo $this->Html->script('libs/jquery'); ?>  
+		<?php echo $this->Html->script('libs/bootstrap.min'); ?>  
+		 
+		<?php echo $this->fetch('script'); ?>  
+        <?php echo $this->Html->script('common'); ?>  
+        <?php echo $this->fetch('scriptBottom'); ?>  
 	</body>
 
 </html>
