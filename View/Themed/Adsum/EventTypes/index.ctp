@@ -5,7 +5,7 @@
 
         <div class="eventTypes index">
 
-            <h2><?php echo __('Event Types'); ?> <?php echo $this->Html->link('<i class="icon-plus">&nbsp;</i>' . __('Add New'), array('action' => 'add'), array('escape' => false, 'class' => 'btn btn-mini')); ?></h2>
+            <h2><?php echo __('Event Types'); ?> <?php echo $this->Html->link('<i class="icon-plus">&nbsp;</i>' . __('Add New'), array('action' => 'add'), array('escape' => false, 'class' => 'btn btn-mini btn-success')); ?></h2>
 
             <table cellpadding="0" cellspacing="0" class="table table-striped table-bordered">
                 <tr>

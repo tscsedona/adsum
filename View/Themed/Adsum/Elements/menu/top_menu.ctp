@@ -14,6 +14,15 @@
                     <?php echo $this->element('menu/items'); ?> 
                 </ul>
               </div><!--/.nav-collapse -->
+        <!-- Links -->
+        <ul class="nav pull-right">
+          <li class="dropdown pull-right">            
+            <a href="#">
+              <i class="icon-off"></i> Logout</a>             
+            </a>
+          </li>
+          
+        </ul>
             </div><!-- /.container -->
           </div><!-- /.navbar-inner -->
         </div><!-- /.navbar.navbar-inverse -->
