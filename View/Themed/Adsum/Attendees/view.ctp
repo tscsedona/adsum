@@ -7,16 +7,9 @@
 
             <ul class="nav nav-list bs-docs-sidenav">			
                 <li><?php echo $this->Html->link(__('Edit Attendee'), array('action' => 'edit', $attendee['Attendee']['id']), array('class' => '')); ?> </li>
+                <li><?php echo $this->Html->link(__('Add Bar Number'), array('controller' => 'attendee_meta', 'action' => 'add'), array('class' => '')); ?> </li>
+                <li><?php echo $this->Html->link(__('Record New Status'), array('controller' => 'attendee_status_logs', 'action' => 'add'), array('class' => '')); ?> </li>
                 <li><?php echo $this->Form->postLink(__('Delete Attendee'), array('action' => 'delete', $attendee['Attendee']['id']), array('class' => ''), __('Are you sure you want to delete # %s?', $attendee['Attendee']['id'])); ?> </li>
-                <li><?php echo $this->Html->link(__('List Attendees'), array('action' => 'index'), array('class' => '')); ?> </li>
-                <li><?php echo $this->Html->link(__('New Attendee'), array('action' => 'add'), array('class' => '')); ?> </li>
-                <li><?php echo $this->Html->link(__('List Attendee Meta'), array('controller' => 'attendee_meta', 'action' => 'index'), array('class' => '')); ?> </li>
-                <li><?php echo $this->Html->link(__('New Attendee Metum'), array('controller' => 'attendee_meta', 'action' => 'add'), array('class' => '')); ?> </li>
-                <li><?php echo $this->Html->link(__('List Attendee Status Logs'), array('controller' => 'attendee_status_logs', 'action' => 'index'), array('class' => '')); ?> </li>
-                <li><?php echo $this->Html->link(__('New Attendee Status Log'), array('controller' => 'attendee_status_logs', 'action' => 'add'), array('class' => '')); ?> </li>
-                <li><?php echo $this->Html->link(__('List Events'), array('controller' => 'events', 'action' => 'index'), array('class' => '')); ?> </li>
-                <li><?php echo $this->Html->link(__('New Event'), array('controller' => 'events', 'action' => 'add'), array('class' => '')); ?> </li>
-
             </ul><!-- .nav nav-list bs-docs-sidenav -->
 
         </div><!-- .actions -->
@@ -27,27 +20,13 @@
 
         <div class="attendees view">
 
-            <h2><?php echo __('Attendee'); ?></h2>
+            <h2><?php echo __('Attendee Profile'); ?></h2>
 
             <table class="table table-striped table-bordered">
                 <tr>
-                    <td><strong><?php echo __('Id'); ?></strong></td>
+                    <td><strong><?php echo __('Display Name'); ?></strong></td>
                     <td>
-                        <?php echo h($attendee['Attendee']['id']); ?>
-                        &nbsp;
-                    </td>
-                </tr>
-                <tr>
-                    <td><strong><?php echo __('Uuid'); ?></strong></td>
-                    <td>
-                        <?php echo h($attendee['Attendee']['uuid']); ?>
-                        &nbsp;
-                    </td>
-                </tr>
-                <tr>
-                    <td><strong><?php echo __('Extid'); ?></strong></td>
-                    <td>
-                        <?php echo h($attendee['Attendee']['extid']); ?>
+                        <?php echo h($attendee['Attendee']['display_name']); ?>
                         &nbsp;
                     </td>
                 </tr>
@@ -66,9 +45,16 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><strong><?php echo __('Display Name'); ?></strong></td>
+                    <td><strong><?php echo __('Uuid'); ?></strong></td>
                     <td>
-                        <?php echo h($attendee['Attendee']['display_name']); ?>
+                        <?php echo h($attendee['Attendee']['uuid']); ?>
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong><?php echo __('Extid'); ?></strong></td>
+                    <td>
+                        <?php echo h($attendee['Attendee']['extid']); ?>
                         &nbsp;
                     </td>
                 </tr>
