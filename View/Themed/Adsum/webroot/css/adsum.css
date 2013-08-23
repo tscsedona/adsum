@@ -23,3 +23,7 @@ body {
 .table {
     background: #fefefe;
 }
+td.actions {
+    width: 174px;
+    max-width: auto;
+}
