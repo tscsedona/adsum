@@ -5,7 +5,7 @@ Adsum is [free and open-source](http://en.wikipedia.org/wiki/Free_and_open-sourc
 
 **This is a Work In Progress; this is an unstable, unfinished project. Development is taking place in the `wip` branch. SemVer [http://semver.org/] will be utilized as the project matures.**
 
-![AdsumCCI Screenshot](/screenshot.jpg)
+![AdsumCCI Screenshot](/screenshot.png)
 
 ![AdsumCCI Screenshot](/Config/Schema/adsum.png)
 
