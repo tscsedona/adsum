@@ -3,7 +3,7 @@
 
     <div id="page-content" class="span12">
 
-        <div class="users index">
+        <div class="users index well well-small">
 
             <h2><?php echo __('Users'); ?> <?php echo $this->Html->link('<i class="icon-plus">&nbsp;</i>' . __('Add New'), array('action' => 'add'), array('escape' => false, 'class' => 'btn btn-mini btn-success')); ?></h2>
 
@@ -22,14 +22,14 @@
                             <?php if ($user['User']['is_admin']) echo '<i class="icon-star icon-border"></i>'; ?> 
                         </td>
                         <td><?php echo $this->Html->link(h($user['User']['email']), 'mailto:' . h($user['User']['email'])); ?>&nbsp;</td>
-                        <td><?php echo (h($user['User']['is_admin']) ? __('Yes') : __('No')); ?>&nbsp;
+                        <td><?php echo (h($user['User']['is_active']) ? __('Yes') : __('No')); ?>&nbsp;
                         <td><?php echo h($this->Time->nice($user['User']['last_seen'])); ?>&nbsp;</td>
                         
                         </td>
                         <td class="actions">
                             <?php echo $this->Html->link('<i class="icon-eye-open">&nbsp;</i> ' . __('View'), array('action' => 'view', $user['User']['id']), array('escape' => false, 'class' => 'btn btn-mini')); ?>
                             <?php echo $this->Html->link('<i class="icon-edit">&nbsp;</i> ' . __('Edit'), array('action' => 'edit', $user['User']['id']), array('escape' => false, 'class' => 'btn btn-mini')); ?>
-                            <?php echo $this->Form->postLink('<i class="icon-remove">&nbsp;</i> ' . __('Delete'), array('action' => 'delete', $user['User']['id']), array('escape' => false, 'class' => 'btn btn-mini'), __('Are you sure you want to delete # %s?', $user['User']['id'])); ?>
+                            <?php echo $this->Form->postLink('<i class="icon-remove">&nbsp;</i> ' . __('Delete'), array('action' => 'delete', $user['User']['id']), array('escape' => false, 'class' => 'btn btn-mini btn-danger'), __('Are you sure you want to delete # %s?', $user['User']['id'])); ?>
                         </td>
                     </tr>
                 <?php endforeach; ?>

@@ -42,8 +42,11 @@
                     </div><!-- .control-group -->
 
                 </fieldset>
+                
+                <hr />
+                
                 <div class="text-right">
-                   <?php echo $this->Form->submit('Submit', array('class' => 'btn btn-large btn-primary')); ?>
+                   <?php echo $this->Form->submit('Submit', array('class' => 'btn btn-large btn-success')); ?>
                 </div><!-- /.text-right -->
                 <?php echo $this->Form->end(); ?>
 

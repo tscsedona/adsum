@@ -17,7 +17,7 @@
 
     <div id="page-content" class="span9">
 
-        <div class="users view">
+        <div class="users view well well-small">
 
             <h2><?php echo __('User'); ?></h2>
 

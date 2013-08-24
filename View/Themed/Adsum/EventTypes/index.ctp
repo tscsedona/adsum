@@ -3,7 +3,7 @@
 
     <div id="page-content" class="span12">
 
-        <div class="eventTypes index">
+        <div class="eventTypes index well well-small">
 
             <h2><?php echo __('Event Types'); ?> <?php echo $this->Html->link('<i class="icon-plus">&nbsp;</i>' . __('Add New'), array('action' => 'add'), array('escape' => false, 'class' => 'btn btn-mini btn-success')); ?></h2>
 
@@ -18,7 +18,7 @@
                         <td class="actions">
                             <?php echo $this->Html->link('<i class="icon-eye-open">&nbsp;</i> ' . __('View'), array('action' => 'view', $eventType['EventType']['id']), array('escape' => false, 'class' => 'btn btn-mini')); ?>
                             <?php echo $this->Html->link('<i class="icon-edit">&nbsp;</i> ' . __('Edit'), array('action' => 'edit', $eventType['EventType']['id']), array('escape' => false, 'class' => 'btn btn-mini')); ?>
-                            <?php echo $this->Form->postLink('<i class="icon-remove">&nbsp;</i> ' . __('Delete'), array('action' => 'delete', $eventType['EventType']['id']), array('escape' => false, 'class' => 'btn btn-mini'), __('Are you sure you want to delete # %s?', $eventType['EventType']['id'])); ?>
+                            <?php echo $this->Form->postLink('<i class="icon-remove">&nbsp;</i> ' . __('Delete'), array('action' => 'delete', $eventType['EventType']['id']), array('escape' => false, 'class' => 'btn btn-mini btn-danger'), __('Are you sure you want to delete # %s?', $eventType['EventType']['id'])); ?>
                         </td>
                     </tr>
                 <?php endforeach; ?>

@@ -18,7 +18,7 @@
 
     <div id="page-content" class="span9">
 
-        <div class="attendees view">
+        <div class="attendees view well well-small">
 
             <h2><?php echo __('Attendee Profile'); ?></h2>
 

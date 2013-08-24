@@ -27,3 +27,6 @@ td.actions {
     width: 174px;
     max-width: auto;
 }
+.well {
+    background: rgba(250,250,250,0.8);
+}

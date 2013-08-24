@@ -16,7 +16,7 @@
 
     <div id="page-content" class="span9">
 
-        <div class="attendeeStatusLogs view">
+        <div class="attendeeStatusLogs view well well-small">
 
             <h2><?php echo __('Attendee Status Log'); ?></h2>
 

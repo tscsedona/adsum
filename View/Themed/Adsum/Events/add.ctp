@@ -23,27 +23,6 @@
                     </div><!-- .control-group -->
                     
                     <div class="control-group">
-                        <?php echo $this->Form->label('uuid', 'UUID', array('class' => 'control-label')); ?>
-                        <div class="controls">
-                            <?php echo $this->Form->input('uuid', array('class' => 'span12', 'disabled' => true)); ?>
-                        </div><!-- .controls -->
-                    </div><!-- .control-group -->
-
-                    <div class="control-group">
-                        <?php echo $this->Form->label('extid', 'ExtID', array('class' => 'control-label')); ?>
-                        <div class="controls">
-                            <?php echo $this->Form->input('extid', array('class' => 'span12')); ?>
-                        </div><!-- .controls -->
-                    </div><!-- .control-group -->
-
-                    <div class="control-group">
-                        <?php echo $this->Form->label('is_active', 'Is Active', array('class' => 'control-label')); ?>
-                        <div class="controls">
-                            <?php echo $this->Form->input('is_active'); ?>
-                        </div><!-- .controls -->
-                    </div><!-- .control-group -->
-
-                    <div class="control-group">
                         <?php echo $this->Form->label('start_time', 'Start Date', array('class' => 'control-label')); ?>
                         <div class="controls">
                             <?php echo $this->Form->input('start_time', array(
@@ -60,12 +39,34 @@
                             )); ?>
                         </div><!-- .controls -->
                     </div><!-- .control-group -->
+                    
+                    <div class="control-group">
+                        <?php echo $this->Form->label('extid', 'ExtID', array('class' => 'control-label')); ?>
+                        <div class="controls">
+                            <?php echo $this->Form->input('extid', array('class' => 'span12')); ?>
+                        </div><!-- .controls -->
+                    </div><!-- .control-group -->
+
+                    <div class="control-group">
+                        <?php echo $this->Form->label('uuid', 'UUID', array('class' => 'control-label')); ?>
+                        <div class="controls">
+                            <?php echo $this->Form->input('uuid', array('class' => 'span12', 'disabled' => true)); ?>
+                        </div><!-- .controls -->
+                    </div><!-- .control-group -->
+
+                    
+                    <div class="control-group">
+                        <?php echo $this->Form->label('is_active', 'Is Active', array('class' => 'control-label')); ?>
+                        <div class="controls">
+                            <?php echo $this->Form->input('is_active', array('checked' => true)); ?>
+                        </div><!-- .controls -->
+                    </div><!-- .control-group -->
 
                     <?php # echo $this->Form->input('Attendee'); ?>
                 </fieldset>
                 <hr />
                 <div class="text-right">
-                    <?php echo $this->Form->submit('Create Event', array('class' => 'btn btn-large btn-success')); ?>
+                    <?php echo $this->Form->submit('Submit', array('class' => 'btn btn-large btn-success')); ?>
                 </div><!-- /.text-right -->
                 <?php echo $this->Form->end(); ?>
             </div><!-- /.well -->
