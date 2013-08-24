@@ -1,9 +1,6 @@
-AdsumCCI (WIP)
-========
+# AdsumCCI
 
-Adsum is [free and open-source](http://en.wikipedia.org/wiki/Free_and_open-source_software) legal event attendance software (FLEAS), built on [CakePHP 2.x](https://github.com/cakephp/cakephp).
-
-**This is a Work In Progress; this is an unstable, unfinished project. Development is taking place in the `wip` branch. [SemVer](http://semver.org/) will be utilized as the project matures.**
+**WIP** Adsum is [free and open-source](http://en.wikipedia.org/wiki/Free_and_open-source_software) legal event attendance software (FLEAS), built on [CakePHP 2.x](https://github.com/cakephp/cakephp).
 
 ![AdsumCCI Screenshot](/screenshot.png)
 
