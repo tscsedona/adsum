@@ -8,15 +8,6 @@
             <ul class="nav nav-list bs-docs-sidenav">			
                 <li><?php echo $this->Html->link(__('Edit Attendee Status Log'), array('action' => 'edit', $attendeeStatusLog['AttendeeStatusLog']['id']), array('class' => '')); ?> </li>
                 <li><?php echo $this->Form->postLink(__('Delete Attendee Status Log'), array('action' => 'delete', $attendeeStatusLog['AttendeeStatusLog']['id']), array('class' => ''), __('Are you sure you want to delete # %s?', $attendeeStatusLog['AttendeeStatusLog']['id'])); ?> </li>
-                <li><?php echo $this->Html->link(__('List Attendee Status Logs'), array('action' => 'index'), array('class' => '')); ?> </li>
-                <li><?php echo $this->Html->link(__('New Attendee Status Log'), array('action' => 'add'), array('class' => '')); ?> </li>
-                <li><?php echo $this->Html->link(__('List Attendees'), array('controller' => 'attendees', 'action' => 'index'), array('class' => '')); ?> </li>
-                <li><?php echo $this->Html->link(__('New Attendee'), array('controller' => 'attendees', 'action' => 'add'), array('class' => '')); ?> </li>
-                <li><?php echo $this->Html->link(__('List Attendance Status States'), array('controller' => 'attendance_status_states', 'action' => 'index'), array('class' => '')); ?> </li>
-                <li><?php echo $this->Html->link(__('New Attendance Status State'), array('controller' => 'attendance_status_states', 'action' => 'add'), array('class' => '')); ?> </li>
-                <li><?php echo $this->Html->link(__('List Events'), array('controller' => 'events', 'action' => 'index'), array('class' => '')); ?> </li>
-                <li><?php echo $this->Html->link(__('New Event'), array('controller' => 'events', 'action' => 'add'), array('class' => '')); ?> </li>
-
             </ul><!-- .nav nav-list bs-docs-sidenav -->
 
         </div><!-- .actions -->
