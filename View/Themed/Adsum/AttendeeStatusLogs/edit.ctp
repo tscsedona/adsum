@@ -20,7 +20,7 @@
                     </div><!-- .control-group -->
 
                     <div class="control-group">
-                        <?php echo $this->Form->label('Status State', 'attendance_status_state_id', array('class' => 'control-label')); ?>
+                        <?php echo $this->Form->label('Status State', 'Status State', array('class' => 'control-label')); ?>
                         <div class="controls">
                             <?php echo $this->Form->input('attendance_status_state_id', array('class' => 'span12')); ?>
                         </div><!-- .controls -->
