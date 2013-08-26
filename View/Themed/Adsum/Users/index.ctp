@@ -29,7 +29,7 @@
                         <td class="actions">
                             <?php echo $this->Html->link('<i class="icon-eye-open">&nbsp;</i> ' . __('View'), array('action' => 'view', $user['User']['id']), array('escape' => false, 'class' => 'btn btn-mini')); ?>
                             <?php echo $this->Html->link('<i class="icon-edit">&nbsp;</i> ' . __('Edit'), array('action' => 'edit', $user['User']['id']), array('escape' => false, 'class' => 'btn btn-mini')); ?>
-                            <?php echo $this->Form->postLink('<i class="icon-remove">&nbsp;</i> ' . __('Delete'), array('action' => 'delete', $user['User']['id']), array('escape' => false, 'class' => 'btn btn-mini btn-danger'), __('Are you sure you want to delete # %s?', $user['User']['id'])); ?>
+                            <?php echo $this->Form->postLink('<i class="icon-remove">&nbsp;</i> ' . __('Delete'), array('action' => 'delete', $user['User']['id']), array('escape' => false, 'class' => 'btn btn-mini btn-danger'), __('Are you sure you want to delete %s?', $user['User']['display_name'])); ?>
                         </td>
                     </tr>
                 <?php endforeach; ?>

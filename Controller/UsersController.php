@@ -9,6 +9,16 @@ App::uses('AppController', 'Controller');
 class UsersController extends AppController {
 
 /**
+ * beforeFilter method
+ *
+ * @return void
+ */
+    public function beforeFilter() {
+        parent::beforeFilter();
+        $this->Auth->allow('login');
+    }
+    
+/**
  * Components
  *
  * @var array
@@ -31,8 +41,22 @@ class UsersController extends AppController {
  * @return void
  */    
     public function login() {
+#        Debugger::dump(Security::hash('Password123'));
+#        die();
         $this->layout = 'preauth';
-        ## does nothing yet
+        if ($this->request->is('post')) {
+            if ($this->Auth->login()) {
+                return $this->redirect($this->Auth->redirectUrl());
+            }
+            $this->Session->setFlash(__('Username or password is incorrect'), 'default', array(), 'auth');
+        }
+    }
+    
+/**
+ * logout method
+ */
+    public function logout() {
+        return $this->redirect($this->Auth->logout());
     }
     
 /**

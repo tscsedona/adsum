@@ -1,101 +1,88 @@
 
 <div id="page-container" class="row-fluid">
 
-    <div id="sidebar" class="span3">
+    <div id="page-content" class="span6 offset3">
 
-        <div class="actions">
+        <div class="well">
 
-            <ul class="nav nav-list bs-docs-sidenav">
-                <li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('User.id')), null, __('Are you sure you want to delete # %s?', $this->Form->value('User.id'))); ?></li>
-                <li><?php echo $this->Html->link(__('List Users'), array('action' => 'index')); ?></li>
-            </ul><!-- .nav nav-list bs-docs-sidenav -->
+            <div class="users form">
 
-        </div><!-- .actions -->
+                <?php echo $this->Form->create('User', array('inputDefaults' => array('label' => false), 'class' => 'form form-horizontal')); ?>
+                <fieldset>
+                    <h2><?php echo __('Edit User'); ?></h2>
+                    
+                    <hr />
+                    
+                    <div class="control-group">
+                        <?php echo $this->Form->label('display_name', 'Display Name', array('class' => 'control-label')); ?>
+                        <div class="controls">
+                            <?php echo $this->Form->input('display_name', array('class' => 'span12')); ?>
+                        </div><!-- .controls -->
+                    </div><!-- .control-group -->
 
-    </div><!-- #sidebar .span3 -->
+                    <div class="control-group">
+                        <?php echo $this->Form->label('first_name', 'First Name', array('class' => 'control-label')); ?>
+                        <div class="controls">
+                            <?php echo $this->Form->input('first_name', array('class' => 'span12')); ?>
+                        </div><!-- .controls -->
+                    </div><!-- .control-group -->
 
-    <div id="page-content" class="span9">
+                    <div class="control-group">
+                        <?php echo $this->Form->label('last_name', 'Last Name', array('class' => 'control-label')); ?>
+                        <div class="controls">
+                            <?php echo $this->Form->input('last_name', array('class' => 'span12')); ?>
+                        </div><!-- .controls -->
+                    </div><!-- .control-group -->
 
-        <div class="users form">
+                    <div class="control-group">
+                        <?php echo $this->Form->label('email', 'Email', array('class' => 'control-label')); ?>
+                        <div class="controls">
+                            <?php echo $this->Form->input('email', array('class' => 'span12')); ?>
+                        </div><!-- .controls -->
+                    </div><!-- .control-group -->
+                    
+                    <div class="control-group">
+                        <?php echo $this->Form->label('extid', 'ExtID', array('class' => 'control-label')); ?>
+                        <div class="controls">
+                            <?php echo $this->Form->input('extid', array('class' => 'span12')); ?>
+                        </div><!-- .controls -->
+                    </div><!-- .control-group -->
 
-            <?php echo $this->Form->create('User', array('inputDefaults' => array('label' => false), 'class' => 'form form-horizontal')); ?>
-            <fieldset>
-                <h2><?php echo __('Edit User'); ?></h2>
-                <div class="control-group">
-                    <?php echo $this->Form->label('id', 'id', array('class' => 'control-label')); ?>
-                    <div class="controls">
-                        <?php echo $this->Form->input('id', array('class' => 'span12')); ?>
-                    </div><!-- .controls -->
-                </div><!-- .control-group -->
+                    <div class="control-group">
+                        <?php echo $this->Form->label('pass', 'Password', array('class' => 'control-label')); ?>
+                        <div class="controls">
+                            <!-- <a href="#" class="btn btn-small"><i class="icon-lock">&nbsp;</i> Reset password</a> -->
+                            <?php echo $this->Form->input('pass'); ?>
+                        </div><!-- .controls -->
+                    </div><!-- .control-group -->
 
-                <div class="control-group">
-                    <?php echo $this->Form->label('extid', 'extid', array('class' => 'control-label')); ?>
-                    <div class="controls">
-                        <?php echo $this->Form->input('extid', array('class' => 'span12')); ?>
-                    </div><!-- .controls -->
-                </div><!-- .control-group -->
+                    <div class="control-group">
+                        <?php echo $this->Form->label('is_active', 'Is Active', array('class' => 'control-label')); ?>
+                        <div class="controls">
+                            <?php echo $this->Form->input('is_active'); ?>
+                        </div><!-- .controls -->
+                    </div><!-- .control-group -->
 
-                <div class="control-group">
-                    <?php echo $this->Form->label('email', 'email', array('class' => 'control-label')); ?>
-                    <div class="controls">
-                        <?php echo $this->Form->input('email', array('class' => 'span12')); ?>
-                    </div><!-- .controls -->
-                </div><!-- .control-group -->
+                    <div class="control-group">
+                        <?php echo $this->Form->label('is_admin', 'Is Admin', array('class' => 'control-label')); ?>
+                        <div class="controls">
+                            <?php echo $this->Form->input('is_admin'); ?>
+                        </div><!-- .controls -->
+                    </div><!-- .control-group -->
 
-                <div class="control-group">
-                    <?php echo $this->Form->label('pass', 'pass', array('class' => 'control-label')); ?>
-                    <div class="controls">
-                        <?php echo $this->Form->input('pass', array('class' => 'span12')); ?>
-                    </div><!-- .controls -->
-                </div><!-- .control-group -->
+                </fieldset>
+                
+                <hr />
+                
+                <div class="text-right">
+                    <?php echo $this->Form->submit('Save', array('class' => 'btn btn-large btn-success')); ?>
+                </div><!-- /.text-right -->
+                
+                <?php echo $this->Form->end(); ?>
 
-                <div class="control-group">
-                    <?php echo $this->Form->label('display_name', 'display_name', array('class' => 'control-label')); ?>
-                    <div class="controls">
-                        <?php echo $this->Form->input('display_name', array('class' => 'span12')); ?>
-                    </div><!-- .controls -->
-                </div><!-- .control-group -->
-
-                <div class="control-group">
-                    <?php echo $this->Form->label('first_name', 'first_name', array('class' => 'control-label')); ?>
-                    <div class="controls">
-                        <?php echo $this->Form->input('first_name', array('class' => 'span12')); ?>
-                    </div><!-- .controls -->
-                </div><!-- .control-group -->
-
-                <div class="control-group">
-                    <?php echo $this->Form->label('last_name', 'last_name', array('class' => 'control-label')); ?>
-                    <div class="controls">
-                        <?php echo $this->Form->input('last_name', array('class' => 'span12')); ?>
-                    </div><!-- .controls -->
-                </div><!-- .control-group -->
-
-                <div class="control-group">
-                    <?php echo $this->Form->label('is_active', 'is_active', array('class' => 'control-label')); ?>
-                    <div class="controls">
-                        <?php echo $this->Form->input('is_active'); ?>
-                    </div><!-- .controls -->
-                </div><!-- .control-group -->
-
-                <div class="control-group">
-                    <?php echo $this->Form->label('last_seen', 'last_seen', array('class' => 'control-label')); ?>
-                    <div class="controls">
-                        <?php echo $this->Form->input('last_seen'); ?>
-                    </div><!-- .controls -->
-                </div><!-- .control-group -->
-
-                <div class="control-group">
-                    <?php echo $this->Form->label('is_admin', 'is_admin', array('class' => 'control-label')); ?>
-                    <div class="controls">
-                        <?php echo $this->Form->input('is_admin'); ?>
-                    </div><!-- .controls -->
-                </div><!-- .control-group -->
-
-            </fieldset>
-            <?php echo $this->Form->submit('Submit', array('class' => 'btn btn-large btn-primary')); ?>
-            <?php echo $this->Form->end(); ?>
-
-        </div>
+            </div><!-- /.users.form -->
+            
+        </div><!-- /.well -->
 
     </div><!-- #page-content .span9 -->
 

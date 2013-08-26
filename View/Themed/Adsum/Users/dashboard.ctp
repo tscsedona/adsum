@@ -4,7 +4,7 @@
             <p><?php echo __d('adsum', 'Welcome back, USERNAME.'); ?></p>
 
             <?php echo $this->Html->link('<i class="icon-calendar">&nbsp;</i> Check-in / Check-out',
-                    array('controller' => 'events'),
+                    array('controller' => 'AttendeeStatusLogs', 'action' => 'add'),
                     array('escape' => false,'class' => 'btn btn-large btn-success btn-block')); ?> 
 
             <hr />

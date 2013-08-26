@@ -20,8 +20,8 @@ class User extends AppModel {
  * @return boolean
  */
 public function beforeSave($options = array()) {
-    if (isset($this->data[$this->alias]['pass'])) {
-        $this->data[$this->alias]['pass'] = AuthComponent::password($this->data[$this->alias]['pass']);
+    if (isset($this->data[$this->alias]['password'])) {
+        $this->data[$this->alias]['password'] = AuthComponent::password($this->data[$this->alias]['password']);
     }
     return true;
 }
@@ -42,7 +42,7 @@ public function beforeSave($options = array()) {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'pass' => array(
+		'password' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
 				//'message' => 'Your custom message here',

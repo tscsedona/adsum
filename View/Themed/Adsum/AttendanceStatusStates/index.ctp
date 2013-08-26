@@ -1,23 +1,11 @@
 
 <div id="page-container" class="row-fluid">
 
-    <div id="sidebar" class="span3">
+    <div id="page-content" class="span12">
 
-        <div class="actions">
+        <div class="attendanceStatusStates index well well-small">
 
-            <ul class="nav nav-list bs-docs-sidenav">
-                <li><?php echo $this->Html->link(__('New Attendance Status State'), array('action' => 'add'), array('class' => '')); ?></li>
-            </ul><!-- .nav nav-list bs-docs-sidenav -->
-
-        </div><!-- .actions -->
-
-    </div><!-- #sidebar .span3 -->
-
-    <div id="page-content" class="span9">
-
-        <div class="attendanceStatusStates index">
-
-            <h2><?php echo __('Attendance Status States'); ?></h2>
+            <h2><?php echo __('Status States'); ?> <?php echo $this->Html->link('<i class="icon-plus">&nbsp;</i>' . __('Add New'), array('action' => 'add'), array('escape' => false, 'class' => 'btn btn-mini btn-success')); ?></h2>
 
             <table cellpadding="0" cellspacing="0" class="table table-striped table-bordered">
                 <tr>
@@ -30,7 +18,7 @@
                         <td class="actions">
                             <?php echo $this->Html->link('<i class="icon-eye-open">&nbsp;</i> ' . __('View'), array('action' => 'view', $attendanceStatusState['AttendanceStatusState']['id']), array('escape' => false, 'class' => 'btn btn-mini')); ?>
                             <?php echo $this->Html->link('<i class="icon-edit">&nbsp;</i> ' . __('Edit'), array('action' => 'edit', $attendanceStatusState['AttendanceStatusState']['id']), array('escape' => false, 'class' => 'btn btn-mini')); ?>
-                            <?php echo $this->Form->postLink('<i class="icon-remove">&nbsp;</i> ' . __('Delete'), array('action' => 'delete', $attendanceStatusState['AttendanceStatusState']['id']), array('escape' => false, 'class' => 'btn btn-mini'), __('Are you sure you want to delete # %s?', $attendanceStatusState['AttendanceStatusState']['id'])); ?>
+                            <?php echo $this->Form->postLink('<i class="icon-remove">&nbsp;</i> ' . __('Delete'), array('action' => 'delete', $attendanceStatusState['AttendanceStatusState']['id']), array('escape' => false, 'class' => 'btn btn-mini btn-danger'), __('Are you sure you want to delete # %s?', $attendanceStatusState['AttendanceStatusState']['id'])); ?>
                         </td>
                     </tr>
                 <?php endforeach; ?>

@@ -39,13 +39,6 @@
                             <?php echo $this->Form->input('extid', array('class' => 'span12')); ?>
                         </div><!-- .controls -->
                     </div><!-- .control-group -->
-                    
-                    <div class="control-group">
-                        <?php echo $this->Form->label('uuid', 'UUID', array('class' => 'control-label')); ?>
-                        <div class="controls">
-                            <?php echo $this->Form->input('uuid', array('class' => 'span12', 'disabled' => true)); ?>
-                        </div><!-- .controls -->
-                    </div><!-- .control-group -->
 
                     <?php # echo $this->Form->input('Event'); ?>
 

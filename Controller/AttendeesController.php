@@ -13,7 +13,7 @@ class AttendeesController extends AppController {
  *
  * @var array
  */
-	public $components = array('Paginator');
+	public $components = array('Paginator', 'Uuid');
 
 /**
  * index method
@@ -48,6 +48,7 @@ class AttendeesController extends AppController {
 	public function add() {
 		if ($this->request->is('post')) {
 			$this->Attendee->create();
+            $this->request->data['Attendee']['uuid'] = $this->Uuid->generateUuid();
 			if ($this->Attendee->save($this->request->data)) {
 				$this->Session->setFlash(__('The attendee has been saved'), 'flash/success');
 				$this->redirect(array('action' => 'index'));

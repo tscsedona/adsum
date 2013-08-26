@@ -13,7 +13,7 @@ class EventsController extends AppController {
  *
  * @var array
  */
-	public $components = array('Paginator');
+	public $components = array('Paginator', 'Uuid');
 
 /**
  * index method
@@ -49,6 +49,7 @@ class EventsController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Event->create();
 			if ($this->Event->save($this->request->data)) {
+                $this->request->data['Attendee']['uuid'] = $this->Uuid->generateUuid();
 				$this->Session->setFlash(__('The event has been saved'), 'flash/success');
 				$this->redirect(array('action' => 'index'));
 			} else {

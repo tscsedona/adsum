@@ -17,10 +17,8 @@
 
             <!-- Links -->
             <ul class="nav pull-right">
-                <li class="dropdown pull-right">            
-                    <a href="#">
-                        <i class="icon-off"></i> Logout</a>             
-                    </a>
+                <li class="dropdown pull-right">
+                    <?php echo $this->Html->link('<i class="icon-off">&nbsp;</i> Logout', array('controller' => 'users', 'action' => 'logout'), array('escape' => false)); ?>
                 </li>
             </ul><!-- /ul.nav -->
         </div><!-- /.container -->

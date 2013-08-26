@@ -35,10 +35,26 @@ class AppController extends Controller {
     
     public $components = array(
        # 'DebugKit.Toolbar',
-        'Session'
+        'Session',
+        'Auth' => array(
+            'authenticate' => array(
+                'Form' => array(
+                    'fields' => array('username' => 'email')
+                )
+            ),
+            'loginAction' => array('controller' => 'users','action' => 'login'),
+            'loginRedirect'     => array('controller' => 'users', 'action' => 'dashboard'),
+            'logoutRedirect'    => '/',
+            'authError' => 'You must be logged in to access this location.'
+        )
     );
     
-    // DEV - Globally enable scaffold mode
+    public function beforeFilter() {
+        parent::beforeFilter();
+        $this->Auth->allow();
+        $this->set('authUser', $this->Auth->user());
+    }
+    
     public $theme = "Adsum";
     
 }

@@ -48,14 +48,6 @@
                     </div><!-- .control-group -->
 
                     <div class="control-group">
-                        <?php echo $this->Form->label('uuid', 'UUID', array('class' => 'control-label')); ?>
-                        <div class="controls">
-                            <?php echo $this->Form->input('uuid', array('class' => 'span12', 'disabled' => true)); ?>
-                        </div><!-- .controls -->
-                    </div><!-- .control-group -->
-
-                    
-                    <div class="control-group">
                         <?php echo $this->Form->label('is_active', 'Is Active', array('class' => 'control-label')); ?>
                         <div class="controls">
                             <?php echo $this->Form->input('is_active', array('checked' => true)); ?>
