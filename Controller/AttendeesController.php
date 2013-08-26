@@ -106,4 +106,10 @@ class AttendeesController extends AppController {
 		$this->Session->setFlash(__('Attendee was not deleted'), 'flash/error');
 		$this->redirect(array('action' => 'index'));
 	}
+    
+    
+    public function bulk_import() {
+        # Bulk import function here
+    }
+    
 }

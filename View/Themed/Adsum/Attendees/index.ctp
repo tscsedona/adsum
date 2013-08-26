@@ -5,7 +5,11 @@
 
         <div class="attendees index well well-small">
 
-            <h2><?php echo __('Attendees'); ?> <?php echo $this->Html->link('<i class="icon-plus">&nbsp;</i>' . __('Add New'), array('action' => 'add'), array('escape' => false, 'class' => 'btn btn-mini btn-success')); ?></h2>
+            <h2>
+                <?php echo __('Attendees'); ?> 
+                <?php echo $this->Html->link('<i class="icon-plus">&nbsp;</i>' . __('Add New'), array('action' => 'add'), array('escape' => false, 'class' => 'btn btn-mini btn-success')); ?>
+                <?php echo $this->Html->link('<i class="icon-upload">&nbsp;</i>' . __('Bulk Import'), array('action' => 'bulk_import'), array('escape' => false, 'class' => 'btn btn-mini btn-info')); ?>
+            </h2>
 
             <table cellpadding="0" cellspacing="0" class="table table-striped table-bordered">
                 <tr>
