@@ -180,7 +180,6 @@
                     <tr>
                         <th><?php echo __('Status State'); ?></th>
                         <th><?php echo __('Event Id'); ?></th>
-                        <th><?php echo __('Logged By'); ?></th>
                         <th><?php echo __('Recorded'); ?></th>
                         <th class="actions"><?php echo __('Actions'); ?></th>
                     </tr>
@@ -188,10 +187,9 @@
                     $i = 0;
                     foreach ($attendee['AttendeeStatusLog'] as $attendeeStatusLog):
                         ?>
-                        <tr>
-                            <td><?php echo $attendeeStatusLog['attendance_status_state_id']; ?></td>
-                            <td><?php echo $attendeeStatusLog['event_id']; ?></td>
-                            <td><?php echo $attendeeStatusLog['user_id']; ?></td>
+                        <tr><?php # Debugger::dump(); ?> 
+                            <td><?php echo $attendeeStatusLog['AttendanceStatusState']['title']; ?></td>
+                            <td><?php echo $attendeeStatusLog['Event']['title']; ?></td>
                             <td><?php echo h($this->Time->niceShort($attendeeStatusLog['created'])); ?></td>
                             <td class="actions">
                                 <?php echo $this->Html->link(__('View'), array('controller' => 'attendee_status_logs', 'action' => 'view', $attendeeStatusLog['id']), array('class' => 'btn btn-mini')); ?>

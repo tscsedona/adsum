@@ -39,8 +39,13 @@
                             <?php echo $this->Form->input('extid', array('class' => 'span12')); ?>
                         </div><!-- .controls -->
                     </div><!-- .control-group -->
-
-                    <?php # echo $this->Form->input('Event'); ?>
+                    
+                    <div class="control-group">
+                        <?php echo $this->Form->label('Event', 'Registered For', array('class' => 'control-label')); ?>
+                        <div class="controls">
+                            <?php echo $this->Form->input('Event', array('class' => 'input-block-level')); ?>
+                        </div><!-- .controls -->
+                    </div><!-- .control-group -->
 
                 </fieldset>
                 

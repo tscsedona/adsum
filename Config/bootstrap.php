@@ -35,7 +35,7 @@ Configure::write('Site.settings', array(
 /**
  * For development
  */
-# CakePlugin::load('DebugKit');
+ CakePlugin::load('DebugKit');
 
 
 /**

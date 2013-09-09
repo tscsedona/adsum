@@ -37,7 +37,7 @@ class AppController extends Controller {
     public $theme = "Adsum";
     
     public $components = array(
-       # 'DebugKit.Toolbar',
+        'DebugKit.Toolbar',
         'Session',
         'Auth' => array(
             'authenticate' => array(

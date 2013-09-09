@@ -36,6 +36,7 @@ class AttendeesController extends AppController {
 		if (!$this->Attendee->exists($id)) {
 			throw new NotFoundException(__('Invalid attendee'));
 		}
+        $this->Attendee->recursive = 2;
 		$options = array('conditions' => array('Attendee.' . $this->Attendee->primaryKey => $id));
 		$this->set('attendee', $this->Attendee->find('first', $options));
 	}

@@ -11,6 +11,8 @@
                     <h2><?php echo __('Edit Attendee'); ?></h2>
                     
                     <hr />
+                    
+                    <?php echo $this->Form->input('id'); ?> 
 
                     <div class="control-group">
                         <?php echo $this->Form->label('display_name', 'Display Name', array('class' => 'control-label')); ?>
@@ -47,7 +49,12 @@
                         </div><!-- .controls -->
                     </div><!-- .control-group -->
 
-                    <?php # echo $this->Form->input('Event'); ?>
+                    <div class="control-group">
+                        <?php echo $this->Form->label('Event', 'Registered For', array('class' => 'control-label')); ?>
+                        <div class="controls">
+                            <?php echo $this->Form->input('Event', array('class' => 'input-block-level')); ?>
+                        </div><!-- .controls -->
+                    </div><!-- .control-group -->
 
                 </fieldset>
 
