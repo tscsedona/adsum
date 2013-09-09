@@ -33,6 +33,9 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller {
     
+    // Adsum theme to use
+    public $theme = "Adsum";
+    
     public $components = array(
        # 'DebugKit.Toolbar',
         'Session',
@@ -55,13 +58,11 @@ class AppController extends Controller {
         $this->renderHomeLink();
     }
     
-    public $theme = "Adsum";
-    
-    
     /**
      * Toggle the home page link based on the
      * current user's logged in status
      * 
+     * @return var $homeLink
      */
     public function renderHomeLink() {
         if (!$this->Auth->loggedIn()) {

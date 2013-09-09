@@ -7,7 +7,7 @@ App::uses('AppController', 'Controller');
  * @property PaginatorComponent $Paginator
  */
 class OptionsController extends AppController {
-
+    
 /**
  * Components
  *
