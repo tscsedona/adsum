@@ -55,11 +55,7 @@ class AttendeeStatusLogsController extends AppController {
 				$this->Session->setFlash(__('The attendee status log could not be saved. Please, try again.'), 'flash/error');
 			}
 		}
-        if ($this->Auth->user('is_admin')) {
-            $this->set('loggedByState', false);
-        } else {
-            $this->set('loggedByState', true);
-        }
+        $this->determineLoggedByState();
 		$attendees = $this->AttendeeStatusLog->Attendee->find('list');
 		$attendanceStatusStates = $this->AttendeeStatusLog->AttendanceStatusState->find('list');
 		$events = $this->AttendeeStatusLog->Event->find('list');
@@ -89,6 +85,7 @@ class AttendeeStatusLogsController extends AppController {
 			$options = array('conditions' => array('AttendeeStatusLog.' . $this->AttendeeStatusLog->primaryKey => $id));
 			$this->request->data = $this->AttendeeStatusLog->find('first', $options);
 		}
+        $this->determineLoggedByState();
 		$attendees = $this->AttendeeStatusLog->Attendee->find('list');
 		$attendanceStatusStates = $this->AttendeeStatusLog->AttendanceStatusState->find('list');
 		$events = $this->AttendeeStatusLog->Event->find('list');
@@ -117,4 +114,13 @@ class AttendeeStatusLogsController extends AppController {
 		$this->Session->setFlash(__('Attendee status log was not deleted'), 'flash/error');
 		$this->redirect(array('action' => 'index'));
 	}
+    
+    protected function determineLoggedByState() {
+        if ($this->Auth->user('is_admin')) {
+            $this->set('loggedByState', false);
+        } else {
+            $this->set('loggedByState', true);
+        }
+    }
+    
 }

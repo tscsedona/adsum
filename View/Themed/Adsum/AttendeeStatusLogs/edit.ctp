@@ -36,7 +36,7 @@
                     <div class="control-group">
                         <?php echo $this->Form->label('logged_by', 'Logged By', array('class' => 'control-label')); ?>
                         <div class="controls">
-                            <?php echo $this->Form->input('logged_by', array('class' => 'span12', 'disabled' => true)); ?>
+                            <?php echo $this->Form->input('logged_by', array('class' => 'span12', 'disabled' => $loggedByState)); ?>
                         </div><!-- .controls -->
                     </div><!-- .control-group -->
 
