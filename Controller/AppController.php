@@ -51,10 +51,24 @@ class AppController extends Controller {
     
     public function beforeFilter() {
         parent::beforeFilter();
-        $this->Auth->allow();
         $this->set('authUser', $this->Auth->user());
+        $this->renderHomeLink();
     }
     
     public $theme = "Adsum";
+    
+    
+    /**
+     * Toggle the home page link based on the
+     * current user's logged in status
+     * 
+     */
+    public function renderHomeLink() {
+        if (!$this->Auth->loggedIn()) {
+            $this->set('homeLink', '/');
+        } else {
+            $this->set('homeLink', array('controller' => 'users', 'action' => 'dashboard'));
+        }
+    }
     
 }
