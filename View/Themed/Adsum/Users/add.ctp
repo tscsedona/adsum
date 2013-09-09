@@ -41,6 +41,13 @@
                     </div><!-- .control-group -->
                     
                     <div class="control-group">
+                        <?php echo $this->Form->label('password', 'Password', array('class' => 'control-label')); ?>
+                        <div class="controls">
+                            <?php echo $this->Form->input('password', array('class' => 'span12', 'type' => 'password')); ?>
+                        </div><!-- .controls -->
+                    </div><!-- .control-group -->
+                    
+                    <div class="control-group">
                         <?php echo $this->Form->label('extid', 'ExtID', array('class' => 'control-label')); ?>
                         <div class="controls">
                             <?php echo $this->Form->input('extid', array('class' => 'span12')); ?>
