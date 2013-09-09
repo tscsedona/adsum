@@ -1,7 +1,7 @@
 <div class="row">
     <div class="span6 offset3">
         <div class="well">
-            <p><?php echo __d('adsum', 'Welcome back, USERNAME.'); ?></p>
+            <p><?php echo __d('adsum', 'Welcome back, '); ?> <?php echo AuthComponent::user('first_name'); ?>.</p>
 
             <?php echo $this->Html->link('<i class="icon-calendar">&nbsp;</i> Check-in / Check-out',
                     array('controller' => 'AttendeeStatusLogs', 'action' => 'add'),
@@ -27,7 +27,7 @@
             <div class="row-fluid">
                 <div class="span4">
                     <?php echo $this->Html->link('<i class="icon-user">&nbsp;</i> Users',
-                            array('controller' => 'users'),
+                            array('controller' => 'users', 'action' => 'index'),
                             array('escape' => false,'class' => 'btn btn-large btn-block')); ?> 
                 </div><!-- /.span4 -->
                 <div class="span4">
