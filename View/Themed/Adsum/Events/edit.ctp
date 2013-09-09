@@ -10,6 +10,10 @@
                 <?php echo $this->Form->create('Event', array('inputDefaults' => array('label' => false), 'class' => 'form form-horizontal')); ?>
                 <fieldset>
                     <h2><?php echo __('Edit Event'); ?></h2>
+                    
+                    <hr />
+                    
+                    <?php echo $this->Form->input('id'); ?>
 
                     <div class="control-group">
                         <?php echo $this->Form->label('title', 'Title', array('class' => 'control-label')); ?>

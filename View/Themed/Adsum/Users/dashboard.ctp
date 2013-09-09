@@ -31,7 +31,10 @@
             <br />
             
             <div class="row-fluid">
-                    <a href="#" class="btn btn-large btn-block"><i class="icon-external-link-sign">&nbsp</i> Assign Attendees to Event</a>
+                    <?php echo $this->Html->link('<i class="icon-external-link">&nbsp;</i> Assign Attendees to Event',
+                            array('controller' => 'events', 'action' => 'assign'),
+                            array('escape' => false,'class' => 'btn btn-large btn-block')); ?> 
+
                     <?php if (AuthComponent::user('is_admin') == true) : ?>  
                         <?php echo $this->Html->link('<i class="icon-user">&nbsp;</i> Users',
                                 array('controller' => 'users', 'action' => 'index'),

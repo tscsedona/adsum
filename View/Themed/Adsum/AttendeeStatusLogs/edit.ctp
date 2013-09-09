@@ -11,6 +11,8 @@
                     <h2><?php echo __('Edit Attendee Status Log'); ?></h2>
                     
                     <hr />
+                    
+                    <?php echo $this->Form->input('id'); ?>
 
                     <div class="control-group">
                         <?php echo $this->Form->label('attendee_id', 'Attendee', array('class' => 'control-label')); ?>

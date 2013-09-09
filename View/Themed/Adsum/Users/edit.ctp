@@ -13,6 +13,8 @@
                     
                     <hr />
                     
+                    <?php echo $this->Form->input('id'); ?>
+                    
                     <div class="control-group">
                         <?php echo $this->Form->label('display_name', 'Display Name', array('class' => 'control-label')); ?>
                         <div class="controls">

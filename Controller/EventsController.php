@@ -60,6 +60,14 @@ class EventsController extends AppController {
 		$attendees = $this->Event->Attendee->find('list');
 		$this->set(compact('eventTypes', 'attendees'));
 	}
+    
+    public function assign($id = null) {
+        // Bulk assign users to an event
+        $events = $this->Event->find('list');
+        $this->loadModel('Attendee');
+        $attendees = $this->Attendee->find('list');
+		$this->set(compact('events', 'attendees'));
+    }
 
 /**
  * edit method

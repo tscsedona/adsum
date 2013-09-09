@@ -77,16 +77,7 @@
 
                 <table class="table table-striped table-bordered">
                     <tr>
-                        <th><?php echo __('Id'); ?></th>
-                        <th><?php echo __('Event Type Id'); ?></th>
-                        <th><?php echo __('Uuid'); ?></th>
-                        <th><?php echo __('Extid'); ?></th>
                         <th><?php echo __('Title'); ?></th>
-                        <th><?php echo __('Is Active'); ?></th>
-                        <th><?php echo __('Start Time'); ?></th>
-                        <th><?php echo __('End Time'); ?></th>
-                        <th><?php echo __('Attendee Count'); ?></th>
-                        <th><?php echo __('Created'); ?></th>
                         <th class="actions"><?php echo __('Actions'); ?></th>
                     </tr>
                     <?php
@@ -94,20 +85,10 @@
                     foreach ($attendee['Event'] as $event):
                         ?>
                         <tr>
-                            <td><?php echo $event['id']; ?></td>
-                            <td><?php echo $event['event_type_id']; ?></td>
-                            <td><?php echo $event['uuid']; ?></td>
-                            <td><?php echo $event['extid']; ?></td>
+                           
                             <td><?php echo $event['title']; ?></td>
-                            <td><?php echo $event['is_active']; ?></td>
-                            <td><?php echo $event['start_time']; ?></td>
-                            <td><?php echo $event['end_time']; ?></td>
-                            <td><?php echo $event['attendee_count']; ?></td>
-                            <td><?php echo $event['created']; ?></td>
                             <td class="actions">
-                                <?php echo $this->Html->link(__('View'), array('controller' => 'events', 'action' => 'view', $event['id']), array('class' => 'btn btn-mini')); ?>
-                                <?php echo $this->Html->link(__('Edit'), array('controller' => 'events', 'action' => 'edit', $event['id']), array('class' => 'btn btn-mini')); ?>
-                                <?php echo $this->Form->postLink(__('Delete'), array('controller' => 'events', 'action' => 'delete', $event['id']), array('class' => 'btn btn-mini'), __('Are you sure you want to delete # %s?', $event['id'])); ?>
+                                <?php echo $this->Html->link(__('Unregister'), '/', array('class' => 'btn btn-mini')); ?>
                             </td>
                         </tr>
                     <?php endforeach; ?>
@@ -116,10 +97,6 @@
             <?php else: ?> 
                 <p>This attendee is not yet registered for an event.</p>
             <?php endif; ?>
-
-            <div class="actions">
-                <?php echo $this->Html->link('<i class="icon-plus icon-white"></i> ' . __('New Event'), array('controller' => 'events', 'action' => 'add'), array('class' => 'btn btn-primary', 'escape' => false)); ?>
-            </div><!-- .actions -->
 
         </div><!-- .related -->
 
