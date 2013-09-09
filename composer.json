@@ -1,0 +1,18 @@
+{
+    "name": "adsum/adsum",
+    "type": "Application",
+    "description": "Event attendance tracking software for CakePHP",
+    "keywords": ["tracking","attendance"],
+    "homepage": "https://github.com/tscsedona/adsumCCI",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Chris Vogt",
+            "email": "cjv@sedonaconference.org",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    }
+}
