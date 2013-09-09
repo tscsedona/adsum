@@ -14,6 +14,9 @@ body {
 .navbar-inverse .navbar-inner a, .navbar-inverse .navbar-inner .nav a {
     color: #cecece;
 }
+.dropdown-menu>li>a {
+    color: #686868!important;
+}
 .navbar.navbar-static-top {
     border-bottom: 4px solid #FFD700;
 }
