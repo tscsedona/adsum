@@ -26,21 +26,23 @@
                             array('controller' => 'attendees'),
                             array('escape' => false,'class' => 'btn btn-large btn-block')); ?> 
                 </div><!-- /.span6 -->
-            </div><!-- /.row-fluid -->
-                
+            </div><!-- /.row-fluid -->  
+            
             <br />
             
             <div class="row-fluid">
                     <a href="#" class="btn btn-large btn-block"><i class="icon-external-link-sign">&nbsp</i> Assign Attendees to Event</a>
-                    <?php echo $this->Html->link('<i class="icon-user">&nbsp;</i> Users',
-                            array('controller' => 'users', 'action' => 'index'),
-                            array('escape' => false,'class' => 'btn btn-large btn-block')); ?> 
-                    <?php echo $this->Html->link('<i class="icon-file-text-alt">&nbsp;</i> Reports',
-                            '#',
-                            array('escape' => false,'class' => 'btn btn-large btn-block')); ?> 
-                    <?php echo $this->Html->link('<i class="icon-cog">&nbsp;</i> Configuration',
-                            array('controller' => 'options'),
-                            array('escape' => false,'class' => 'btn btn-large btn-block')); ?> 
+                    <?php if (AuthComponent::user('is_admin') == true) : ?>  
+                        <?php echo $this->Html->link('<i class="icon-user">&nbsp;</i> Users',
+                                array('controller' => 'users', 'action' => 'index'),
+                                array('escape' => false,'class' => 'btn btn-large btn-block')); ?> 
+                        <?php echo $this->Html->link('<i class="icon-file-text-alt">&nbsp;</i> Reports',
+                                '#',
+                                array('escape' => false,'class' => 'btn btn-large btn-block')); ?> 
+                        <?php echo $this->Html->link('<i class="icon-cog">&nbsp;</i> Configuration',
+                                array('controller' => 'options'),
+                                array('escape' => false,'class' => 'btn btn-large btn-block')); ?> 
+                    <?php endif; ?> 
             </div><!-- /.row-fluid -->
         </div><!-- /.well -->
     </div><!-- /.span6.offset3 -->
