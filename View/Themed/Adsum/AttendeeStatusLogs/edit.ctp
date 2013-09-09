@@ -34,9 +34,9 @@
                     </div><!-- .control-group -->
 
                     <div class="control-group">
-                        <?php echo $this->Form->label('logged_by', 'Logged By', array('class' => 'control-label')); ?>
+                        <?php echo $this->Form->label('user_id', 'Logged By', array('class' => 'control-label')); ?>
                         <div class="controls">
-                            <?php echo $this->Form->input('logged_by', array('class' => 'span12', 'disabled' => $loggedByState)); ?>
+                            <?php echo $this->Form->input('user_id', array('class' => 'span12', 'disabled' => $loggedByState)); ?>
                         </div><!-- .controls -->
                     </div><!-- .control-group -->
 
