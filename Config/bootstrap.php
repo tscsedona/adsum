@@ -36,6 +36,12 @@ Configure::write('Site.settings', array(
  * For development
  */
  CakePlugin::load('DebugKit');
+ 
+ 
+ /**
+  * Load application plugins
+  */
+  CakePlugin::load('Csv');
 
 
 /**
