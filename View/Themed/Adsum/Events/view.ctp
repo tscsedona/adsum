@@ -8,15 +8,6 @@
             <ul class="nav nav-list bs-docs-sidenav">			
                 <li><?php echo $this->Html->link(__('Edit Event'), array('action' => 'edit', $event['Event']['id']), array('class' => '')); ?> </li>
                 <li><?php echo $this->Form->postLink(__('Delete Event'), array('action' => 'delete', $event['Event']['id']), array('class' => ''), __('Are you sure you want to delete # %s?', $event['Event']['id'])); ?> </li>
-                <li><?php echo $this->Html->link(__('List Events'), array('action' => 'index'), array('class' => '')); ?> </li>
-                <li><?php echo $this->Html->link(__('New Event'), array('action' => 'add'), array('class' => '')); ?> </li>
-                <li><?php echo $this->Html->link(__('List Event Types'), array('controller' => 'event_types', 'action' => 'index'), array('class' => '')); ?> </li>
-                <li><?php echo $this->Html->link(__('New Event Type'), array('controller' => 'event_types', 'action' => 'add'), array('class' => '')); ?> </li>
-                <li><?php echo $this->Html->link(__('List Attendee Status Logs'), array('controller' => 'attendee_status_logs', 'action' => 'index'), array('class' => '')); ?> </li>
-                <li><?php echo $this->Html->link(__('New Attendee Status Log'), array('controller' => 'attendee_status_logs', 'action' => 'add'), array('class' => '')); ?> </li>
-                <li><?php echo $this->Html->link(__('List Attendees'), array('controller' => 'attendees', 'action' => 'index'), array('class' => '')); ?> </li>
-                <li><?php echo $this->Html->link(__('New Attendee'), array('controller' => 'attendees', 'action' => 'add'), array('class' => '')); ?> </li>
-
             </ul><!-- .nav nav-list bs-docs-sidenav -->
 
         </div><!-- .actions -->
@@ -25,7 +16,7 @@
 
     <div id="page-content" class="span9">
 
-        <div class="events view">
+        <div class="events view well well-small">
 
             <h2><?php echo h($event['Event']['title']); ?></h2>
 
@@ -77,7 +68,7 @@
                     </td>
                 </tr><tr>		<td><strong><?php echo __('Created'); ?></strong></td>
                     <td>
-                        <?php echo h($event['Event']['created']); ?>
+                        <?php echo $this->Time->nice($event['Event']['created']); ?>
                         &nbsp;
                     </td>
                 </tr>			</table><!-- .table table-striped table-bord ered -->
