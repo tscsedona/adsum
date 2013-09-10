@@ -15,14 +15,11 @@ class AttendeeStatusLogsControllerTest extends ControllerTestCase {
 	public $fixtures = array(
 		'app.attendee_status_log',
 		'app.attendee',
-		'app.attendee_metum',
 		'app.event',
-		'app.event_type',
 		'app.attendees_event',
-		'app.attendance_status_state',
-		'app.user'
+		'app.attendance_status_state'
 	);
-
+    
 /**
  * testIndex method
  *
@@ -36,31 +33,36 @@ class AttendeeStatusLogsControllerTest extends ControllerTestCase {
  *
  * @return void
  */
-	public function testView() {
-	}
+#	public function testView() {
+#	}
 
 /**
  * testAdd method
  *
  * @return void
  */
-	public function testAdd() {
-	}
+#	public function testAdd() {
+#	}
 
 /**
  * testEdit method
  *
  * @return void
  */
-	public function testEdit() {
-	}
+#	public function testEdit() {
+#	}
 
 /**
  * testDelete method
  *
  * @return void
  */
-	public function testDelete() {
-	}
-
+#	public function testDelete() {
+#	}
+    
+    public function testTallyAttendeeHoursByEvent() {
+        $result = $this->testAction('/AttendeeStatusLogs/tallyAttendeeHoursByEvent');
+        
+    }
+    
 }

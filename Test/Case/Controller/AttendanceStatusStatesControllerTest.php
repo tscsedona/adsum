@@ -61,5 +61,9 @@ class AttendanceStatusStatesControllerTest extends ControllerTestCase {
  */
 	public function testDelete() {
 	}
+    
+    public function testTallyAttendeeHoursByEvent() {
+        
+    }
 
 }

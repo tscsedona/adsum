@@ -21,6 +21,7 @@ class AttendeeStatusLogsController extends AppController {
  * @return void
  */
 	public function index() {
+        $this->tallyAttendeeHoursByEvent();
 		$this->AttendeeStatusLog->recursive = 0;
 		$this->set('attendeeStatusLogs', $this->paginate());
 	}
@@ -115,12 +116,39 @@ class AttendeeStatusLogsController extends AppController {
 		$this->redirect(array('action' => 'index'));
 	}
     
+    # -----------------
+    
+    /**
+     * Determine whether the user, if an admin,
+     * may edit the status `Logged By` value
+     */
     protected function determineLoggedByState() {
         if ($this->Auth->user('is_admin')) {
             $this->set('loggedByState', false);
         } else {
             $this->set('loggedByState', true);
         }
+    }
+    
+    public function tallyAttendeeHoursByEvent() {
+        $user_id = 1;
+        $checkinState = 1;
+        $checkoutState = 2;
+
+        $attendeeStatusLogs = $this->AttendeeStatusLog->find('all', array(
+            'conditions' => array(
+                'AttendeeStatusLog.attendee_id' => $user_id,
+            ),
+            'fields' => array(
+                'AttendeeStatusLog.id',
+                'AttendeeStatusLog.attendance_status_state_id',
+                'AttendeeStatusLog.created',
+                'AttendeeStatusLog.event_id'
+            )
+        ));
+        $attendeeStatusLogs = Set::extract($attendeeStatusLogs, '{n}.AttendeeStatusLog');
+        
+        # Debugger::dump($attendeeStatusLogs);
     }
     
 }
