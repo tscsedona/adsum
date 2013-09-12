@@ -62,6 +62,17 @@ class EventsController extends AppController {
 	}
     
     public function assign($id = null) {
+		if ($this->request->is('post')) {
+            Debugger::dump($this->request->data);
+            die();
+			if ($this->Event->save($this->request->data)) {
+				$this->Session->setFlash(__('The attendee list has been updated.'), 'flash/success');
+				$this->redirect(array('action' => 'index'));
+			} else {
+				$this->Session->setFlash(__('The event could not be saved. Please, try again.'), 'flash/error');
+			}
+		}
+        
         // Bulk assign users to an event
         $events = $this->Event->find('list');
         $this->loadModel('Attendee');
