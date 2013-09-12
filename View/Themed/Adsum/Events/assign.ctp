@@ -3,7 +3,7 @@
         <div class="well">
             <div class="assignment form">
 
-                <?php echo $this->Form->create('AttendeesEvents', array('inputDefaults' => array('label' => false), 'class' => 'form form-horizontal')); ?>
+                <?php echo $this->Form->create('Event', array('inputDefaults' => array('label' => false), 'class' => 'form form-horizontal')); ?>
                 
                 <fieldset>
                     <h2><?php echo __('Assign Attendees'); ?></h2>
