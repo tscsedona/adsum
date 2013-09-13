@@ -16,7 +16,7 @@
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 
-$cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework');
+$adsumDescription = __d('adsum', 'Adsum - Event Attendance Tracking Software');
 ?>
 <?php echo $this->Html->docType('html5'); ?> 
 <html>
@@ -38,8 +38,8 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
         /jgs  /-'`  `\   \  \-.\ -->
         
 		<title>
-			<?php echo $cakeDescription ?> :
-			<?php echo $title_for_layout; ?> 
+			<?php echo $adsumDescription ?>
+			<?php # echo $title_for_layout; ?> 
 		</title>
         <?php
         echo $this->Html->meta(
