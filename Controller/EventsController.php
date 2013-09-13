@@ -65,7 +65,7 @@ class EventsController extends AppController {
 		if ($this->request->is('post')) {
             Debugger::dump($this->request->data);
             # die();
-			if ($this->Event->saveAll($this->request->data)) {
+			if ($this->Event->updateAll($this->request->data)) {
 				$this->Session->setFlash(__('The attendee list has been updated.'), 'flash/success');
 				$this->redirect(array('action' => 'index'));
 			} else {
@@ -73,7 +73,6 @@ class EventsController extends AppController {
 			}
 		}
         
-        // Bulk assign users to an event
         $events = $this->Event->find('list');
         $this->loadModel('Attendee');
         $attendees = $this->Attendee->find('list');
