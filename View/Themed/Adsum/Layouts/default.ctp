@@ -41,7 +41,13 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 			<?php echo $cakeDescription ?> :
 			<?php echo $title_for_layout; ?> 
 		</title>
-		<?php echo $this->Html->meta('icon'); ?> 
+        <?php
+        echo $this->Html->meta(
+            'favicon.ico',
+            '/theme/Adsum/favicon.ico',
+            array('type' => 'icon')
+        );
+        ?>
         <?php echo $this->fetch('meta'); ?> 
         
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -50,7 +56,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
         <?php echo $this->Html->css('bootstrap-responsive.min'); ?> 
         <?php echo $this->Html->css('core'); ?> 
         <?php echo $this->Html->css('adsum'); ?> 
-        <?php echo $this->Html->css('//netdna.bootstrapcdn.com/font-awesome/3.2.0/css/font-awesome.min.css'); ?>  
+        <?php echo $this->Html->css('//netdna.bootstrapcdn.com/font-awesome/3.2.0/css/font-awesome.min.css'); ?> 
  
         <?php echo $this->fetch('css'); ?> 
         <?php echo $this->fetch('scriptHead'); ?> 
