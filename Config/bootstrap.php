@@ -42,6 +42,7 @@ Configure::write('Site.settings', array(
   * Load application plugins
   */
   CakePlugin::load('Csv');
+  CakePlugin::load('AdsumStateBar');
 
 
 /**
