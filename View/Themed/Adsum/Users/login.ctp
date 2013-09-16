@@ -1,5 +1,5 @@
 <div class="row text-center">
-  <h1><?php echo Configure::read('Site.settings.name'); ?> </h1>
+  <h1><?php echo Configure::read('Site.settings.name'); ?> <span id="version">v<?php echo VERSION; ?> </h1>
 </div><!-- /.row -->
     
 <div class="row-fluid">

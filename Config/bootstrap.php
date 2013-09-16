@@ -28,7 +28,7 @@
  * Settings that alter the adsumCCI system
  */
 Configure::write('Site.settings', array(
-    'name'  => __d('adsum', 'AdsumCCI'),
+    'name'  => __d('adsum', 'Adsum'),
     'email' => 'you@email.com'
 ));
 
