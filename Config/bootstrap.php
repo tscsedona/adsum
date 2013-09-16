@@ -52,6 +52,15 @@ Cache::config('default', array('engine' => 'File'));
 
 
 /**
+ * Define Adsum VERSION as
+ * a global constant
+ */
+$verFile = fopen(APP . 'VERSION', "r");
+define('VERSION', fread($verFile, 5));
+fclose($verFile);
+
+
+/**
  * The settings below can be used to set additional paths to models, views and controllers.
  *
  * App::build(array(
