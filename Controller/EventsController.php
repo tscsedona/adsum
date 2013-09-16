@@ -63,9 +63,7 @@ class EventsController extends AppController {
     
     public function assign() {
 		if ($this->request->is('post')) {
-            Debugger::dump($this->request->data);
-            # die();
-			if ($this->Event->updateAll($this->request->data)) {
+			if ($this->Event->save($this->request->data)) {
 				$this->Session->setFlash(__('The attendee list has been updated.'), 'flash/success');
 				$this->redirect(array('action' => 'index'));
 			} else {
