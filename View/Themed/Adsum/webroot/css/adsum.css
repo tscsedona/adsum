@@ -33,3 +33,6 @@ td.actions {
 .well {
     background: rgba(250,250,250,0.8);
 }
+form#AttendeeStatusLogEditForm .datetime select {
+    width: auto;
+}

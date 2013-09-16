@@ -1,7 +1,7 @@
 
 <div id="page-container" class="row-fluid">
 
-    <div id="page-content" class="span6 offset3">
+    <div id="page-content" class="span8 offset2">
         <div class="well">
 
             <div class="attendeeStatusLogs form">
@@ -41,6 +41,15 @@
                             <?php echo $this->Form->input('user_id', array('class' => 'span12', 'disabled' => $loggedByState)); ?>
                         </div><!-- .controls -->
                     </div><!-- .control-group -->
+                    
+                    <?php if (AuthComponent::user('is_admin') == true) : ?>
+                    <div class="control-group">
+                        <?php echo $this->Form->label('created', 'Timestamp', array('class' => 'control-label')); ?>
+                        <div class="controls">
+                            <?php echo $this->Form->input('created', array('disabled' => $loggedByState)); ?>
+                        </div><!-- .controls -->
+                    </div><!-- .control-group -->
+                    <?php endif; ?> 
 
                 </fieldset>
                 

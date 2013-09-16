@@ -23,7 +23,13 @@
                     <div class="control-group">
                         <?php echo $this->Form->label('attendance_status_state_id', 'Status State', array('class' => 'control-label')); ?>
                         <div class="controls">
-                            <?php echo $this->Form->input('attendance_status_state_id', array('class' => 'span12')); ?>
+                            <?php echo $this->Form->input('attendance_status_state_id', array(
+                                'class' => 'span6',
+                                'type' => 'radio',
+    'legend' => false,
+    'between' => '--between---',
+    'separator' => '&nbsp;',
+                                )); ?>
                         </div><!-- .controls -->
                     </div><!-- .control-group -->
 

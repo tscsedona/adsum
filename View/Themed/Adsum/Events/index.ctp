@@ -17,7 +17,7 @@
                     <th><?php echo $this->Paginator->sort('title'); ?></th>
                     <th><?php echo $this->Paginator->sort('start_time', 'Start'); ?></th>
                     <th><?php echo $this->Paginator->sort('end_time', 'End'); ?></th>
-                    <th><?php echo $this->Paginator->sort('attendee_count', 'Attendees'); ?></th>
+                    <!-- <th><?php # echo $this->Paginator->sort('attendee_count', 'Attendees'); ?></th> -->
                     <th class="actions"><?php echo __('Actions'); ?></th>
                 </tr>
                 <?php foreach ($events as $event): ?>
@@ -28,7 +28,7 @@
                         <td><?php echo h($event['Event']['title']); ?>&nbsp;</td>
                         <td><?php echo h($this->Time->format($event['Event']['start_time'])); ?>&nbsp;</td>
                         <td><?php echo h($this->Time->format($event['Event']['end_time'])); ?>&nbsp;</td>
-                        <td><?php echo h($event['Event']['attendee_count']); ?>&nbsp;</td>
+                        <!-- <td><?php # echo h($event['Event']['attendee_count']); ?>&nbsp;</td> -->
                         <td class="actions">
                             <?php echo $this->Html->link('<i class="icon-eye-open">&nbsp;</i> ' . __('View'), array('action' => 'view', $event['Event']['id']), array('escape' => false, 'class' => 'btn btn-mini')); ?>
                             <?php echo $this->Html->link('<i class="icon-edit">&nbsp;</i> ' . __('Edit'), array('action' => 'edit', $event['Event']['id']), array('escape' => false, 'class' => 'btn btn-mini')); ?>
