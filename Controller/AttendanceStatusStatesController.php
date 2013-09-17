@@ -1,10 +1,24 @@
 <?php
 App::uses('AppController', 'Controller');
+
 /**
- * AttendanceStatusStates Controller
+ * Attendance Status States Controller
  *
- * @property AttendanceStatusState $AttendanceStatusState
- * @property PaginatorComponent $Paginator
+ * PHP ≥5.4
+ *
+ * Adsum : Attendance Management Software (http://adsum.sedonaconference.org)
+ * Copyright (c) 2013 The Sedona Conferencee® (https://thesedonaconference.org)
+ *
+ * Licensed under The MIT License
+ * For full copyright and license information, please see the LICENSE file
+ * Redistributions of files must retain the above copyright notice.
+ *
+ * @copyright     Copyright (c) The Sedona Conference® (https://thesedonaconference.org)
+ * @link          http://cakephp.org CakePHP(tm) Project
+ * @package       CakePHP(tm)
+ * @subpackage    Adsum
+ * @since         Adsum v 0.1.0
+ * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 class AttendanceStatusStatesController extends AppController {
 
