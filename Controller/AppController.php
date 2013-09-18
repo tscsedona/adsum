@@ -55,7 +55,7 @@ class AppController extends Controller {
     public function beforeFilter() {
         parent::beforeFilter();
         $this->set('authUser', $this->Auth->user());
-        $this->set('siteName', )
+        $this->set('siteName', $this->determineSiteName());
         $this->renderHomeLink();
     }
     
