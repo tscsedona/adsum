@@ -57,7 +57,10 @@ class AttendeeStatusLogsController extends AppController {
 			}
 		}
         $this->determineLoggedByState();
-		$attendees = $this->AttendeeStatusLog->Attendee->find('list');
+		$attendees = $this->AttendeeStatusLog->Attendee->find(
+                'list', array(
+                    'order' => array('Attendee.last_name ASC')
+                ));
 		$attendanceStatusStates = $this->AttendeeStatusLog->AttendanceStatusState->find('list');
 		$events = $this->AttendeeStatusLog->Event->find('list');
 		$users = $this->AttendeeStatusLog->User->find('list');
