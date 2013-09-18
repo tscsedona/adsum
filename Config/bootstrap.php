@@ -59,6 +59,11 @@ $verFile = fopen(APP . 'VERSION', "r");
 define('VERSION', fread($verFile, 5));
 fclose($verFile);
 
+Configure::write('Session', array(
+    'cookie' => 'adsum',
+    'timeout' => 60
+));
+
 
 /**
  * The settings below can be used to set additional paths to models, views and controllers.
