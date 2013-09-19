@@ -29,6 +29,8 @@
 	Router::connect('/', array('controller' => 'users', 'action' => 'login'));
     Router::connect('/dashboard', array('controller' => 'users', 'action' => 'dashboard'));
     
+    Router::connect('/qr', array('controller' => 'AttendeeStatusLogs', 'action' => 'add'));
+    
 /**
  * ...and connect the rest of 'Pages' controller's urls.
  */

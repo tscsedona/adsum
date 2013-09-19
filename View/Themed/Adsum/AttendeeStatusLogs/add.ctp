@@ -16,7 +16,7 @@
                     <div class="control-group">
                         <?php echo $this->Form->label('attendee_id', 'Attendee', array('class' => 'control-label')); ?>
                         <div class="controls">
-                            <?php echo $this->Form->input('attendee_id', array('class' => 'span12')); ?>
+                            <?php echo $this->Form->input('attendee_id', array('class' => 'span12', 'default' => $defaultAttendee)); ?>
                         </div><!-- .controls -->
                     </div><!-- .control-group -->
 

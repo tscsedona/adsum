@@ -62,6 +62,14 @@ class AttendeeStatusLogsController extends AppController {
 				$this->Session->setFlash(__('The attendee status log could not be saved. Please, try again.'), 'flash/error');
 			}
 		}
+        $defaultAttendee = NULL;
+        if ($this->request->query) {
+            $defaultAttendee = $this->AttendeeStatusLog->Attendee->findByExtid($this->request->query['attendee'], 'id');
+#            Debugger::dump($this->request->query['attendee']);
+#            Debugger::dump($defaultAttendee['Attendee']['id']);
+            $this->set('defaultAttendee', $defaultAttendee['Attendee']['id']);
+        }
+        
         $this->determineLoggedByState();
 		$attendees = $this->AttendeeStatusLog->Attendee->find(
                 'list', array(
@@ -130,6 +138,8 @@ class AttendeeStatusLogsController extends AppController {
     /**
      * Determine whether the user, if an admin,
      * may edit the status `Logged By` value
+     * 
+     * @todo this is incomplete
      */
     protected function determineLoggedByState() {
         if ($this->Auth->user('is_admin')) {
