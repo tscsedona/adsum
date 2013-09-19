@@ -23,7 +23,7 @@
                 <?php foreach ($events as $event): ?>
                     <tr>
                         <td>
-                            <?php echo $this->Html->link($event['EventType']['title'], array('controller' => 'event_types', 'action' => 'view', $event['EventType']['id'])); ?>
+                            <span class="label"><?php echo $event['EventType']['title']; ?></span>
                         </td>
                         <td><?php echo h($event['Event']['title']); ?>&nbsp;</td>
                         <td><?php echo h($this->Time->format($event['Event']['start_time'])); ?>&nbsp;</td>
