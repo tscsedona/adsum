@@ -26,9 +26,9 @@
                             <?php echo $this->Form->input('attendance_status_state_id', array(
                                 'class' => 'span6',
                                 'type' => 'radio',
-    'legend' => false,
-    'between' => '--between---',
-    'separator' => '&nbsp;',
+                                'legend' => false,
+                                'between' => '--between---',
+                                'separator' => '&nbsp;',
                                 )); ?>
                         </div><!-- .controls -->
                     </div><!-- .control-group -->
@@ -52,7 +52,10 @@
                 <hr />
                 
                 <div class="text-right">
-                   <?php echo $this->Form->submit('Submit', array('class' => 'btn btn-large btn-success')); ?>
+                    <p>
+                        <?php echo $this->Form->submit('Save & Add Another', array('class' => 'btn', 'name' => 'submit', 'div' => false)); ?> 
+                        <?php echo $this->Form->submit('Save', array('class' => 'btn btn-success', 'name' => 'submit', 'div' => false)); ?> 
+                    </p>
                 </div><!-- /.text-right -->
                 <?php echo $this->Form->end(); ?>
 

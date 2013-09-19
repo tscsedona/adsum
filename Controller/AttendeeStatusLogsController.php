@@ -51,7 +51,13 @@ class AttendeeStatusLogsController extends AppController {
 			$this->AttendeeStatusLog->create();
 			if ($this->AttendeeStatusLog->save($this->request->data)) {
 				$this->Session->setFlash(__('The attendee status log has been saved'), 'flash/success');
-				$this->redirect(array('action' => 'index'));
+                
+                if ($this->request->data['submit'] === 'Save & Add Another') {
+                    $this->redirect(array('action' => 'add'));
+                } else {
+    				$this->redirect(array('action' => 'index'));
+                }
+                
 			} else {
 				$this->Session->setFlash(__('The attendee status log could not be saved. Please, try again.'), 'flash/error');
 			}
