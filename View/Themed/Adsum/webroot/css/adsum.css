@@ -36,3 +36,8 @@ td.actions {
 form#AttendeeStatusLogEditForm .datetime select {
     width: auto;
 }
+select#AttendeeAttendee {
+    min-height: 400px;
+    height: 80%;
+    height: auto;
+}
