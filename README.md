@@ -1,6 +1,8 @@
 # AdsumCCI
 
-**WIP** Adsum is [free and open-source](http://en.wikipedia.org/wiki/Free_and_open-source_software) legal event attendance software (FLEAS), built on [CakePHP 2.x](https://github.com/cakephp/cakephp).
+**WIP** Adsum is intuitive, web-based event attendance tracking software built to adapt to your needs. It is created and maintained by [Chris Vogt](https://github.com/chrisvogt) under the guidance of [Nate Nelson](https://github.com/nbnelson).
+
+Adsum is built on [CakePHP](http://cakephp.org/).
 
 ![AdsumCCI Screenshot](/screenshot.png)
 
