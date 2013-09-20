@@ -29,6 +29,7 @@
 	Router::connect('/', array('controller' => 'users', 'action' => 'login'));
     Router::connect('/dashboard', array('controller' => 'users', 'action' => 'dashboard'));
     
+    Router::connect('/status/update', array('controller' => 'AttendeeStatusLogs', 'action' => 'add'));
     Router::connect('/qr', array('controller' => 'AttendeeStatusLogs', 'action' => 'add'));
     
 /**

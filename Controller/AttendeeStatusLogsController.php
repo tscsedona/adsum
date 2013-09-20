@@ -62,14 +62,12 @@ class AttendeeStatusLogsController extends AppController {
 				$this->Session->setFlash(__('The attendee status log could not be saved. Please, try again.'), 'flash/error');
 			}
 		}
-        $defaultAttendee = NULL;
+        $attendeeInputOptions = array('class' => 'span12');
         if ($this->request->query) {
             $defaultAttendee = $this->AttendeeStatusLog->Attendee->findByExtid($this->request->query['attendee'], 'id');
-#            Debugger::dump($this->request->query['attendee']);
-#            Debugger::dump($defaultAttendee['Attendee']['id']);
-            $this->set('defaultAttendee', $defaultAttendee['Attendee']['id']);
+            $attendeeInputOptions['default'] = $defaultAttendee;
         }
-        
+#        Debugger::dump($attendeeInputOptions);
         $this->determineLoggedByState();
 		$attendees = $this->AttendeeStatusLog->Attendee->find(
                 'list', array(
@@ -78,7 +76,7 @@ class AttendeeStatusLogsController extends AppController {
 		$attendanceStatusStates = $this->AttendeeStatusLog->AttendanceStatusState->find('list');
 		$events = $this->AttendeeStatusLog->Event->find('list');
 		$users = $this->AttendeeStatusLog->User->find('list');
-		$this->set(compact('attendees', 'attendanceStatusStates', 'events', 'users'));
+		$this->set(compact('attendees', 'attendanceStatusStates', 'attendeeInputOptions', 'events', 'users'));
 	}
 
 /**
