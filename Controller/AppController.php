@@ -85,10 +85,10 @@ class AppController extends Controller {
      */
     protected function determineSiteName() {
        $this->loadModel('Option');
-       if (Configure::read('Site.settings.name')) {
-           $siteName = Configure::read('Site.settings.name'); 
-       } elseif ($this->Option->getOption('Site.name')) {
+       if ($this->Option->getOption('Site.name')) {
             $siteName = $this->Option->getOption('Site.name');
+       } elseif (Configure::read('Site.settings.name')) {
+           $siteName = Configure::read('Site.settings.name'); 
        } else {
            $siteName = 'Adsum';
        }
