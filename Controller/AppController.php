@@ -7,7 +7,7 @@
  *
  * PHP ≥5.4
  *
- * Adsum : Attendance Management Software (http://adsum.sedonaconference.org)
+ * Adsum : Attendance Management Software (https://github.com/tscsedona/adsum)
  * Copyright (c) 2013 The Sedona Conferencee® (https://thesedonaconference.org)
  *
  * Licensed under The MIT License
@@ -15,11 +15,12 @@
  * Redistributions of files must retain the above copyright notice.
  *
  * @copyright     Copyright (c) The Sedona Conference® (https://thesedonaconference.org)
- * @link          http://cakephp.org CakePHP(tm) Project
+ * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ * @link          https://github.com/tscsedona/adsum Adsum on GitHub
  * @package       CakePHP(tm)
  * @subpackage    Adsum
  * @since         Adsum v 0.1.0
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ */
 App::uses('Controller', 'Controller');
 
 /**

@@ -8,7 +8,7 @@ App::uses('AppModel', 'Model');
  *
  * PHP ≥5.4
  *
- * Adsum : Attendance Management Software (http://adsum.sedonaconference.org)
+ * Adsum : Attendance Management Software (https://github.com/tscsedona/adsum)
  * Copyright (c) 2013 The Sedona Conferencee® (https://thesedonaconference.org)
  *
  * Licensed under The MIT License
