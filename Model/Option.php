@@ -22,7 +22,6 @@ App::uses('AppModel', 'Model');
  * @since         Adsum v 0.1.0
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
-App::uses('Controller', 'Controller');
 
 /**
  * Option Model
@@ -30,7 +29,7 @@ App::uses('Controller', 'Controller');
  * @package		app.Model.Option
  */
 class Option extends AppModel {
-
+    
 /**
  * Validation rules
  *
@@ -53,17 +52,18 @@ class Option extends AppModel {
 # \//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\
 #  ""  ""  ""  ""  ""  ""  ""  ""  ""  ""  ""  ""  ""
     
-    /**
-     * Site name getter method
-     * 
-     * @return mixed[string|boolean]
-     */
-    public function getSiteName() {
-        $site_name = $this->Option->find('first', array(
-            'conditions' => array('Option.key' => 'Site.name')
+/**
+ * Dynamic site option getter method
+ * 
+ * @param string $key
+ * @return mixed[boolean|string]
+ */
+    public function getOption($key) {
+        $result = $this->find('first', array(
+            'conditions' => array('Option.key' => $key)
         ));
-        if ($site_name) {
-            return $site_name;
+        if ($result) {
+            return $result['Option']['value'];
         } else {
             return false;
         }

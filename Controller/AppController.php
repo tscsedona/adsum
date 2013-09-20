@@ -84,28 +84,15 @@ class AppController extends Controller {
      * @return string
      */
     protected function determineSiteName() {
+       $this->loadModel('Option');
        if (Configure::read('Site.settings.name')) {
            $siteName = Configure::read('Site.settings.name'); 
-       } elseif ($this->isOptionNameSet) {
-           $siteName = $this->isOptionNameSet;
+       } elseif ($this->Option->getOption('Site.name')) {
+            $siteName = $this->Option->getOption('Site.name');
        } else {
            $siteName = 'Adsum';
        }
-    }
-    
-    /**
-     * action to determine if site name
-     * is a specified option value
-     * 
-     * @return mixed[string|boolean]
-     */
-    protected function isOptionNameSet() {
-        $this->loadModel('Options');
-        if ($this->Option->getSiteName()) {
-            return $this->Option->getSiteName();
-        } else {
-            return false;
-        }
+       return $siteName;
     }
     
 }
