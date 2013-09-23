@@ -139,6 +139,8 @@
 
         </div><!-- .related -->
 
+        <?php /*
+        
         <hr />
 
         <div class="related">
@@ -178,6 +180,8 @@
                 <?php echo $this->Html->link('<i class="icon-plus icon-white"></i> ' . __('New Attendee Status Log'), array('controller' => 'attendee_status_logs', 'action' => 'add'), array('class' => 'btn btn-primary', 'escape' => false)); ?>				</div><!-- .actions -->
 
         </div><!-- .related -->
+         * 
+         */ ?> 
 
 
     </div><!-- #page-content .span9 -->
