@@ -7,7 +7,7 @@
 
             <ul class="nav nav-list bs-docs-sidenav">			
                 <li><?php echo $this->Html->link(__('Edit Attendee'), array('action' => 'edit', $attendee['Attendee']['id']), array('class' => '')); ?> </li>
-                <li><?php echo $this->Html->link(__('Add Bar Number'), array('controller' => 'attendee_meta', 'action' => 'add'), array('class' => '')); ?> </li>
+                <li><?php echo $this->Html->link(__('Add Bar Number'), array('controller' => 'StateBars', 'action' => 'add', 'plugin' => true), array('class' => '')); ?> </li>
                 <li><?php echo $this->Html->link(__('Record New Status'), array('controller' => 'attendee_status_logs', 'action' => 'add'), array('class' => '')); ?> </li>
                 <li><?php echo $this->Form->postLink(__('Delete Attendee'), array('action' => 'delete', $attendee['Attendee']['id']), array('class' => ''), __('Are you sure you want to delete # %s?', $attendee['Attendee']['id'])); ?> </li>
             </ul><!-- .nav nav-list bs-docs-sidenav -->
@@ -110,9 +110,6 @@
 
                 <table class="table table-striped table-bordered">
                     <tr>
-                        <th><?php echo __('Id'); ?></th>
-                        <th><?php echo __('Attendee Id'); ?></th>
-                        <th><?php echo __('Key'); ?></th>
                         <th><?php echo __('Value'); ?></th>
                         <th class="actions"><?php echo __('Actions'); ?></th>
                     </tr>
@@ -121,9 +118,6 @@
                     foreach ($attendee['AttendeeMetum'] as $attendeeMetum):
                         ?>
                         <tr>
-                            <td><?php echo $attendeeMetum['id']; ?></td>
-                            <td><?php echo $attendeeMetum['attendee_id']; ?></td>
-                            <td><?php echo $attendeeMetum['key']; ?></td>
                             <td><?php echo $attendeeMetum['value']; ?></td>
                             <td class="actions">
                                 <?php echo $this->Html->link(__('View'), array('controller' => 'attendee_meta', 'action' => 'view', $attendeeMetum['id']), array('class' => 'btn btn-mini')); ?>
@@ -141,7 +135,7 @@
 
 
             <div class="actions">
-                <?php echo $this->Html->link('<i class="icon-plus icon-white"></i> ' . __('Add New Bar Number'), array('controller' => 'attendee_meta', 'action' => 'add'), array('class' => 'btn btn-primary', 'escape' => false)); ?>				</div><!-- .actions -->
+                <?php echo $this->Html->link('<i class="icon-plus icon-white"></i> ' . __('Add New Bar Number'), array('controller' => 'StateBars', 'action' => 'add', 'plugin' => true), array('class' => 'btn btn-primary', 'escape' => false)); ?>				</div><!-- .actions -->
 
         </div><!-- .related -->
 
