@@ -1,13 +1,5 @@
 <?php
-App::uses('AppModel', 'Model');
 /**
- * Option Model
- *
- * Controls site-wide configuration for the
- * Adsum admin interface
- *
- * PHP ≥5.4
- *
  * Adsum : Attendance Management Software (https://github.com/tscsedona/adsum)
  * Copyright (c) 2013 The Sedona Conferencee® (https://thesedonaconference.org)
  *
@@ -16,12 +8,9 @@ App::uses('AppModel', 'Model');
  * Redistributions of files must retain the above copyright notice.
  *
  * @copyright     Copyright (c) The Sedona Conference® (https://thesedonaconference.org)
- * @link          http://cakephp.org CakePHP(tm) Project
- * @package       CakePHP(tm)
- * @subpackage    Adsum
- * @since         Adsum v 0.1.0
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
+App::uses('AppModel', 'Model');
 
 /**
  * Option Model
