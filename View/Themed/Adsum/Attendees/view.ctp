@@ -88,7 +88,7 @@
                            
                             <td><?php echo $event['title']; ?></td>
                             <td class="actions">
-                                <?php echo $this->Html->link(__('Unregister'), '/', array('class' => 'btn btn-mini')); ?>
+                                <?php # echo $this->Form->postLink(__('Unregister'), array('controller' => 'events', 'action' => 'unassign', array('event_id' => $event['id'], 'attendee_id' => $attendee['Attendee']['id'])), array('class' => 'btn btn-mini btn-block'), __('Are you sure you want to delete # %s?')); ?>
                             </td>
                         </tr>
                     <?php endforeach; ?>
