@@ -49,7 +49,7 @@ class EventsController extends AppController {
 			throw new NotFoundException(__('Invalid event'));
 		}
 		$options = array('conditions' => array('Event.' . $this->Event->primaryKey => $id));
-        $this->set('event_attendees', $this->Event->Attendee->find('count'));
+#        $this->set('event_attendees', $this->Event->Attendee->find('count'));
 		$this->set('event', $this->Event->find('first', $options));
 	}
 
