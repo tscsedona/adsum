@@ -19,6 +19,8 @@
                             <?php echo $this->Form->input('attendee_id', $attendeeInputOptions); ?>
                         </div><!-- .controls -->
                     </div><!-- .control-group -->
+                    
+                    <div class="ajax_loading_image"></div>
 
                     <div class="control-group">
                         <?php echo $this->Form->label('attendance_status_state_id', 'Status State', array('class' => 'control-label')); ?>

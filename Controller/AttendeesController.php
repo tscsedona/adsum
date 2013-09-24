@@ -27,6 +27,48 @@ class AttendeesController extends AppController {
  */
 	public $components = array('Paginator', 'Uuid');
 
+    
+/**
+ * Bulk import method
+ * 
+ * @return void
+ */
+    public function bulk_import() {
+        # Bulk import function here
+    }
+
+/**
+ * AJAX method to get Attendee bar numbers
+ * 
+ * @todo move to StateBar plugin
+ */
+    public function ajax_get_attendee_bar_numbers() {
+        if ($this->params->query['id']) {
+            $id = $this->params->query['id'];
+        } else {
+            $id = $this->params['form']['id'];
+        }
+        
+        $bar_numbers = array();
+        $this->layout = null;
+        
+        if ($id > 0) {
+            $bar_numbers = $this->Attendee->AttendeeMetum->find('all', array(
+                'conditions' => array(
+                    'AttendeeMetum.attendee_id =' => $id,
+                    'AttendeeMetum.key =' => 'State.bar'
+                ),
+                'fields' => array('id', 'attendee_id', 'key', 'value')
+            ));
+        }
+        
+        $this->set(compact('bar_numbers'));
+    }
+    
+#    __  __  __  __  __  __  __  __  __  __  __  __  __
+#    \//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\
+#      ""  ""  ""  ""  ""  ""  ""  ""  ""  ""  ""  ""  ""
+    
 /**
  * index method
  *
@@ -120,10 +162,5 @@ class AttendeesController extends AppController {
 		$this->Session->setFlash(__('Attendee was not deleted'), 'flash/error');
 		$this->redirect(array('action' => 'index'));
 	}
-    
-    
-    public function bulk_import() {
-        # Bulk import function here
-    }
     
 }
