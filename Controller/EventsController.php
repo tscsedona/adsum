@@ -26,7 +26,7 @@ class EventsController extends AppController {
  * @var array
  */
 	public $components = array('Paginator', 'Uuid');
-
+    
 /**
  * index method
  *
@@ -49,6 +49,7 @@ class EventsController extends AppController {
 			throw new NotFoundException(__('Invalid event'));
 		}
 		$options = array('conditions' => array('Event.' . $this->Event->primaryKey => $id));
+        $this->set('event_attendees', $this->Event->Attendee->find('count'));
 		$this->set('event', $this->Event->find('first', $options));
 	}
 
@@ -59,6 +60,8 @@ class EventsController extends AppController {
  */
 	public function add() {
 		if ($this->request->is('post')) {
+            $this->request->data['Event']['start_time'] = date("Y-m-d H:i:s",strtotime($this->request->data['Event']['start_time']));
+            $this->request->data['Event']['end_time'] = date("Y-m-d H:i:s",strtotime($this->request->data['Event']['end_time']));
 			$this->Event->create();
 			if ($this->Event->save($this->request->data)) {
                 $this->request->data['Attendee']['uuid'] = $this->Uuid->generateUuid();
@@ -126,6 +129,8 @@ class EventsController extends AppController {
 			throw new NotFoundException(__('Invalid event'));
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
+                $this->request->data['Event']['start_time'] = date("Y-m-d H:i:s",strtotime($this->request->data['Event']['start_time']));
+                $this->request->data['Event']['end_time'] = date("Y-m-d H:i:s",strtotime($this->request->data['Event']['end_time']));
 			if ($this->Event->save($this->request->data)) {
 				$this->Session->setFlash(__('The event has been saved'), 'flash/success');
 				$this->redirect(array('action' => 'index'));
