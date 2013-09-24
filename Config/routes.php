@@ -32,6 +32,8 @@
     Router::connect('/status/update', array('controller' => 'AttendeeStatusLogs', 'action' => 'add'));
     Router::connect('/qr', array('controller' => 'AttendeeStatusLogs', 'action' => 'add'));
     
+    Router::connect('/config', array('controller' => 'Options', 'action' => 'navigation'));
+    
 /**
  * ...and connect the rest of 'Pages' controller's urls.
  */

@@ -27,6 +27,11 @@ class OptionsController extends AppController {
  */
 	public $components = array('Paginator');
 
+    
+    public function navigation() {
+        ## Navigation template
+    }
+    
 /**
  * index method
  *

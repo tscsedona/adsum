@@ -43,7 +43,7 @@
                                 '#',
                                 array('escape' => false,'class' => 'btn btn-large btn-block')); */ ?> 
                         <?php echo $this->Html->link('<i class="icon-cog">&nbsp;</i> Configuration',
-                                array('controller' => 'options'),
+                                '/config',
                                 array('escape' => false,'class' => 'btn btn-large btn-block')); ?> 
                     <?php endif; ?> 
             </div><!-- /.row-fluid -->
