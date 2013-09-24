@@ -26,7 +26,7 @@ class UsersController extends AppController {
  */
     public function beforeFilter() {
         parent::beforeFilter();
-        $this->Auth->allow('login');
+        $this->Auth->allow('login', 'recover_password');
     }
     
 /**
@@ -52,8 +52,6 @@ class UsersController extends AppController {
  * @return void
  */    
     public function login() {
-#        Debugger::dump(Security::hash('Password123'));
-#        die();
         $this->layout = 'preauth';
         if ($this->request->is('post')) {
             if ($this->Auth->login()) {
@@ -76,6 +74,15 @@ class UsersController extends AppController {
  * @return void
  */
     public function dashboard() {
+        ## does nothing yet
+    }
+    
+    public function recover_password() {
+        $this->layout = 'preauth';
+        if ($this->request->is('post')) {
+            $this->Session->setFlash(__('This form does not yet do anything.'), 'flash/error');
+            $this->redirect($this->request->here);
+        }
         ## does nothing yet
     }
     

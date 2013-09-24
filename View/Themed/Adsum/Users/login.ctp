@@ -32,7 +32,7 @@
                     </fieldset>
                     <?php echo $this->Form->end(); ?> 
 
-                    <p><?php echo $this->Html->link('Can\'t access your account?', '#'); ?> </p>
+                    <p><?php echo $this->Html->link('Can\'t access your account?', array('controller' => 'users', 'action' => 'recover_password')); ?> </p>
             </div><!-- /#login -->
         </div><!-- /.well -->
         
