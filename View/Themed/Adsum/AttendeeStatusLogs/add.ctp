@@ -20,7 +20,9 @@
                         </div><!-- .controls -->
                     </div><!-- .control-group -->
                     
-                    <div class="ajax_loading_image"></div>
+                    <div class="ajax_loading_image text-center"></div>
+                    
+                    <div class="ajax_bar_numbers"></div>
 
                     <div class="control-group">
                         <?php echo $this->Form->label('attendance_status_state_id', 'Status State', array('class' => 'control-label')); ?>
@@ -31,7 +33,7 @@
                                 'legend' => false,
                                 'between' => '--between---',
                                 'separator' => '&nbsp;',
-                                )); ?>
+                                )); ?> 
                         </div><!-- .controls -->
                     </div><!-- .control-group -->
 
@@ -66,3 +68,5 @@
     </div><!-- #page-content .span9 -->
 
 </div><!-- #page-container .row-fluid -->
+
+<?php $this->Html->script('ajax_bar_numbers.js', array('block' => 'script')); ?> 

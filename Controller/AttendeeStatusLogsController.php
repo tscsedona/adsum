@@ -26,6 +26,13 @@ class AttendeeStatusLogsController extends AppController {
  * @var array
  */
 	public $components = array('Paginator');
+    
+/**
+ * Helpers
+ *
+ * @var array
+ */    
+    public $helpers = array('Js' => array('Jquery'));
 
 /**
  * index method

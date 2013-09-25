@@ -43,15 +43,17 @@ class AttendeesController extends AppController {
  * @todo move to StateBar plugin
  */
     public function ajax_get_attendee_bar_numbers() {
-        if ($this->params->query['id']) {
-            $id = $this->params->query['id'];
-        } else {
-            $id = $this->params['form']['id'];
-        }
-        
         $bar_numbers = array();
         $this->layout = null;
         
+        # Determine the Attendee's ID
+        if ($this->request->data['id']) { // POST
+            $id = $this->request->data['id'];
+        } elseif ($this->params->query['id']) { // GET
+            $id = $this->params->query['id'];
+        }
+        
+        # Find the bar numbers and populate $bar_numbers
         if ($id > 0) {
             $bar_numbers = $this->Attendee->AttendeeMetum->find('all', array(
                 'conditions' => array(
