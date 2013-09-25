@@ -17,7 +17,7 @@
  */
 
 $adsumDescription = __d('adsum', 'Adsum - Event Attendance Tracking Software');
-?>
+?> 
 <?php echo $this->Html->docType('html5'); ?> 
 <html>
 	<head>
@@ -38,16 +38,16 @@ $adsumDescription = __d('adsum', 'Adsum - Event Attendance Tracking Software');
         /jgs  /-'`  `\   \  \-.\ -->
         
 		<title>
-            <?php echo $title_for_layout; ?> | 
-			<?php echo $adsumDescription ?>
+                    <?php echo $title_for_layout; ?> | <?php echo $adsumDescription ?> 
 		</title>
+
         <?php
         echo $this->Html->meta(
             'favicon.ico',
             '/theme/Adsum/favicon.ico',
             array('type' => 'icon')
         );
-        ?>
+        ?> 
         <?php echo $this->fetch('meta'); ?> 
         
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -59,7 +59,7 @@ $adsumDescription = __d('adsum', 'Adsum - Event Attendance Tracking Software');
         <?php echo $this->Html->css('//netdna.bootstrapcdn.com/font-awesome/3.2.0/css/font-awesome.min.css'); ?> 
  
         <?php echo $this->fetch('css'); ?> 
-        <?php echo $this->fetch('scriptHead'); ?> 
+        <?php echo $this->fetch('scriptHead'); ?>  
 	</head>
 
 	<body>
@@ -76,11 +76,10 @@ $adsumDescription = __d('adsum', 'Adsum - Event Attendance Tracking Software');
 			</div><!-- #header .container -->
 			
 			<div id="footer" class="container">
-				<?php //Silence is golden ?>
+				<?php //Silence is golden ?>  
 			</div><!-- #footer .container -->
-			
+            
 		</div><!-- #main-container -->
-		
         <?php /*
 		<div class="container">
 			<div class="well">
@@ -89,13 +88,11 @@ $adsumDescription = __d('adsum', 'Adsum - Event Attendance Tracking Software');
 				</small>
 			</div>
 		</div><!-- .container -->
-		*/ ?> 
-        
+		*/ ?>  
 		<?php echo $this->Html->script('libs/jquery'); ?>  
 		<?php echo $this->Html->script('libs/bootstrap.min'); ?>  
-		 
 		<?php echo $this->fetch('script'); ?>  
-        <?php echo $this->Html->script('common'); ?>  
+                <?php echo $this->Html->script('common'); ?>  
         <?php echo $this->fetch('scriptBottom'); ?>  
 	</body>
 
