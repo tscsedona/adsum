@@ -63,7 +63,7 @@
                     </td>
                 </tr><tr>		<td><strong><?php echo __('Attendee Count'); ?></strong></td>
                     <td>
-                        <?php # echo h($event_attendees); ?>
+                        <?php echo h(count($event['Attendee'])); ?>
                         &nbsp;
                     </td>
                 </tr><tr>		<td><strong><?php echo __('Created'); ?></strong></td>
