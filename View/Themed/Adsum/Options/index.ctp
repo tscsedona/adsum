@@ -1,22 +1,11 @@
 
 <div id="page-container" class="row-fluid">
 
-    <div id="sidebar" class="span3">
+    <div id="page-content" class="span12">
 
-        <div class="actions">
+        <div class="options index well well-small">
 
-            <ul class="nav nav-list bs-docs-sidenav">
-                <li><?php echo $this->Html->link(__('New Option'), array('action' => 'add'), array('class' => '')); ?></li>							</ul><!-- .nav nav-list bs-docs-sidenav -->
-
-        </div><!-- .actions -->
-
-    </div><!-- #sidebar .span3 -->
-
-    <div id="page-content" class="span9">
-
-        <div class="options index">
-
-            <h2><?php echo __('Options'); ?></h2>
+            <h2><?php echo __('Options'); ?> <?php echo $this->Html->link('<i class="icon-plus">&nbsp;</i>' . __('Add New'), array('action' => 'add'), array('escape' => false, 'class' => 'btn btn-mini btn-success')); ?> </h2>
 
             <table cellpadding="0" cellspacing="0" class="table table-striped table-bordered">
                 <tr>
