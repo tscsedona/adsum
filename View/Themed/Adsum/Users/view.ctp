@@ -57,13 +57,6 @@
                         &nbsp;
                     </td>
                 </tr>
-                <tr class="btn-danger">
-                    <td><strong><?php echo __('Pass'); ?></strong></td>
-                    <td>
-                        <?php echo h($user['User']['pass']); ?>
-                        &nbsp;
-                    </td>
-                </tr>
                 <tr>
                     <td><strong><?php echo __('Is Active'); ?></strong></td>
                     <td>

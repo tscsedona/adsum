@@ -53,8 +53,8 @@
                     <div class="control-group">
                         <?php echo $this->Form->label('pass', 'Password', array('class' => 'control-label')); ?>
                         <div class="controls">
-                            <!-- <a href="#" class="btn btn-small"><i class="icon-lock">&nbsp;</i> Reset password</a> -->
-                            <?php echo $this->Form->input('pass'); ?>
+                            <a href="#" class="btn btn-small"><i class="icon-lock">&nbsp;</i> Reset password</a>
+                            <?php # echo $this->Form->input('pass'); ?>
                         </div><!-- .controls -->
                     </div><!-- .control-group -->
 
