@@ -15,13 +15,19 @@
                 <tr>
                     <th><?php echo $this->Paginator->sort('first_name'); ?></th>
                     <th><?php echo $this->Paginator->sort('last_name'); ?></th>
-                    <th><?php echo $this->Paginator->sort('display_name'); ?></th>
+                    <th><?php echo __('Display Name'); ?></th>
+                    <th class="actions"><?php echo __('Actions'); ?></th>
                 </tr>
                 <?php foreach ($attendees as $attendee): ?>
                     <tr>
                         <td><?php echo h($attendee['Attendee']['first_name']); ?>&nbsp;</td>
                         <td><?php echo h($attendee['Attendee']['last_name']); ?>&nbsp;</td>
                         <td><?php echo h($attendee['Attendee']['display_name']); ?>&nbsp;</td>
+                        <td class="actions" style="width:84px;">
+                            <?php echo $this->Html->link('<i class="icon-remove">&nbsp;</i> ' . __('Unregister'), array('action' => 'view', $event['Event']['id']), array('escape' => false, 'class' => 'btn btn-mini')); ?>
+                            <?php # echo $this->Html->link('<i class="icon-edit">&nbsp;</i> ' . __('Edit'), array('action' => 'edit', $event['Event']['id']), array('escape' => false, 'class' => 'btn btn-mini')); ?>
+                            <?php # echo $this->Form->postLink('<i class="icon-remove">&nbsp;</i> ' . __('Delete'), array('action' => 'delete', $event['Event']['id']), array('escape' => false, 'class' => 'btn btn-mini btn-danger'), __('Are you sure you want to delete # %s?', $event['Event']['id'])); ?>
+                        </td>
                     </tr>
                 <?php endforeach; ?>
             </table>
