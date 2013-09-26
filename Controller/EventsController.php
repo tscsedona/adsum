@@ -46,6 +46,47 @@ class EventsController extends AppController {
         $this->set(compact('event', 'attendees'));
     }
     
+    /**
+     * assign method
+     * 
+     * Creates an association between an Attendee
+     * and an Event.
+     */
+    public function assign() {
+		if ($this->request->is('post')) {
+			if ($this->Event->save($this->request->data)) {
+				$this->Session->setFlash(__('The attendee list has been updated.'), 'flash/success');
+				$this->redirect(array('action' => 'index'));
+			} else {
+				$this->Session->setFlash(__('The event could not be saved. Please, try again.'), 'flash/error');
+			}
+		}
+        
+        $events = $this->Event->find('list');
+        $this->loadModel('Attendee');
+        $attendees = $this->Attendee->find('list');
+		$this->set(compact('events', 'attendees'));
+    }
+    
+    
+    /**
+     * unassign method
+     * 
+     * Deletes an association between an Attendee
+     * and an Event.
+     * 
+     * @param int $attendee_id
+     * @param int $event_id
+     * @throws InvalidArgumentException
+     * @todo finish writing this function
+     */
+    public function unassign($attendee_id, $event_id) {
+        if (empty($attendee_id) || empty($event_id)) {
+            throw new InvalidArgumentException('Missing or incorrect data passed to unassign method.');
+        }
+        # UNFINISHED
+    }
+    
 #    __  __  __  __  __  __  __  __  __  __  __  __  __
 #    \//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\
 #      ""  ""  ""  ""  ""  ""  ""  ""  ""  ""  ""  ""  ""
@@ -98,47 +139,6 @@ class EventsController extends AppController {
 		$attendees = $this->Event->Attendee->find('list');
 		$this->set(compact('eventTypes', 'attendees'));
 	}
-    
-    /**
-     * assign method
-     * 
-     * Creates an association between an Attendee
-     * and an Event.
-     */
-    public function assign() {
-		if ($this->request->is('post')) {
-			if ($this->Event->save($this->request->data)) {
-				$this->Session->setFlash(__('The attendee list has been updated.'), 'flash/success');
-				$this->redirect(array('action' => 'index'));
-			} else {
-				$this->Session->setFlash(__('The event could not be saved. Please, try again.'), 'flash/error');
-			}
-		}
-        
-        $events = $this->Event->find('list');
-        $this->loadModel('Attendee');
-        $attendees = $this->Attendee->find('list');
-		$this->set(compact('events', 'attendees'));
-    }
-    
-    
-    /**
-     * unassign method
-     * 
-     * Deletes an association between an Attendee
-     * and an Event.
-     * 
-     * @param int $attendee_id
-     * @param int $event_id
-     * @throws InvalidArgumentException
-     * @todo finish writing this function
-     */
-    public function unassign($attendee_id, $event_id) {
-        if (empty($attendee_id) || empty($event_id)) {
-            throw new InvalidArgumentException('Missing or incorrect data passed to unassign method.');
-        }
-        # UNFINISHED
-    }
 
 /**
  * edit method

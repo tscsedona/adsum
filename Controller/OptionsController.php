@@ -32,6 +32,10 @@ class OptionsController extends AppController {
         ## Navigation template
     }
     
+#    __  __  __  __  __  __  __  __  __  __  __  __  __
+#    \//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\
+#      ""  ""  ""  ""  ""  ""  ""  ""  ""  ""  ""  ""  ""
+    
 /**
  * index method
  *

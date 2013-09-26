@@ -29,6 +29,10 @@ class AttendanceStatusStatesController extends AppController {
  */
 	public $components = array('Paginator');
 
+#    __  __  __  __  __  __  __  __  __  __  __  __  __
+#    \//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\
+#      ""  ""  ""  ""  ""  ""  ""  ""  ""  ""  ""  ""  ""
+    
 /**
  * index method
  *

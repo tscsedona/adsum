@@ -37,16 +37,6 @@ class UsersController extends AppController {
 	public $components = array('Paginator');
 
 /**
- * index method
- *
- * @return void
- */
-	public function index() {
-		$this->User->recursive = 0;
-		$this->set('users', $this->paginate());
-	}
-
-/**
  * login method
  * 
  * @return void
@@ -85,6 +75,20 @@ class UsersController extends AppController {
         }
         ## does nothing yet
     }
+    
+#    __  __  __  __  __  __  __  __  __  __  __  __  __
+#    \//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\
+#      ""  ""  ""  ""  ""  ""  ""  ""  ""  ""  ""  ""  ""
+    
+/**
+ * index method
+ *
+ * @return void
+ */
+	public function index() {
+		$this->User->recursive = 0;
+		$this->set('users', $this->paginate());
+	}
     
 /**
  * view method

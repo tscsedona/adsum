@@ -34,6 +34,45 @@ class AttendeeStatusLogsController extends AppController {
  */    
     public $helpers = array('Js' => array('Jquery'));
 
+    /**
+     * Determine whether the user, if an admin,
+     * may edit the status `Logged By` value
+     * 
+     * @todo this is incomplete
+     */
+    protected function determineLoggedByState() {
+        if ($this->Auth->user('is_admin')) {
+            $this->set('loggedByState', false);
+        } else {
+            $this->set('loggedByState', true);
+        }
+    }
+    
+    public function tallyAttendeeHoursByEvent() {
+        $user_id = 1;
+        $checkinState = 1;
+        $checkoutState = 2;
+
+        $attendeeStatusLogs = $this->AttendeeStatusLog->find('all', array(
+            'conditions' => array(
+                'AttendeeStatusLog.attendee_id' => $user_id,
+            ),
+            'fields' => array(
+                'AttendeeStatusLog.id',
+                'AttendeeStatusLog.attendance_status_state_id',
+                'AttendeeStatusLog.created',
+                'AttendeeStatusLog.event_id'
+            )
+        ));
+        $attendeeStatusLogs = Set::extract($attendeeStatusLogs, '{n}.AttendeeStatusLog');
+        
+        # Debugger::dump($attendeeStatusLogs);
+    }
+    
+#    __  __  __  __  __  __  __  __  __  __  __  __  __
+#    \//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\
+#      ""  ""  ""  ""  ""  ""  ""  ""  ""  ""  ""  ""  ""
+    
 /**
  * index method
  *
@@ -151,42 +190,5 @@ class AttendeeStatusLogsController extends AppController {
 		$this->Session->setFlash(__('Attendee status log was not deleted'), 'flash/error');
 		$this->redirect(array('action' => 'index'));
 	}
-    
-    # -----------------
-    
-    /**
-     * Determine whether the user, if an admin,
-     * may edit the status `Logged By` value
-     * 
-     * @todo this is incomplete
-     */
-    protected function determineLoggedByState() {
-        if ($this->Auth->user('is_admin')) {
-            $this->set('loggedByState', false);
-        } else {
-            $this->set('loggedByState', true);
-        }
-    }
-    
-    public function tallyAttendeeHoursByEvent() {
-        $user_id = 1;
-        $checkinState = 1;
-        $checkoutState = 2;
-
-        $attendeeStatusLogs = $this->AttendeeStatusLog->find('all', array(
-            'conditions' => array(
-                'AttendeeStatusLog.attendee_id' => $user_id,
-            ),
-            'fields' => array(
-                'AttendeeStatusLog.id',
-                'AttendeeStatusLog.attendance_status_state_id',
-                'AttendeeStatusLog.created',
-                'AttendeeStatusLog.event_id'
-            )
-        ));
-        $attendeeStatusLogs = Set::extract($attendeeStatusLogs, '{n}.AttendeeStatusLog');
-        
-        # Debugger::dump($attendeeStatusLogs);
-    }
     
 }
