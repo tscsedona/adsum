@@ -21,57 +21,77 @@
             <h2><?php echo h($event['Event']['title']); ?></h2>
 
             <table class="table table-striped table-bordered">
-                <tr>		<td><strong><?php echo __('Id'); ?></strong></td>
+                <tr>
+                    <td><strong><?php echo __('Id'); ?></strong></td>
                     <td>
                         <?php echo h($event['Event']['id']); ?>
                         &nbsp;
                     </td>
-                </tr><tr>		<td><strong><?php echo __('Event Type'); ?></strong></td>
+                </tr>
+                <tr>
+                    <td><strong><?php echo __('Event Type'); ?></strong></td>
                     <td>
                         <?php echo $this->Html->link($event['EventType']['title'], array('controller' => 'event_types', 'action' => 'view', $event['EventType']['id']), array('class' => '')); ?>
                         &nbsp;
                     </td>
-                </tr><tr>		<td><strong><?php echo __('Uuid'); ?></strong></td>
+                </tr>
+                <tr>
+                    <td><strong><?php echo __('Uuid'); ?></strong></td>
                     <td>
                         <?php echo h($event['Event']['uuid']); ?>
                         &nbsp;
                     </td>
-                </tr><tr>		<td><strong><?php echo __('Extid'); ?></strong></td>
+                </tr>
+                <tr>
+                    <td><strong><?php echo __('Extid'); ?></strong></td>
                     <td>
                         <?php echo h($event['Event']['extid']); ?>
                         &nbsp;
                     </td>
-                </tr><tr>		<td><strong><?php echo __('Title'); ?></strong></td>
+                </tr>
+                <tr>
+                    <td><strong><?php echo __('Title'); ?></strong></td>
                     <td>
                         <?php echo h($event['Event']['title']); ?>
                         &nbsp;
                     </td>
-                </tr><tr>		<td><strong><?php echo __('Is Active'); ?></strong></td>
+                </tr>
+                <tr>
+                    <td><strong><?php echo __('Is Active'); ?></strong></td>
                     <td>
                         <?php echo h($event['Event']['is_active'] ? __('Yes') : __('No')); ?> 
                         &nbsp;
                     </td>
-                </tr><tr>		<td><strong><?php echo __('Start Time'); ?></strong></td>
+                </tr>
+                <tr>
+                    <td><strong><?php echo __('Start Time'); ?></strong></td>
                     <td>
                         <?php echo h($this->Time->nice($event['Event']['start_time'])); ?>
                         &nbsp;
                     </td>
-                </tr><tr>		<td><strong><?php echo __('End Time'); ?></strong></td>
+                </tr>
+                <tr>
+                    <td><strong><?php echo __('End Time'); ?></strong></td>
                     <td>
                         <?php echo h($this->Time->nice($event['Event']['end_time'])); ?>
                         &nbsp;
                     </td>
-                </tr><tr>		<td><strong><?php echo __('Attendee Count'); ?></strong></td>
+                </tr>
+                <tr>
+                    <td><strong><?php echo __('Attendee Count'); ?></strong></td>
                     <td>
-                        <?php echo h(count($event['Attendee'])); ?>
+                        <?php echo $this->Html->link(count($event['Attendee']), array('action' => 'attendance', $event['Event']['id'])); ?> 
                         &nbsp;
                     </td>
-                </tr><tr>		<td><strong><?php echo __('Created'); ?></strong></td>
+                </tr>
+                <tr>
+                    <td><strong><?php echo __('Created'); ?></strong></td>
                     <td>
                         <?php echo $this->Time->nice($event['Event']['created']); ?>
                         &nbsp;
                     </td>
-                </tr>			</table><!-- .table table-striped table-bord ered -->
+                </tr>
+            </table><!-- .table table-striped table-bord ered -->
 
         </div><!-- .view -->
 

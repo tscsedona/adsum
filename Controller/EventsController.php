@@ -27,6 +27,29 @@ class EventsController extends AppController {
  */
 	public $components = array('Paginator', 'Uuid');
     
+    /**
+     * Attendance method
+     * 
+     * Provides a list of registered Attendees for the Event
+     * and also displays their attendance hours.
+     * 
+     * @return void
+     */
+    public function attendance($id = null) {
+		if (!$this->Event->exists($id)) {
+			throw new NotFoundException(__('Invalid event'));
+		}
+		$options = array('conditions' => array('Event.' . $this->Event->primaryKey => $id));
+		$event = $this->Event->find('first', $options);
+        $attendees = $this->Paginator->paginate('Event.Attendee');
+        $this->set('attendees', $attendees);
+        $this->set(compact('event', 'attendees'));
+    }
+    
+#    __  __  __  __  __  __  __  __  __  __  __  __  __
+#    \//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\
+#      ""  ""  ""  ""  ""  ""  ""  ""  ""  ""  ""  ""  ""
+    
 /**
  * index method
  *
