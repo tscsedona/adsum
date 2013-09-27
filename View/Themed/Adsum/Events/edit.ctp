@@ -68,13 +68,6 @@
                         </div><!-- .controls -->
                     </div><!-- .control-group -->
 
-                    <div class="control-group">
-                        <?php echo $this->Form->label('attendee_count', 'Attendees', array('class' => 'control-label')); ?>
-                        <div class="controls">
-                            <?php echo $this->Form->input('attendee_count', array('class' => 'span12', 'disabled' => true, 'type' => 'text')); ?>
-                        </div><!-- .controls -->
-                    </div><!-- .control-group -->
-
                     <?php # echo $this->Form->input('Attendee'); Temp removed, will allow adding users to an event from this view ?>
 
                 </fieldset>

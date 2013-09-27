@@ -44,6 +44,16 @@ class Attendee extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
+		'extid' => array(
+			'extid' => array(
+				'rule' => array('isUnique'),
+				'message' => 'The ExtID for this Attendee is not unique. Perhaps they already exist?',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
 		'first_name' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
