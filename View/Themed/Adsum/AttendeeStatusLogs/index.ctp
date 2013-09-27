@@ -30,7 +30,7 @@
                         <td class="actions">
                             <?php echo $this->Html->link('<i class="icon-eye-open">&nbsp;</i> ' . __('View'), array('action' => 'view', $attendeeStatusLog['AttendeeStatusLog']['id']), array('escape' => false, 'class' => 'btn btn-mini')); ?>
                             <?php echo $this->Html->link('<i class="icon-edit">&nbsp;</i> ' . __('Edit'), array('action' => 'edit', $attendeeStatusLog['AttendeeStatusLog']['id']), array('escape' => false, 'class' => 'btn btn-mini')); ?>
-                            <?php echo $this->Form->postLink('<i class="icon-remove">&nbsp;</i> ' . __('Delete'), array('action' => 'delete', $attendeeStatusLog['AttendeeStatusLog']['id']), array('escape' => false, 'class' => 'btn btn-mini btn-danger'), __('Are you sure you want to delete # %s?', $attendeeStatusLog['AttendeeStatusLog']['id'])); ?>
+                            <?php echo $this->Form->postLink('<i class="icon-remove">&nbsp;</i> ' . __('Delete'), array('action' => 'delete', $attendeeStatusLog['AttendeeStatusLog']['id']), array('escape' => false, 'class' => 'btn btn-mini btn-danger'), __('Are you sure you want to delete this record?', $attendeeStatusLog['AttendeeStatusLog']['id'])); ?>
                         </td>
                     </tr>
                 <?php endforeach; ?>
