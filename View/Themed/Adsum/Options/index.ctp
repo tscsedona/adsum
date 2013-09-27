@@ -18,9 +18,9 @@
                         <td><?php echo h($option['Option']['key']); ?>&nbsp;</td>
                         <td><?php echo h($option['Option']['value']); ?>&nbsp;</td>
                         <td class="actions">
-                            <?php echo $this->Html->link(__('View'), array('action' => 'view', $option['Option']['id']), array('class' => 'btn btn-mini')); ?>
-                            <?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $option['Option']['id']), array('class' => 'btn btn-mini')); ?>
-                            <?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $option['Option']['id']), array('class' => 'btn btn-mini'), __('Are you sure you want to delete # %s?', $option['Option']['id'])); ?>
+                            <?php echo $this->Html->link('<i class="icon-eye-open">&nbsp;</i> ' . __('View'), array('action' => 'view', $option['Option']['id']), array('escape' => false, 'class' => 'btn btn-mini')); ?>
+                            <?php echo $this->Html->link('<i class="icon-edit">&nbsp;</i> ' . __('Edit'), array('action' => 'edit', $option['Option']['id']), array('escape' => false, 'class' => 'btn btn-mini')); ?>
+                            <?php echo $this->Form->postLink('<i class="icon-remove">&nbsp;</i> ' . __('Delete'), array('action' => 'delete', $option['Option']['id']), array('escape' => false, 'class' => 'btn btn-mini btn-danger'), __('Are you sure you want to delete # %s?', $option['Option']['id'])); ?>
                         </td>
                     </tr>
                 <?php endforeach; ?>
