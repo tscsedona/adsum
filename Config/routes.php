@@ -34,6 +34,8 @@
     
     Router::connect('/config', array('controller' => 'Options', 'action' => 'navigation'));
     
+    Router::connect('/recover-password', array('controller' => 'Users', 'action' => 'recover_password'));
+    
 /**
  * ...and connect the rest of 'Pages' controller's urls.
  */
