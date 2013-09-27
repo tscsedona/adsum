@@ -78,13 +78,28 @@ class EventsController extends AppController {
      * @param int $attendee_id
      * @param int $event_id
      * @throws InvalidArgumentException
-     * @todo finish writing this function
      */
     public function unassign($attendee_id, $event_id) {
+        $this->autoRender = false;
         if (empty($attendee_id) || empty($event_id)) {
             throw new InvalidArgumentException('Missing or incorrect data passed to unassign method.');
         }
-        # UNFINISHED
+        # construct the conditions
+        $params = array(
+            'AttendeesEvent.attendee_id' => $attendee_id,
+            'AttendeesEvent.event_id'    => $event_id
+        );
+        # verify the association exists
+        $verification = $this->Event->AttendeesEvent->find('first', array('conditions' => $params));  
+        # if not, redirect away and don't continue
+        if (empty($verification)) {
+            $this->Session->setFlash(__('No association found between the event and attendee.'), 'flash/error');
+            $this->redirect(array('action' => 'index'));
+        }
+        # else, delete the assocation
+        $this->Event->AttendeesEvent->deleteAll($params, false);
+        $this->Session->setFlash(__('The attendee has been removed from the event.'), 'flash/success');
+        $this->redirect(array('action' => 'index'));
     }
     
 #    __  __  __  __  __  __  __  __  __  __  __  __  __
