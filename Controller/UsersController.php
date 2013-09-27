@@ -70,10 +70,16 @@ class UsersController extends AppController {
     public function recover_password() {
         $this->layout = 'preauth';
         if ($this->request->is('post')) {
-            $this->Session->setFlash(__('This form does not yet do anything.'), 'flash/error');
-            $this->redirect($this->request->here);
+            $user = $this->User->findByEmail($this->request->data['User']['email']);
+            if (empty($user)) {
+                $this->Session->setFlash(__('Unable to find that user.'), 'flash/error');
+                $this->redirect($this->referer());
+            }
+            
+            $this->Session->setFlash(__('That user was found - form action still under construction.'), 'flash/info');
+            # start the chain of events that resets a password
+            
         }
-        ## does nothing yet
     }
     
 #    __  __  __  __  __  __  __  __  __  __  __  __  __
