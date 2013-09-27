@@ -94,12 +94,12 @@ class EventsController extends AppController {
         # if not, redirect away and don't continue
         if (empty($verification)) {
             $this->Session->setFlash(__('No association found between the event and attendee.'), 'flash/error');
-            $this->redirect(array('action' => 'index'));
+            $this->redirect($this->referer());
         }
         # else, delete the assocation
         $this->Event->AttendeesEvent->deleteAll($params, false);
         $this->Session->setFlash(__('The attendee has been removed from the event.'), 'flash/success');
-        $this->redirect(array('action' => 'index'));
+        $this->redirect($this->referer());
     }
     
 #    __  __  __  __  __  __  __  __  __  __  __  __  __

@@ -24,8 +24,7 @@
                         <td><?php echo h($attendee['Attendee']['last_name']); ?>&nbsp;</td>
                         <td><?php echo h($attendee['Attendee']['display_name']); ?>&nbsp;</td>
                         <td class="actions" style="width:84px;">
-                            <?php echo $this->Form->postLink('<i class="icon-remove">&nbsp;</i> ' . __('Unassign'), array('action' => 'unassign', $attendee['Attendee']['id'], $event['Event']['id']), array('escape' => false, 'class' => 'btn btn-mini btn-warning'), __('Are you sure you want to delete # %s?', $event['Event']['id'])); ?>
-                            <?php # echo $this->Html->link('<i class="icon-remove">&nbsp;</i> ' . __('Unregister'), array('action' => 'view', $event['Event']['id']), array('escape' => false, 'class' => 'btn btn-mini')); ?>
+                            <?php echo $this->Form->postLink('<i class="icon-remove">&nbsp;</i> ' . __('Unassign'), array('action' => 'unassign', $attendee['Attendee']['id'], $event['Event']['id']), array('escape' => false, 'class' => 'btn btn-mini btn-warning'), __('Are you sure you want to remove %s from the event?', $attendee['Attendee']['display_name'])); ?>
                         </td>
                     </tr>
                 <?php endforeach; ?>
