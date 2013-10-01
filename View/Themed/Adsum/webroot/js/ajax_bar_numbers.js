@@ -1,4 +1,12 @@
+$( document ).ready(function() {
+    ajax_bar_handler();
+});
+
 $('#AttendeeStatusLogAttendeeId').change(function() {
+    ajax_bar_handler();
+});
+
+function ajax_bar_handler() {
     ajax_loading_image('.ajax_loading_image');
 
     var selected = $('#AttendeeStatusLogAttendeeId').val();
@@ -15,7 +23,7 @@ $('#AttendeeStatusLogAttendeeId').change(function() {
 		}
 	});
 
-});
+}
 
 function ajax_loading_image(div) {
     $(div).html('<img src="/img/preloader.gif" alt="Loading..." />');

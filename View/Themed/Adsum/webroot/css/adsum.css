@@ -42,5 +42,11 @@ select#AttendeeAttendee {
 }
 ajax_loading_image,
 .ajax_bar_numbers {
-    padding-left: 180px;
+    padding-left: 100px;
+}
+#AttendeeStatusLogAddForm .control-label {
+    width: 100px;
+}
+#AttendeeStatusLogAddForm .controls {
+    margin-left: 120px;
 }
