@@ -122,10 +122,18 @@ class AttendeeStatusLogsController extends AppController {
 		}
         # highlighted attendee...
         $attendeeInputOptions = array('class' => 'span12');
-        if ($this->request->query) {
+        if (!empty($this->request->query)) {
             $defaultAttendee = $this->AttendeeStatusLog->Attendee->findByExtid($this->request->query['attendee'], 'id');
             $attendeeInputOptions['default'] = $defaultAttendee['Attendee']['id'];
         }
+        
+        # highlighted event...
+        $eventInputOptions = array('class' => 'span12');
+        if (!empty($this->request->query['event'])) {
+            $defaultEvent = $this->AttendeeStatusLog->Event->findByExtid($this->request->query['event'], 'id');
+            $eventInputOptions['default'] = $defaultEvent['Event']['id'];
+        }
+        
         # logged by...
         $this->determineLoggedByState();
 		$attendees = $this->AttendeeStatusLog->Attendee->find(
@@ -136,7 +144,7 @@ class AttendeeStatusLogsController extends AppController {
 		$attendanceStatusStates = $this->AttendeeStatusLog->AttendanceStatusState->find('list');
 		$events = $this->AttendeeStatusLog->Event->find('list');
 		$users = $this->AttendeeStatusLog->User->find('list');
-		$this->set(compact('attendees', 'attendanceStatusStates', 'attendeeInputOptions', 'events', 'users'));
+		$this->set(compact('attendees', 'attendanceStatusStates', 'attendeeInputOptions', 'eventInputOptions', 'events', 'users'));
 	}
 
 /**

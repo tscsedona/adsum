@@ -40,7 +40,7 @@
                     <div class="control-group">
                         <?php echo $this->Form->label('event_id', 'Event', array('class' => 'control-label')); ?>
                         <div class="controls">
-                            <?php echo $this->Form->input('event_id', array('class' => 'span12')); ?>
+                            <?php echo $this->Form->input('event_id', $eventInputOptions); ?>
                         </div><!-- .controls -->
                     </div><!-- .control-group -->
 
