@@ -40,7 +40,7 @@ select#AttendeeAttendee {
     height: 80%;
     height: auto;
 }
-ajax_loading_image,
+.ajax_loading_image,
 .ajax_bar_numbers {
     padding-left: 100px;
 }
@@ -49,4 +49,12 @@ ajax_loading_image,
 }
 #AttendeeStatusLogAddForm .controls {
     margin-left: 120px;
+}
+@media (max-width: 480px) {
+ 
+    .ajax_loading_image,
+    .ajax_bar_numbers {
+        padding: 0;
+    }
+    
 }
