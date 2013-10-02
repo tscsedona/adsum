@@ -1,6 +1,8 @@
 <?php if (!empty($bar_numbers)) : ?> 
 
-    <h5>Associated bar numbers:</h5>
+    <br />
+
+    <p>Associated bar numbers</p>
     
     <table class="table table-striped table-bordered">
 

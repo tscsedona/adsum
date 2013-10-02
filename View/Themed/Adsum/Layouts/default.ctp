@@ -57,6 +57,7 @@ $adsumDescription = __d('adsum', 'Adsum - Event Attendance Tracking Software');
         <?php echo $this->Html->css('core'); ?> 
         <?php echo $this->Html->css('adsum'); ?> 
         <?php echo $this->Html->css('//netdna.bootstrapcdn.com/font-awesome/3.2.0/css/font-awesome.min.css'); ?> 
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400,300,600' rel='stylesheet' type='text/css'> 
  
         <?php echo $this->fetch('css'); ?> 
         <?php echo $this->fetch('scriptHead'); ?>  

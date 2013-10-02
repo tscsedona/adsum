@@ -2,54 +2,54 @@
 <div id="page-container" class="row-fluid">
 
     <div id="page-content" class="span6 offset3">
-        <div class="well">
+        <div class="well well-small">
 
             <div class="attendeeStatusLogs form">
 
                 <?php echo $this->Form->create('AttendeeStatusLog', array('inputDefaults' => array('label' => false), 'class' => 'form form-horizontal')); ?>
                 
                 <fieldset>
-                    <h2><?php echo __('Record Attendee Status'); ?></h2>
+                    <h2><?php echo __('Record Status'); ?></h2>
                     
                     <hr />
                     
-                    <div class="control-group">
-                        <?php echo $this->Form->label('attendee_id', 'Attendee', array('class' => 'control-label')); ?>
-                        <div class="controls">
-                            <?php echo $this->Form->input('attendee_id', $attendeeInputOptions); ?>
-                        </div><!-- .controls -->
-                    </div><!-- .control-group -->
+                    <?php echo $this->Form->label('attendee_id', 'Attendee', array('class' => '')); ?>
+                    <?php echo $this->Form->input('attendee_id', $attendeeInputOptions); ?>
                     
                     <div class="ajax_loading_image text-center"></div>
-                    
                     <div class="ajax_bar_numbers"></div>
+                    
+                    <?php echo $this->Form->label('attendance_status_state_id', 'Status State', array('class' => '')); ?>
 
-                    <div class="control-group">
-                        <?php echo $this->Form->label('attendance_status_state_id', 'Status State', array('class' => 'control-label')); ?>
-                        <div class="controls">
-                            <?php echo $this->Form->input('attendance_status_state_id', array(
-                                'class' => 'span6',
-                                'type' => 'radio',
-                                'legend' => false,
-                                'between' => '--between---',
-                                'separator' => '&nbsp;',
-                                )); ?> 
-                        </div><!-- .controls -->
-                    </div><!-- .control-group -->
+                    <?php echo $this->Form->input('attendance_status_state_id', array(
+                        'class' => '',
+                        'type' => 'radio',
+                        'legend' => false,
+                        'between' => '--between---',
+                        'separator' => '<br />',
+                        )); ?> 
 
-                    <div class="control-group">
-                        <?php echo $this->Form->label('event_id', 'Event', array('class' => 'control-label')); ?>
-                        <div class="controls">
-                            <?php echo $this->Form->input('event_id', $eventInputOptions); ?>
-                        </div><!-- .controls -->
-                    </div><!-- .control-group -->
+                    
+                    <hr />
+                    
+                    <?php if (empty($preset['event'])) { ?>
+                    <?php echo $this->Form->label('event_id', 'Event', array('class' => '')); ?>
+                    <?php echo $this->Form->input('event_id', $eventInputOptions); ?>
+                    <?php } ?>
 
+                    <?php if (empty($preset['user_id'])) { ?>
                     <div class="control-group">
                         <?php echo $this->Form->label('user_id', 'Logged by', array('class' => 'control-label')); ?>
                         <div class="controls">
                             <?php echo $this->Form->input('user_id', array('class' => 'span12', 'disabled' => $loggedByState, 'default' => AuthComponent::user('id'))); ?>
                         </div><!-- .controls -->
                     </div><!-- .control-group -->
+                    <?php } else { ?>
+
+                    <br />
+                    <small>Logged by: <em><?php echo AuthComponent::user('display_name'); ?> </em></small>
+
+                    <?php } ?>
 
                 </fieldset>
                 

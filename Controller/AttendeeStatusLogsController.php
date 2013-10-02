@@ -46,6 +46,7 @@ class AttendeeStatusLogsController extends AppController {
         } else {
             $this->set('loggedByState', true);
         }
+        return true;
     }
     
     public function tallyAttendeeHoursByEvent() {
@@ -102,6 +103,7 @@ class AttendeeStatusLogsController extends AppController {
 /**
  * add method
  *
+ * @todo this method is getting somewhat sphaghetti-like, break it apart
  * @return void
  */
 	public function add() {
@@ -132,6 +134,10 @@ class AttendeeStatusLogsController extends AppController {
                 $preset['attendee'] = true;
             }
         }
+		$attendees = $this->AttendeeStatusLog->Attendee->find(
+                'list', array(
+                    'order' => array('Attendee.last_name ASC')
+                ));
         
         unset($result); # we're going to reuse this variable directly below
         
@@ -146,13 +152,16 @@ class AttendeeStatusLogsController extends AppController {
         }
         
         # logged by...
-        $this->determineLoggedByState();
-		$attendees = $this->AttendeeStatusLog->Attendee->find(
-                'list', array(
-                    'order' => array('Attendee.last_name ASC')
-                ));
+        $loggedBy = $this->determineLoggedByState();
+        if ($loggedBy) {
+            $preset['user_id'] = $loggedBy;
+        }
+        
         # prep data...
-		$attendanceStatusStates = $this->AttendeeStatusLog->AttendanceStatusState->find('list');
+		if (!empty($preset)) {
+            $this->set('preset', $preset);
+        }
+        $attendanceStatusStates = $this->AttendeeStatusLog->AttendanceStatusState->find('list');
 		$events = $this->AttendeeStatusLog->Event->find('list');
 		$users = $this->AttendeeStatusLog->User->find('list');
 		$this->set(compact('attendees', 'attendanceStatusStates', 'attendeeInputOptions', 'eventInputOptions', 'events', 'users'));

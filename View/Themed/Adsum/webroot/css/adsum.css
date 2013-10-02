@@ -7,6 +7,15 @@
 body {
     background: url('../img/pattern/square_bg.png') repeat #fefefe;
 }
+
+/** Typography */
+h2 {
+    font-size: 1.6em;
+    font-weight: 300;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/** Misc **/
 .navbar-inverse .navbar-inner {
     background-color: #563d7c;
     background-image: none;
@@ -40,21 +49,9 @@ select#AttendeeAttendee {
     height: 80%;
     height: auto;
 }
-.ajax_loading_image,
-.ajax_bar_numbers {
-    padding-left: 100px;
-}
 #AttendeeStatusLogAddForm .control-label {
     width: 100px;
 }
 #AttendeeStatusLogAddForm .controls {
     margin-left: 120px;
-}
-@media (max-width: 480px) {
- 
-    .ajax_loading_image,
-    .ajax_bar_numbers {
-        padding: 0;
-    }
-    
 }
