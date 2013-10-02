@@ -121,12 +121,15 @@ class AttendeeStatusLogsController extends AppController {
 			}
 		}
         
+        $preset = array();
+        
         # highlighted attendee...
         $attendeeInputOptions = array('class' => 'span12');
         if (!empty($this->request->query['attendee'])) {
             $result = $defaultAttendee = $this->AttendeeStatusLog->Attendee->findByExtid($this->request->query['attendee'], 'id');
             if (!empty($result)) {
                 $attendeeInputOptions['default'] = $defaultAttendee['Attendee']['id'];
+                $preset['attendee'] = true;
             }
         }
         
@@ -138,6 +141,7 @@ class AttendeeStatusLogsController extends AppController {
             $result = $defaultEvent = $this->AttendeeStatusLog->Event->findByExtid($this->request->query['event'], 'id');
             if (!empty($result)) {
                 $eventInputOptions['default'] = $defaultEvent['Event']['id'];
+                $preset['event'] = true;
             }
         }
         
