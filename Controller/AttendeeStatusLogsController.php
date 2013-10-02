@@ -157,6 +157,9 @@ class AttendeeStatusLogsController extends AppController {
             $preset['user_id'] = $loggedBy;
         }
         
+        # changes for mobile user agents
+        $isMobile = $this->isUserMobile();
+        
         # prep data...
 		if (!empty($preset)) {
             $this->set('preset', $preset);
@@ -164,7 +167,7 @@ class AttendeeStatusLogsController extends AppController {
         $attendanceStatusStates = $this->AttendeeStatusLog->AttendanceStatusState->find('list');
 		$events = $this->AttendeeStatusLog->Event->find('list');
 		$users = $this->AttendeeStatusLog->User->find('list');
-		$this->set(compact('attendees', 'attendanceStatusStates', 'attendeeInputOptions', 'eventInputOptions', 'events', 'users'));
+		$this->set(compact('attendees', 'attendanceStatusStates', 'attendeeInputOptions', 'eventInputOptions', 'events', 'users', 'isMobile'));
 	}
 
 /**

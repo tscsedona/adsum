@@ -74,6 +74,12 @@ class AppController extends Controller {
         }
     }
     
+    public function isUserMobile() {
+        if ($this->request->is('mobile')) {
+            return true;
+        }
+    }
+    
 #    __  __  __  __  __  __  __  __  __  __  __  __  __
 #    \//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\
 #      ""  ""  ""  ""  ""  ""  ""  ""  ""  ""  ""  ""  ""

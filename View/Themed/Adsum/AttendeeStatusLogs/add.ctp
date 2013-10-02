@@ -9,9 +9,11 @@
                 <?php echo $this->Form->create('AttendeeStatusLog', array('inputDefaults' => array('label' => false), 'class' => 'form form-horizontal')); ?>
                 
                 <fieldset>
-                    <h2><?php echo __('Record Status'); ?></h2>
                     
+                    <?php if (empty($isMobile)) { ?>
+                    <h2><?php echo __('Record Status'); ?></h2>
                     <hr />
+                    <?php } ?>
                     
                     <?php echo $this->Form->label('attendee_id', 'Attendee', array('class' => '')); ?>
                     <?php echo $this->Form->input('attendee_id', $attendeeInputOptions); ?>
