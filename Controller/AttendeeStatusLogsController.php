@@ -120,18 +120,25 @@ class AttendeeStatusLogsController extends AppController {
 				$this->Session->setFlash(__('The attendee status log could not be saved. Please, try again.'), 'flash/error');
 			}
 		}
+        
         # highlighted attendee...
         $attendeeInputOptions = array('class' => 'span12');
-        if (!empty($this->request->query)) {
-            $defaultAttendee = $this->AttendeeStatusLog->Attendee->findByExtid($this->request->query['attendee'], 'id');
-            $attendeeInputOptions['default'] = $defaultAttendee['Attendee']['id'];
+        if (!empty($this->request->query['attendee'])) {
+            $result = $defaultAttendee = $this->AttendeeStatusLog->Attendee->findByExtid($this->request->query['attendee'], 'id');
+            if (!empty($result)) {
+                $attendeeInputOptions['default'] = $defaultAttendee['Attendee']['id'];
+            }
         }
+        
+        unset($result); # we're going to reuse this variable directly below
         
         # highlighted event...
         $eventInputOptions = array('class' => 'span12');
         if (!empty($this->request->query['event'])) {
-            $defaultEvent = $this->AttendeeStatusLog->Event->findByExtid($this->request->query['event'], 'id');
-            $eventInputOptions['default'] = $defaultEvent['Event']['id'];
+            $result = $defaultEvent = $this->AttendeeStatusLog->Event->findByExtid($this->request->query['event'], 'id');
+            if (!empty($result)) {
+                $eventInputOptions['default'] = $defaultEvent['Event']['id'];
+            }
         }
         
         # logged by...
