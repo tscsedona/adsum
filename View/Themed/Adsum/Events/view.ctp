@@ -80,7 +80,7 @@
                 <tr>
                     <td><strong><?php echo __('Attendee Count'); ?></strong></td>
                     <td>
-                        <?php echo $this->Html->link(count($event['Attendee']), array('action' => 'attendance', $event['Event']['id'])); ?> 
+                        <?php echo $this->Html->link('View Attendees <label class="label label-success">' . count($event['Attendee']) . '</label>', array('action' => 'attendance', $event['Event']['id']), array('escape' => false, 'class' => 'btn btn-mini')); ?> 
                         &nbsp;
                     </td>
                 </tr>
