@@ -11,6 +11,8 @@
                 <h2><?php echo __('Edit Option'); ?></h2>
                 
                 <hr />
+                
+                <?php echo $this->Form->input('id'); ?> 
 
                 <div class="control-group">
                     <?php echo $this->Form->label('key', 'key', array('class' => 'control-label')); ?>

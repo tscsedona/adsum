@@ -20,6 +20,14 @@
                         <?php echo $this->Form->input('title', array('class' => 'span12')); ?> 
                     </div><!-- .controls -->
                 </div><!-- .control-group -->
+                
+                <div class="control-group">
+                    <?php echo $this->Form->label('color', 'Color', array('class' => 'control-label')); ?> 
+                    <div class="controls">
+                        <?php echo $this->Form->input('color', array('type' => 'text', 'length' => 6)); ?> 
+                        <div id="colorSample" class="span1" style="display:inline;">&nbsp;</div>
+                    </div><!-- .controls -->
+                </div><!-- .control-group -->
 
             </fieldset>
             
@@ -36,3 +44,9 @@
     </div><!-- #page-content .span9 -->
 
 </div><!-- #page-container .row-fluid -->
+
+<?php if (CakePlugin::loaded('CakeJqueryColorPicker')) : ?>
+<?php $this->Html->script('/CakeJqueryColorPicker/js/colorpicker.min.js', array('block' => 'script')); ?> 
+<?php $this->Html->css('/CakeJqueryColorPicker/css/colorpicker.min.css', null, array('block' => 'scriptHead')); ?> 
+<?php $this->Html->script('/CakeJqueryColorPicker/js/initColorPicker.js', array('block' => 'scriptBottom')); ?> 
+<?php endif; ?> 

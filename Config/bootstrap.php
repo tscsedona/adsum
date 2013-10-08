@@ -43,6 +43,7 @@ Configure::write('Site.settings', array(
   */
   CakePlugin::load('Csv');
   CakePlugin::load('StateBars', array('routes' => true));
+  CakePlugin::load('CakeJqueryColorPicker');
 
 
 /**

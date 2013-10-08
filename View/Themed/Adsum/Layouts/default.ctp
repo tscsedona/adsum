@@ -93,7 +93,7 @@ $adsumDescription = __d('adsum', 'Adsum - Event Attendance Tracking Software');
 		<?php echo $this->Html->script('libs/jquery'); ?>  
 		<?php echo $this->Html->script('libs/bootstrap.min'); ?>  
 		<?php echo $this->fetch('script'); ?>  
-                <?php echo $this->Html->script('common'); ?>  
+        <?php echo $this->Html->script('common'); ?>  
         <?php echo $this->fetch('scriptBottom'); ?>  
 	</body>
 

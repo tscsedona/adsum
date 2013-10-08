@@ -3,7 +3,7 @@
     <div id="page-content" class="span12">
         <div class="attendees index well well-small">
 
-            <?php # Debugger::dump($event); ?> 
+            <?php # Debugger::dump($attendees[0]['Attendee']); ?> 
             
             <h2>
                 <?php echo __('Registered Attendees'); ?>

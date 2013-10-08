@@ -60,6 +60,10 @@ class AppController extends Controller {
         $this->renderHomeLink();
     }
     
+#    __  __  __  __  __  __  __  __  __  __  __  __  __
+#    \//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\
+#      ""  ""  ""  ""  ""  ""  ""  ""  ""  ""  ""  ""  ""
+    
     /**
      * Toggle the home page link based on the
      * current user's logged in status
@@ -80,11 +84,6 @@ class AppController extends Controller {
         }
     }
     
-#    __  __  __  __  __  __  __  __  __  __  __  __  __
-#    \//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\
-#      ""  ""  ""  ""  ""  ""  ""  ""  ""  ""  ""  ""  ""
-    
-
     /**
      * determine the site name
      * 
@@ -101,5 +100,6 @@ class AppController extends Controller {
        }
        return $siteName;
     }
+    
     
 }

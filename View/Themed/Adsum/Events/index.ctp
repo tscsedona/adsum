@@ -23,7 +23,7 @@
                 <?php foreach ($events as $event): ?>
                     <tr>
                         <td>
-                            <span class="label"><?php echo $event['EventType']['title']; ?></span>
+                            <span class="label" style="background-color:#<?php echo $event['EventType']['color']; ?>"><?php echo $event['EventType']['title']; ?></span>
                         </td>
                         <td><?php echo h($event['Event']['title']); ?>&nbsp;</td>
                         <td><?php echo h($this->Time->format($event['Event']['start_time'])); ?>&nbsp;</td>

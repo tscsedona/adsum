@@ -39,10 +39,15 @@ class EventsController extends AppController {
 		if (!$this->Event->exists($id)) {
 			throw new NotFoundException(__('Invalid event'));
 		}
+        
 		$options = array('conditions' => array('Event.' . $this->Event->primaryKey => $id));
 		$event = $this->Event->find('first', $options);
-        $attendees = $this->Paginator->paginate('Event.Attendee');
-        $this->set('attendees', $attendees);
+        $this->Event->Behaviors->load('Containable');
+        $this->Event->contain('Attendee');
+        $attendees = $this->Event->find('all');
+        $a = Set::classicExtract($attendees, '{n}.Attendee');
+#        $attendees = $this->Paginator->paginate($a);
+        Debugger::dump($a);
         $this->set(compact('event', 'attendees'));
     }
     
