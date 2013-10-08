@@ -135,7 +135,7 @@
 
 
             <div class="actions">
-                <?php echo $this->Html->link('<i class="icon-plus icon-white"></i> ' . __('Add New Bar Number'), array('controller' => 'StateBars', 'action' => 'add', 'plugin' => true), array('class' => 'btn btn-primary', 'escape' => false)); ?>				</div><!-- .actions -->
+                <?php echo $this->Html->link('<i class="icon-plus icon-white"></i> ' . __('Add New Bar Number'), array('controller' => 'StateBars', 'action' => 'add', $attendee['Attendee']['id'], 'plugin' => true), array('class' => 'btn btn-primary', 'escape' => false)); ?>				</div><!-- .actions -->
 
         </div><!-- .related -->
 
