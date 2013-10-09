@@ -22,9 +22,9 @@
                     <div class="ajax_loading_image text-center"></div>
                     <div class="ajax_bar_numbers"></div>
 
-                    <?php echo $this->Form->label('attendance_status_state_id', 'Status State', array('class' => '')); ?>
+                    <?php echo $this->Form->label('attendance_status_state_id', 'Status State', array('style' => 'margin-top:8px;')); ?>
                     <?php echo $this->Form->input('attendance_status_state_id', array(
-                        'class' => '',
+                        'class' => 'span6',
                         'type' => 'radio',
                         'legend' => false,
                         'between' => '--between---',
