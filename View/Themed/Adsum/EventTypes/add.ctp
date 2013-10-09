@@ -48,3 +48,9 @@
     </div><!-- #page-content .span9 -->
 
 </div><!-- #page-container .row-fluid -->
+
+<?php if (CakePlugin::loaded('CakeJqueryColorPicker')) : ?>
+<?php $this->Html->script('/CakeJqueryColorPicker/js/colorpicker.min.js', array('block' => 'script')); ?> 
+<?php $this->Html->css('/CakeJqueryColorPicker/css/colorpicker.min.css', null, array('block' => 'scriptHead')); ?> 
+<?php $this->Html->script('/CakeJqueryColorPicker/js/initColorPicker.js', array('block' => 'scriptBottom')); ?> 
+<?php endif; ?> 

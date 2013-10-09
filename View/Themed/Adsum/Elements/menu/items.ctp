@@ -1,6 +1,6 @@
 <li><?php echo $this->Html->link(__('Events'), array('controller' => 'events', 'action' => 'index', 'plugin' => false)); ?> </li>
                     <li><?php echo $this->Html->link(__('Attendees'), array('controller' => 'attendees', 'action' => 'index', 'plugin' => false)); ?> </li>
-                    <li><?php echo $this->Html->link(__('Status Logs'), array('controller' => 'AttendeeStatusLogs', 'action' => 'index', 'plugin' => false)); ?> </li>
+                    <li><?php echo $this->Html->link(__('Logbook'), array('controller' => 'AttendeeStatusLogs', 'action' => 'index', 'plugin' => false)); ?> </li>
                     <?php if (AuthComponent::user('is_admin') == true) : ?>
                     <li><?php echo $this->Html->link(__('Users'), array('controller' => 'users', 'action' => 'index', 'plugin' => false)); ?> </li>
                     <li class="dropdown">
