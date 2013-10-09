@@ -17,12 +17,12 @@
                     
                     <?php echo $this->Form->label('attendee_id', 'Attendee', array('class' => '')); ?>
                     <?php echo $this->Form->input('attendee_id', $attendeeInputOptions); ?>
-                    
+
+                    <?php if (CakePlugin::loaded('StateBars')) : ?>
                     <div class="ajax_loading_image text-center"></div>
                     <div class="ajax_bar_numbers"></div>
-                    
-                    <?php echo $this->Form->label('attendance_status_state_id', 'Status State', array('class' => '')); ?>
 
+                    <?php echo $this->Form->label('attendance_status_state_id', 'Status State', array('class' => '')); ?>
                     <?php echo $this->Form->input('attendance_status_state_id', array(
                         'class' => '',
                         'type' => 'radio',
@@ -30,7 +30,7 @@
                         'between' => '--between---',
                         'separator' => '<br />',
                         )); ?> 
-
+                    <?php endif; ?> 
                     
                     <hr />
                     
