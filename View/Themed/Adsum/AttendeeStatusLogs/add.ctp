@@ -32,9 +32,8 @@
                         )); ?> 
                     <?php endif; ?> 
                     
-                    <hr />
-                    
                     <?php if (empty($preset['event'])) { ?>
+                    <hr />
                     <?php echo $this->Form->label('event_id', 'Event', array('class' => '')); ?>
                     <?php echo $this->Form->input('event_id', $eventInputOptions); ?>
                     <?php } ?>
