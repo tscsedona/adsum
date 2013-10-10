@@ -55,3 +55,9 @@ select#AttendeeAttendee {
 #AttendeeStatusLogAddForm .controls {
     margin-left: 120px;
 }
+#btnFilter {
+    display: inline-block;
+}
+#eventNavigationPane {
+    margin-top: 20px;
+}

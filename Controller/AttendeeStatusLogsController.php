@@ -80,9 +80,20 @@ class AttendeeStatusLogsController extends AppController {
  * @return void
  */
 	public function index() {
+        $passed = null;
+        if ($this->request->is('post') && $this->request->data['AttendeeStatusLog']['event_id']) {
+            $passed = $this->request->data['AttendeeStatusLog']['event_id'];
+        }
         $this->tallyAttendeeHoursByEvent();
 		$this->AttendeeStatusLog->recursive = 0;
-		$this->set('attendeeStatusLogs', $this->paginate());
+        $events = $this->AttendeeStatusLog->Event->find('list');
+  #      Debugger::dump($events);
+        if (!empty($passed)) {
+            $attendeeStatusLogs = $this->paginate(array('event_id' => $passed));
+        } else {
+            $attendeeStatusLogs = $this->paginate();
+        }
+        $this->set(compact('attendeeStatusLogs', 'events'));
 	}
 
 /**
